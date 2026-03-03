@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="tr">
+<head>
+{{> head}}
+<title>{{name}} — Sık Sorulan Sorular | MirPDF</title>
+<meta name="description" content="{{name}} hakkında en çok sorulan sorular ve cevapları." />
+<link rel="canonical" href="{{baseUrl}}/seo/tools/{{slug}}/sss.html" />
+<script type="application/ld+json">{{faqSchema}}</script>
+</head>
+<body>
+<div class="bg"></div>
+<main class="wrap">
+{{> header}}
+
+<article class="card">
+  <h1>{{name}} — Sık Sorulan Sorular</h1>
+  <p class="lead">{{name}} kullanımına dair merak edilen her şey.</p>
+  {{faqHtml}}
+  <div class="cta-box">
+    <a href="/tools/{{slug}}.html" class="primary">{{name}} Aracını Kullan →</a>
+  </div>
+</article>
+
+<section class="card related-section">
+  <h2>İlgili Sayfalar</h2>
+  <ul>{{relatedLinks}}</ul>
+</section>
+
+{{> footer}}
+</main>
+</body>
+</html>

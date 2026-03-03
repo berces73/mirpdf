@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ödeme Başarılı | MirPDF</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="bg"></div>
+  <main class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">PDF</div>
+        <div>
+          <h1>Ödeme Başarılı</h1>
+          <p>Kredilerin birkaç saniye içinde hesabına yansır.</p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="ghost" href="../index.html">Ana Sayfa</a>
+        <a class="primary" href="../index.html#tool">Aracı Kullan</a>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>Şimdi ne olacak?</h2>
+      <ul class="muted" style="margin-top:8px;line-height:1.7">
+        <li>Webhook geldikçe krediler otomatik yüklenir.</li>
+        <li>Hesabına giriş yaptıysan kredi bakiyen /api/me içinde görünür.</li>
+        <li>Görünmüyorsa sayfayı yenile.</li>
+      </ul>
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+        <button class="primary" id="refresh">Krediyi Yenile</button>
+        <a class="ghost" href="../index.html#account">Hesap</a>
+      </div>
+      <div class="muted small" id="out" style="margin-top:10px"></div>
+    </section>
+
+    <footer class="muted footer">© 2026 MirPDF</footer>
+  </main>
+
+<script>
+async function api(path){
+  const token = localStorage.getItem("token");
+  const r = await fetch(path, { headers: token ? { "Authorization":"Bearer "+token } : {} });
+  return r.json();
+}
+document.getElementById("refresh").onclick = async ()=>{
+  const out = document.getElementById("out");
+  out.textContent = "Kontrol ediliyor...";
+  const j = await api("/api/me").catch(()=>null);
+  out.textContent = j?.ok ? ("Bakiye: " + (j.data.balance ?? "—")) : "Giriş yapmadıysan bakiye görünmez.";
+};
+</script>
+</body>
+</html>

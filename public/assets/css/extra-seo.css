@@ -1,0 +1,9 @@
+/* Related guides block */
+.related-guides{padding:24px 0;border-top:1px solid rgba(0,0,0,.08)}
+.related-guides .container{max-width:980px;margin:0 auto;padding:0 16px}
+.related-guides h2{font-size:1.25rem;margin:0 0 8px}
+.related-guides .muted{opacity:.75;margin:0 0 12px}
+.related-guides .related-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;list-style:none;padding:0;margin:0}
+.related-guides .related-list li{margin:0}
+.related-guides .rlink{display:block;padding:10px 12px;border:1px solid rgba(0,0,0,.08);border-radius:12px;text-decoration:none}
+.related-guides .rlink:hover{text-decoration:underline}

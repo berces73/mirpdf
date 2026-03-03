@@ -1,0 +1,446 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+<!-- SEO -->
+<title>MirPDF - Ücretsiz Online PDF Araçları | English</title>
+
+    
+  <!-- Verification (replace tokens) -->
+<link rel="alternate" hreflang="tr" href="/index.html">
+    <link rel="alternate" hreflang="en" href="/en/index.html">
+    <link rel="alternate" hreflang="x-default" href="/index.html">
+<meta content="PDF dosyalarınızı ücretsiz ve güvenli şekilde işleyin. Birleştir, sıkıştır, böl, döndür ve düzenle. Dosyalar sunucuya yüklenmez." name="description"/>
+<meta content="index, follow" name="robots"/>
+
+
+<link href="/sitemap.xml" rel="sitemap" type="application/xml"/>
+<!-- Theme Color -->
+<meta content="#0d1117" name="theme-color"/>
+<!-- Open Graph -->
+<meta content="website" property="og:type"/>
+<meta content="https://mirpdf.com/" property="og:url"/>
+<meta content="MirPDF - Ücretsiz Online PDF Araçları" property="og:title"/>
+<meta content="PDF dosyalarınızı ücretsiz ve güvenli şekilde işleyin. Dosyalar sunucuya yüklenmez." property="og:description"/>
+<meta content="https://mirpdf.com/assets/icons/og-image.jpg" property="og:image"/>
+<meta content="MirPDF - Online PDF Araçları" property="og:image:alt"/>
+<meta content="tr_TR" property="og:locale"/>
+<meta content="MirPDF" property="og:site_name"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="MirPDF - Ücretsiz Online PDF Araçları" name="twitter:title"/>
+<meta content="PDF dosyalarınızı ücretsiz ve güvenli şekilde işleyin. Dosyalar sunucuya yüklenmez." name="twitter:description"/>
+<meta content="https://mirpdf.com/assets/icons/og-image.jpg" name="twitter:image"/>
+<meta content="MirPDF - Online PDF Araçları" name="twitter:image:alt"/>
+<!-- Security: CSP (tools için blob/worker destekli) -->
+<meta content="
+    default-src 'self';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline';
+    script-src 'self' 'unsafe-inline';
+    font-src 'self' https://cdnjs.cloudflare.com data:;
+    img-src 'self' data: blob:;
+    worker-src 'self' blob:;
+    connect-src 'self' https://www.google-analytics.com;
+  " http-equiv="Content-Security-Policy"/>
+<meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+<meta content="strict-origin-when-cross-origin" http-equiv="Referrer-Policy"/>
+<!-- Icons -->
+<link href="/favicon.ico" rel="icon"/>
+<link href="/assets/icons/apple-touch-icon.png" rel="apple-touch-icon"/>
+<!-- Performance -->
+<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+<link href="https://cdnjs.cloudflare.com" rel="dns-prefetch"/>
+<!-- FontAwesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<!-- Schema: WebSite -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MirPDF",
+    "url": "https://mirpdf.com/",
+    "description": "Ücretsiz ve güvenli online PDF araçları",
+    "inLanguage": "tr"
+  }
+  </script>
+<!-- Schema: Organization -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MirPDF",
+    "url": "https://mirpdf.com/"
+  }
+  </script>
+<!-- Schema: WebApplication -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "MirPDF Araçları",
+    "url": "https://mirpdf.com/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "TRY"
+    }
+  }
+  </script>
+<style>
+    :root {
+      --red:#e63946;
+      --red-dark:#c1121f;
+      --bg:#0d1117;
+      --bg2:#161b22;
+      --bg3:#1f262e;
+      --border:#30363d;
+      --text:#e6edf3;
+      --text-muted:#8b949e;
+      --radius:12px;
+      --transition:0.22s ease;
+    }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .skip-link{
+      position:absolute;top:-100%;left:1rem;
+      background:var(--red);color:#fff;
+      padding:.6rem 1.2rem;
+      border-radius:0 0 var(--radius) var(--radius);
+      font-weight:700;z-index:9999;text-decoration:none;
+      transition:top .2s;
+    }
+    .skip-link:focus{top:0}
+
+    .container{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+
+    .header{
+      background:var(--bg2);
+      border-bottom:1px solid var(--border);
+      position:sticky;top:0;z-index:100;
+    }
+    .header-content{
+      display:flex;align-items:center;justify-content:space-between;
+      height:64px;gap:1rem;
+    }
+    .logo{
+      display:flex;align-items:center;gap:.6rem;
+      text-decoration:none;font-size:1.2rem;font-weight:700;color:var(--text);
+    }
+    .logo i{color:var(--red);font-size:1.4rem}
+    .logo:hover .logo-text,.logo:focus .logo-text{color:var(--red)}
+    .logo-text{transition:color var(--transition)}
+
+    nav a{
+      color:var(--text-muted);
+      text-decoration:none;
+      padding:.4rem .75rem;border-radius:6px;font-size:.95rem;
+      transition:background var(--transition),color var(--transition);
+    }
+    nav a:hover,nav a:focus{background:var(--bg3);color:var(--text);outline:none}
+    #mainNav{display:flex;gap:.25rem;align-items:center}
+
+    #mobileMenuToggle{
+      display:none;background:none;border:1px solid var(--border);
+      color:var(--text);padding:.45rem .7rem;border-radius:6px;
+      cursor:pointer;font-size:1rem;
+    }
+    #mobileMenuToggle:focus{outline:2px solid var(--red);outline-offset:2px}
+
+    .hero{
+      background:linear-gradient(135deg,var(--bg2) 0%,var(--bg) 100%);
+      border-bottom:1px solid var(--border);
+      padding:5rem 0 4rem;
+      text-align:center;
+    }
+    .hero h1{
+      font-size:clamp(1.8rem,4vw,2.8rem);
+      font-weight:800;margin-bottom:.75rem;
+    }
+    .hero h1 span{color:var(--red)}
+    .hero p{color:var(--text-muted);font-size:1.1rem;margin-bottom:2rem}
+
+    .badge-row{
+      display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;
+      margin-bottom:2rem;
+    }
+    .badge{
+      display:inline-flex;align-items:center;gap:.4rem;
+      background:var(--bg3);border:1px solid var(--border);
+      color:var(--text-muted);font-size:.85rem;
+      padding:.35rem .8rem;border-radius:100px;
+    }
+    .badge i{color:var(--red)}
+
+    .btn{
+      display:inline-flex;align-items:center;gap:.5rem;
+      background:var(--red);color:#fff;text-decoration:none;font-weight:700;
+      padding:.8rem 2rem;border-radius:var(--radius);font-size:1rem;
+      transition:background var(--transition),transform var(--transition);
+    }
+    .btn:hover,.btn:focus{background:var(--red-dark);transform:translateY(-1px);outline:none}
+    .btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+    .tools-section{padding:4rem 0}
+    .tools-section h2{
+      font-size:1.6rem;font-weight:800;margin-bottom:2rem;text-align:center;
+    }
+    .tools-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+      gap:1rem;
+    }
+    .tool-card{
+      display:flex;flex-direction:column;align-items:center;text-align:center;
+      gap:.75rem;padding:1.75rem 1rem;
+      background:var(--bg2);border:1px solid var(--border);
+      border-radius:var(--radius);
+      text-decoration:none;color:var(--text);
+      transition:border-color var(--transition),transform var(--transition),box-shadow var(--transition);
+    }
+    .tool-card:hover,.tool-card:focus{
+      border-color:var(--red);
+      transform:translateY(-3px);
+      box-shadow:0 8px 24px rgba(230,57,70,.15);
+      outline:none;
+    }
+    .tool-card:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+    .tool-card i{font-size:1.8rem;color:var(--red)}
+    .tool-card h3{font-size:.95rem;font-weight:700;margin:0}
+    .tool-card p{font-size:.78rem;color:var(--text-muted);margin:0;line-height:1.4}
+
+    .features-section{
+      background:var(--bg2);
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      padding:3.5rem 0;
+    }
+    .features-section h2{
+      font-size:1.4rem;font-weight:800;text-align:center;margin-bottom:2rem;
+    }
+    .features-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:1.5rem;
+    }
+    .feature-item{
+      display:flex;flex-direction:column;align-items:center;text-align:center;
+      gap:.5rem;
+    }
+    .feature-item i{font-size:1.6rem;color:var(--red);margin-bottom:.25rem}
+    .feature-item strong{font-size:1rem}
+    .feature-item span{font-size:.85rem;color:var(--text-muted);max-width:40ch}
+
+    .footer{
+      background:var(--bg2);
+      border-top:1px solid var(--border);
+      padding:2.5rem 0;
+    }
+    .footer-inner{
+      display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;
+      gap:1rem;
+    }
+    .footer p{color:var(--text-muted);font-size:.9rem}
+    .footer-links{display:flex;gap:1.25rem;flex-wrap:wrap}
+    .footer-links a{
+      color:var(--text-muted);text-decoration:none;font-size:.85rem;
+      transition:color var(--transition);
+    }
+    .footer-links a:hover,.footer-links a:focus{color:var(--text)}
+
+    :focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+    @media (max-width:640px){
+      #mobileMenuToggle{display:block}
+      #mainNav{
+        display:none;flex-direction:column;
+        position:absolute;top:65px;left:0;right:0;
+        background:var(--bg2);border-bottom:1px solid var(--border);
+        padding:1rem;gap:.25rem;z-index:99;
+      }
+      #mainNav.show{display:flex}
+      #mainNav a{padding:.6rem 1rem;width:100%}
+      .tools-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+      .badge-row{gap:.5rem}
+    }
+  </style>
+<link href="https://mirpdf.com/" rel="canonical"/></head>
+<body>
+<a class="skip-link" href="#main">Ana içeriğe geç</a>
+<header class="header" role="banner">
+<div class="container">
+<div class="header-content">
+<a aria-label="MirPDF - Ana Sayfa" class="logo" href="/">
+<i aria-hidden="true" class="fas fa-file-pdf"></i>
+<span class="logo-text">MirPDF</span>
+</a>
+<button aria-controls="mainNav" aria-expanded="false" aria-label="Menüyü aç/kapat" id="mobileMenuToggle">
+<i aria-hidden="true" class="fas fa-bars"></i>
+</button>
+<nav aria-label="Ana Navigasyon" id="mainNav">
+<a href="#tools">Araçlar</a>
+<a href="/pricing.html">Fiyatlandırma</a>
+<a href="/about.html">Hakkımızda</a>
+<a href="/faq.html">SSS</a>
+<a href="/contact.html">İletişim</a>
+</nav>
+</div>
+</div>
+</header>
+<section aria-labelledby="hero-heading" class="hero">
+<div class="container">
+<h1 id="hero-heading"><span>%100 Ücretsiz</span> PDF Araçları</h1>
+<p>Dosyalarınız sunucuya yüklenmez — her şey tarayıcınızda işlenir</p>
+<div aria-label="Platform özellikleri" class="badge-row" role="list">
+<span class="badge" role="listitem"><i aria-hidden="true" class="fas fa-lock"></i> Güvenli</span>
+<span class="badge" role="listitem"><i aria-hidden="true" class="fas fa-bolt"></i> Hızlı</span>
+<span class="badge" role="listitem"><i aria-hidden="true" class="fas fa-gift"></i> Ücretsiz</span>
+<span class="badge" role="listitem"><i aria-hidden="true" class="fas fa-globe"></i> Tarayıcı Tabanlı</span>
+</div>
+<a class="btn" href="#tools">
+<i aria-hidden="true" class="fas fa-rocket"></i>
+        Araçları Keşfet
+      </a>
+</div>
+</section>
+<main id="main">
+<section aria-labelledby="tools-heading" class="tools-section" id="tools">
+<div class="container">
+<h2 id="tools-heading">PDF Araçları</h2>
+<div aria-label="Kullanılabilir PDF araçları" class="tools-grid" role="list">
+<a aria-label="PDF Birleştir - Birden fazla PDF'i tek dosyada birleştir" class="tool-card" data-tool="merge" href="/pdf-birlestir" role="listitem">
+<i aria-hidden="true" class="fas fa-object-group"></i>
+<h3>PDF Birleştir</h3>
+<p>Birden fazla PDF'i tek dosyada birleştir</p>
+</a>
+<a aria-label="PDF Sıkıştır - PDF dosya boyutunu kaliteyi koruyarak küçült" class="tool-card" data-tool="compress" href="/pdf-sikistir" role="listitem">
+<i aria-hidden="true" class="fas fa-compress"></i>
+<h3>PDF Sıkıştır</h3>
+<p>Dosya boyutunu kaliteyi koruyarak küçült</p>
+</a>
+<a aria-label="PDF Böl - PDF'i seçili sayfalara göre ayır" class="tool-card" data-tool="split" href="/pdf-bol" role="listitem">
+<i aria-hidden="true" class="fas fa-scissors"></i>
+<h3>PDF Böl</h3>
+<p>PDF'i istediğin sayfalara göre parçalara ayır</p>
+</a>
+<a aria-label="PDF'den JPG - PDF sayfalarını JPG görüntüsüne dönüştür" class="tool-card" data-tool="convert" href="/pdf-to-jpg" role="listitem">
+<i aria-hidden="true" class="fas fa-file-image"></i>
+<h3>PDF → JPG</h3>
+<p>PDF sayfalarını JPG görüntüsüne dönüştür</p>
+</a>
+<a aria-label="JPG'den PDF - Görselleri tek bir PDF dosyasına dönüştür" class="tool-card" data-tool="convert" href="/jpg-to-pdf" role="listitem">
+<i aria-hidden="true" class="fas fa-file-pdf"></i>
+<h3>JPG → PDF</h3>
+<p>Görselleri tek bir PDF dosyasına dönüştür</p>
+</a>
+<a aria-label="PDF Döndür - Sayfaları 90, 180 veya 270 derece döndür" class="tool-card" data-tool="rotate" href="/pdf-dondur" role="listitem">
+<i aria-hidden="true" class="fas fa-rotate"></i>
+<h3>PDF Döndür</h3>
+<p>Sayfaları 90°/180°/270° döndür</p>
+</a>
+<a aria-label="Sayfa Sil - PDF dosyasından istemediğin sayfaları kaldır" class="tool-card" data-tool="extract" href="/sayfa-sil" role="listitem">
+<i aria-hidden="true" class="fas fa-trash"></i>
+<h3>Sayfa Sil</h3>
+<p>İstemediğin sayfaları kaldır</p>
+</a>
+<a aria-label="Sayfa Sırala - PDF sayfalarını yeniden sırala" class="tool-card" data-tool="reorder" href="/sayfa-sirala" role="listitem">
+<i aria-hidden="true" class="fas fa-sort"></i>
+<h3>Sayfa Sırala</h3>
+<p>Sayfaları yeniden sırala</p>
+</a>
+<a aria-label="PDF Kilitle - PDF dosyasına parola ekle" class="tool-card" data-tool="protect" href="/pdf-kilitle" role="listitem">
+<i aria-hidden="true" class="fas fa-lock"></i>
+<h3>PDF Kilitle</h3>
+<p>PDF'e parola ekle</p>
+</a>
+<a aria-label="QR Kod Ekle - PDF sayfasına QR kod yerleştir" class="tool-card" data-tool="watermark" href="/qr-kod-ekle" role="listitem">
+<i aria-hidden="true" class="fas fa-qrcode"></i>
+<h3>QR Kod Ekle</h3>
+<p>PDF sayfasına QR kod yerleştir</p>
+</a>
+</div>
+</div>
+</section>
+<section aria-labelledby="features-heading" class="features-section">
+<div class="container">
+<h2 id="features-heading">Neden MirPDF?</h2>
+<div class="features-grid">
+<div class="feature-item">
+<i aria-hidden="true" class="fas fa-shield-halved"></i>
+<strong>Gizliliğiniz Korunur</strong>
+<span>Dosyalarınız asla sunucuya yüklenmez. PDF birleştirme/sıkıştırma/bölme gibi tüm işlemler cihazınızda gerçekleşir.</span>
+</div>
+<div class="feature-item">
+<i aria-hidden="true" class="fas fa-bolt"></i>
+<strong>Anında İşlem</strong>
+<span>Yükleme yok, bekleme yok. Dosyayı seç, işlemi uygula ve sonucu anında indir.</span>
+</div>
+<div class="feature-item">
+<i aria-hidden="true" class="fas fa-circle-check"></i>
+<strong>Tamamen Ücretsiz</strong>
+<span>Kayıt zorunluluğu yok. Günlük limit yok. Ücretsiz PDF araçlarını sınırsız kullan.</span>
+</div>
+<div class="feature-item">
+<i aria-hidden="true" class="fas fa-mobile-screen"></i>
+<strong>Her Cihazda Çalışır</strong>
+<span>Mobil, tablet ve masaüstünde modern tarayıcılarla uyumlu. Kurulum gerektirmez.</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer" role="contentinfo">
+<div class="container">
+<div class="footer-inner">
+<p>© 2026 MirPDF — Tüm hakları saklıdır.</p>
+<nav aria-label="Alt Navigasyon" class="footer-links">
+<a href="/privacy.html">Gizlilik</a>
+<a href="/terms.html">Åartlar</a>
+<a href="/contact.html">İletişim</a>
+<a href="/sitemap.xml" rel="noopener noreferrer">Site Haritası</a>
+</nav>
+</div>
+</div>
+</footer>
+<script>
+    const toggle = document.getElementById('mobileMenuToggle');
+    const nav    = document.getElementById('mainNav');
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('show');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+        nav.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('show')) {
+        nav.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
+    });
+  </script>
+<!-- Main JS -->
+<script defer="" src="/assets/js/tools-registry.js" type="module"></script>
+</body>
+</html>

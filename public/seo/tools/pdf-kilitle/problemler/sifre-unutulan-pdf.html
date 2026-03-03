@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Şifreli PDF Açılamıyor – Şifre Unutuldu Ne Yapmalı? | MirPDF</title>
+  <meta name="description" content="PDF şifresini unuttunuz mu? Şifreli PDF açamıyor musunuz? Olası çözüm yolları ve önlemler hakkında kapsamlı rehber."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://mirpdf.com/seo/tools/pdf-kilitle/problemler/sifre-unutulan-pdf.html"/>
+  <link rel="stylesheet" href="/style.css"/>
+  <link rel="stylesheet" href="/assets/css/extra-seo.css"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Şifresi Unutulan PDF ile Başa Çıkma",
+    "description": "Şifreli PDF açılamıyor sorununda yapılabilecekler",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Şifre Kombinasyonlarını Dene", "text": "Hatırlayabildiğiniz olası şifreleri tek tek deneyin: tarihler, eski şifreler, isim kombinasyonları." },
+      { "@type": "HowToStep", "position": 2, "name": "Şifre Yöneticisini Kontrol Et", "text": "LastPass, Bitwarden, 1Password, iOS iCloud Keychain veya tarayıcı kayıtlı şifrelerinizi kontrol edin." },
+      { "@type": "HowToStep", "position": 3, "name": "Göndereni ile İletişime Geç", "text": "PDF'i size gönderen kişiden şifreyi tekrar isteyin." },
+      { "@type": "HowToStep", "position": 4, "name": "Orijinal Belgeye Ulaş", "text": "Mümkünse belgenin şifresiz orijinalini tekrar oluşturun veya kişiden şifresiz göndermasini isteyin." }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "PDF şifresini kırmak mümkün mü?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Modern AES şifreleme ile korunan PDF'leri kırmak pratikte imkânsızdır. Eski RC4 128-bit şifreli PDF'lerde bazı araçlar çalışabilir, ancak bu güvenilir bir yöntem değildir. En gerçekçi çözüm şifreyi bulmak veya belgenin şifresiz kopyasını edinmektir." }
+      },
+      {
+        "@type": "Question",
+        "name": "PDF şifremi nasıl saklasam iyi olur?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Bitwarden (ücretsiz ve açık kaynak) veya 1Password gibi bir şifre yöneticisi kullanın. Alternatif olarak fiziksel bir deftere not alın. Şifreyi asla dosya adına veya e-posta konusuna yazmayın." }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://mirpdf.com/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF Kilitle", "item": "https://mirpdf.com/seo/tools/pdf-kilitle/" },
+      { "@type": "ListItem", "position": 3, "name": "Şifre Unutulan PDF", "item": "https://mirpdf.com/seo/tools/pdf-kilitle/problemler/sifre-unutulan-pdf.html" }
+    ]
+  }
+  </script>
+  <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <!-- Google Analytics GA4 — GA4_ID'yi kendi ID'nizle değiştirin -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA4_MEASUREMENT_ID', {'anonymize_ip': true});
+  </script>
+</head>
+<body>
+<div class="seo-page-wrapper">
+  <nav class="breadcrumb"><div class="container"><ol>
+    <li><a href="/">Ana Sayfa</a></li>
+    <li><a href="/seo/tools/pdf-kilitle/">PDF Kilitle</a></li>
+    <li aria-current="page">Şifre Unutulan PDF</li>
+  </ol></div></nav>
+
+  <main class="container seo-main">
+    <h1>Şifreli PDF Açılamıyor – Şifre Unutuldu Ne Yapmalı?</h1>
+    <p class="lead">
+      PDF şifresini unuttunuz mu ya da size gelen şifreli PDF açılmıyor mu?
+      Bu rehberde gerçekçi çözüm yollarını ve ileride aynı sorunu yaşamamak için
+      alınabilecek önlemleri anlatıyoruz.
+    </p>
+
+    <div class="warning-box">
+      <strong>⚠️ Önemli Bilgi:</strong> Modern PDF şifreleme (AES-256) kriptografik
+      olarak güçlüdür. "Şifre kırma" araçları gerçekçi bir çözüm sunmaz.
+      En etkili yol şifreyi hatırlamak veya belgenin kaynağına ulaşmaktır.
+    </div>
+
+    <h2>Adım 1 – Olası Şifreleri Deneyin</h2>
+    <p>
+      Şifreyi kendiniz koyduysa aşağıdaki kombinasyonları sırayla deneyin:
+    </p>
+    <ul>
+      <li>Doğum tarihiniz (farklı formatlar: 01012000, 2000-01-01)</li>
+      <li>Sık kullandığınız eski şifreler</li>
+      <li>Ad-soyad kombinasyonları</li>
+      <li>Belgeyi oluşturduğunuz tarih</li>
+      <li>Kurumunuzun varsayılan şifre politikaları (ör. sicil numarası)</li>
+    </ul>
+
+    <h2>Adım 2 – Şifre Yöneticinizi Kontrol Edin</h2>
+    <p>
+      Bir şifre yöneticisi kullanıyorsanız oraya kaydetmiş olabilirsiniz:
+    </p>
+    <ul>
+      <li><strong>iOS / macOS:</strong> Ayarlar → Şifreler veya iCloud Keychain</li>
+      <li><strong>Chrome / Edge:</strong> passwords.google.com veya tarayıcı ayarları</li>
+      <li><strong>Bitwarden / 1Password / LastPass:</strong> Uygulama içi arama</li>
+      <li><strong>Windows:</strong> Kimlik Bilgileri Yöneticisi</li>
+    </ul>
+
+    <h2>Adım 3 – Gönderen ile İletişime Geçin</h2>
+    <p>
+      PDF'i başka biri gönderdiyse, şifreyi tekrar isteyin. Kurumsal sistemlerde
+      (e-devlet, banka, sigorta) çoğu zaman belge yeniden indirilebilir veya
+      şifre müşteri hizmetleri aracılığıyla öğrenilebilir.
+    </p>
+
+    <h2>Adım 4 – Orijinal Belgeyi Yeniden Oluşturun</h2>
+    <p>
+      Belgeyi siz oluştturduysanız (Word, Excel vb.) şifresiz kayıt üzerinden tekrar
+      PDF oluşturun ve bu sefer şifreyi güvenli bir yere not edin.
+    </p>
+
+    <h2>PDF Şifre Kırma Araçları Gerçekten Çalışır mı?</h2>
+    <p>
+      İnternette "PDF password remover" olarak geçen araçlar şu iki durumda çalışabilir:
+    </p>
+    <ul>
+      <li><strong>Owner password (düzenleme kilidi) kaldırma:</strong> Bazı araçlar yalnızca
+      düzenleme/yazdırma kısıtlamalarını kaldırabilir. Bu işlem açma şifresi olmadan gerçekleşebilir.</li>
+      <li><strong>Çok zayıf veya eski RC4 şifreleme:</strong> 2000'ler öncesi oluşturulmuş PDF'lerde
+      brute-force teorik olarak mümkündür, ancak saatler hatta günler sürebilir.</li>
+    </ul>
+    <p>
+      Modern AES-128 veya AES-256 ile şifrelenmiş PDF'ler için hiçbir araç
+      pratik sürede sonuç vermez.
+    </p>
+
+    <div class="info-box">
+      <strong>💡 Öneri:</strong> Gelecekte bu sorunu yaşamamak için
+      <a href="https://bitwarden.com" rel="noopener noreferrer">Bitwarden</a> (ücretsiz, açık kaynak)
+      gibi bir şifre yöneticisi kullanın. Her PDF şifresini oluşturduğunuzda oraya kaydedin.
+    </div>
+
+    <h2>Şifreli PDF Nasıl Açılır (Şifreyi Biliyorsanız)?</h2>
+    <p>
+      Şifreyi biliyorsanız farklı platformlarda şöyle açarsınız:
+    </p>
+    <ul>
+      <li><strong>Windows:</strong> Adobe Acrobat Reader veya Microsoft Edge ile açın, şifreyi girin</li>
+      <li><strong>macOS:</strong> Önizleme (Preview) ile açın, şifreyi girin</li>
+      <li><strong>iPhone:</strong> Dosyalar uygulamasından açın, şifreyi girin</li>
+      <li><strong>Android:</strong> Adobe Acrobat Reader uygulamasından açın, şifreyi girin</li>
+    </ul>
+
+    <div class="related-links">
+      <h3>İlgili Sayfalar</h3>
+      <ul>
+        <li><a href="/pdf-kilitle">PDF Kilitle Aracı</a></li>
+        <li><a href="/seo/tools/pdf-kilitle/rehber.html">PDF Kilitleme Rehberi</a></li>
+        <li><a href="/seo/tools/pdf-kilitle/sss.html">PDF Kilitleme SSS</a></li>
+        <li><a href="/articles/sifreli-pdf-acma.html">Şifreli PDF Açma Yöntemleri</a></li>
+      </ul>
+    </div>
+  </main>
+</div>
+
+<section style="margin-top:40px;padding:20px;background:#0f1a30;border-radius:16px">
+<h2>İlgili İçerikler (SEO Cluster)</h2>
+
+<ul>
+<li><a href="/seo/tools/pdf-birlestir/rehber.html">PDF Birleştirme Rehberi</a></li>
+<li><a href="/seo/tools/pdf-sikistir/rehber.html">PDF Sıkıştırma Rehberi</a></li>
+<li><a href="/seo/tools/pdf-to-word/rehber.html">PDF → Word Rehberi</a></li>
+<li><a href="/seo/tools/ocr/rehber.html">OCR Metin Tanıma Rehberi</a></li>
+<li><a href="/seo/tools/jpg-to-pdf/rehber.html">JPG → PDF Rehberi</a></li>
+<li><a href="/seo/rehberler/pdf-kucultme-rehberi.html">PDF Boyutu Küçültme</a></li>
+<li><a href="/seo/rehberler/wordu-pdf-yapma.html">Word Dosyasını PDF Yapma</a></li>
+<li><a href="/seo/rehberler/kvkk-uyumlu-pdf.html">KVKK Uyumlu PDF Araçları</a></li>
+</ul>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+[
+  {
+    "slug": "pdf-imza-atma-yazdirmadan",
+    "title": "PDF'e İmza Nasıl Atılır — Yazdırmadan",
+    "desc": "PDF belgesine online olarak dijital imza ekleme rehberi.",
+    "body": "Artık sözleşme veya formları yazdırıp taramanıza gerek yok. PDF İmzala aracımızla belgenizi yükleyin, imzanızı çizin veya yazın ve imzalı belgeyi indirin. Tüm cihazlarda çalışır."
+  },
+  {
+    "slug": "pdf-excel-donusturme",
+    "title": "PDF'i Excel'e Dönüştürme — Veri Kaybetmeden",
+    "desc": "Tablo içeren PDF'leri Excel formatına aktarma yöntemi.",
+    "body": "Fatura, banka ekstresi veya rapor gibi tablo verisi barındıran PDF'leri Excel'e çevirmek için OCR destekli dönüşüm kullanın. Sütun hizalamasını korumak için PDF'in metin tabanlı (taranmış değil) olmasına dikkat edin."
+  },
+  {
+    "slug": "fotoğraftan-pdf-olusturma",
+    "title": "Fotoğraftan PDF Oluşturma: Adım Adım Rehber",
+    "desc": "Telefon veya kamera fotoğrafını PDF'e dönüştürme.",
+    "body": "JPG'den PDF aracımızla fotoğraflarınızı yükleyin, sıralayın ve tek bir PDF dosyasında birleştirin. Özellikle belge fotoğrafları, makbuz ve notlar için kullanışlıdır."
+  },
+  {
+    "slug": "pdf-powerpoint-donusturme",
+    "title": "PDF'i PowerPoint'e Dönüştürme Nasıl Yapılır",
+    "desc": "PDF slayt belgelerini düzenlenebilir PPTX formatına çevirme.",
+    "body": "Sunum PDF'lerini tekrar düzenlemek için PowerPoint dönüşümüne ihtiyaç duyarsınız. OCR aracımızla metni çıkarın, ardından PowerPoint'te yapıştırarak düzenlemeye devam edin."
+  },
+  {
+    "slug": "iphone-pdf-duzenleme",
+    "title": "iPhone'da PDF Düzenleme — Uygulama Gerektirmeden",
+    "desc": "Safari üzerinden iPhone'da PDF nasıl düzenlenir.",
+    "body": "iPhone'da Safari tarayıcısını açın, MirPDF'a gidin ve aracı seçin. Dosyayı Dosyalar uygulamasından yükleyin, işlemi yapın ve sonucu indirin. Herhangi bir uygulama yüklemenize gerek yok."
+  },
+  {
+    "slug": "android-pdf-birlestirme",
+    "title": "Android'de PDF Birleştirme Nasıl Yapılır",
+    "desc": "Android telefonda birden fazla PDF'i tek dosyaya birleştirme.",
+    "body": "Chrome tarayıcınızda PDF Birleştir aracını açın. 'Dosya Seç' butonuyla PDF'lerinizi yükleyin, sıralarını düzenleyin ve birleştirin. İndirilen dosya Dosyalar uygulamasına kaydedilir."
+  },
+  {
+    "slug": "mac-pdf-kucultme",
+    "title": "Mac'te PDF Küçültme (Preview ile Ücretsiz)",
+    "desc": "MacOS Preview uygulamasıyla PDF boyutu nasıl küçültülür.",
+    "body": "Mac'te Preview uygulamasında PDF'i açın, Dosya > Farklı Dışa Aktar menüsünden Kuvars Filtresi'ni kullanarak sıkıştırabilirsiniz. Daha güçlü sıkıştırma için online PDF Sıkıştır aracımızı deneyin."
+  },
+  {
+    "slug": "windows-pdf-birlestirme-programsiz",
+    "title": "Windows'ta PDF Birleştirme — Program Kurmadan",
+    "desc": "Windows'ta ücretsiz ve programsız PDF birleştirme yöntemi.",
+    "body": "Edge veya Chrome tarayıcınızla PDF Birleştir aracımıza girin. Dosyaları sürükle-bırak ile yükleyin ve birleştirin. Masaüstünüze indirin — herhangi bir program kurulumu gerekmez."
+  },
+  {
+    "slug": "fatura-pdf-word-cevirme",
+    "title": "Fatura PDF'ini Word'e Çevirme — Muhasebe İçin",
+    "desc": "Muhasebe ve ofis kullanımı için fatura PDF dönüşümü.",
+    "body": "E-fatura veya taranmış fatura PDF'lerini Word'e dönüştürerek veri düzenleyebilirsiniz. OCR tabanlı dönüşümümüz Türkçe faturaları yüksek doğrulukla tanır."
+  },
+  {
+    "slug": "sozlesmeye-online-imza",
+    "title": "Sözleşmeye Online İmza Atma Rehberi",
+    "desc": "Dijital sözleşmelere online imza nasıl eklenir.",
+    "body": "Sözleşme PDF'ini PDF İmzala aracına yükleyin. İmzanızı fareyle çizin veya klavyeyle yazın, konumlandırın ve imzalı belgeyi indirin. İmzalı PDF e-posta ile gönderilebilir."
+  },
+  {
+    "slug": "is-basvurusu-cv-pdf",
+    "title": "İş Başvurusu İçin CV'yi PDF'e Dönüştürme",
+    "desc": "Word veya başka formattaki CV'yi PDF'e çevirme.",
+    "body": "Word'de hazırladığınız CV'yi aracımıza yükleyin veya tarayıcıdan PDF olarak yazdırın. PDF formatındaki CV, farklı sistemlerde tutarlı görünür ve formatı bozulmaz."
+  },
+  {
+    "slug": "adobe-acrobat-ucretsiz-alternatif",
+    "title": "Adobe Acrobat'a Ücretsiz Alternatif — 2025",
+    "desc": "Adobe Acrobat yerine kullanabileceğiniz ücretsiz PDF araçları.",
+    "body": "Adobe Acrobat aylık abonelik gerektirirken MirPDF'daki araçlar temel ihtiyaçlar için tamamen ücretsizdir. Birleştirme, bölme, sıkıştırma, OCR ve imzalama özelliklerini ek ücret ödemeden kullanabilirsiniz."
+  },
+  {
+    "slug": "smallpdf-ilovepdf-karsilastirma",
+    "title": "Smallpdf vs. ILovePDF: Hangisi Daha İyi?",
+    "desc": "İki popüler PDF aracının karşılaştırması.",
+    "body": "Smallpdf ve ILovePDF'in her ikisi de popüler araçlardır ancak günlük kullanım limitleri ve ücret politikaları farklıdır. MirPDF Türkçe arayüzü ve yerel veri işleme politikasıyla öne çıkar."
+  },
+  {
+    "slug": "ucretsiz-pdf-sikistirma-araclari",
+    "title": "Ücretsiz PDF Sıkıştırma Araçları Karşılaştırması",
+    "desc": "2025'te en iyi ücretsiz PDF sıkıştırma araçları hangileri?",
+    "body": "PDF Sıkıştır, Smallpdf, ILovePDF ve PDF24 gibi araçları dosya boyutu, hız ve kalite açısından karşılaştırdık. Her aracın ücretsiz sürümünde farklı limitler geçerlidir."
+  },
+  {
+    "slug": "pdf-acilamıyor-cozum",
+    "title": "PDF Açılmıyor: Nedenleri ve Çözümleri",
+    "desc": "PDF dosyası açılmıyorsa ne yapmalısınız.",
+    "body": "PDF açılmama sorununun birkaç nedeni olabilir: bozuk dosya, eski PDF okuyucu sürümü, şifreli belge veya desteklenmeyen PDF sürümü. Önce başka bir araçla açmayı deneyin, sorun devam ediyorsa dosyayı onarma modunda yükleyin."
+  },
+  {
+    "slug": "pdf-muzik-tabanlı-mi-taranmis-mi",
+    "title": "PDF Metin Tabanlı mı, Taranmış mı? Nasıl Anlaşılır",
+    "desc": "PDF türünü belirleyip doğru araç seçme rehberi.",
+    "body": "Metin tabanlı PDF'de içeriği fare ile seçebilirsiniz; taranmış PDF'de sadece görsel vardır. Taranmış PDF'lerde düzenleme veya dönüşüm için önce OCR uygulamanız gerekir."
+  },
+  {
+    "slug": "pdf-filigran-marka-koruma",
+    "title": "PDF'e Filigran Ekleme — Marka Koruması İçin",
+    "desc": "Belgelerinizi yetkisiz kullanıma karşı filigranla koruma.",
+    "body": "Filigran Ekle aracımızla şirket adınızı, logonuzu veya 'GİZLİ' gibi bir metni PDF'e ekleyin. Saydamlık ve konum ayarlarını ihtiyacınıza göre düzenleyebilirsiniz."
+  }
+]

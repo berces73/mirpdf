@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Revenue Dashboard — PDF3</title>
+  
+  <!-- Verification (replace tokens) -->
+  <meta name="google-site-verification" content="GOOGLE_VERIFICATION_TOKEN"/>
+  <meta name="yandex-verification" content="YANDEX_VERIFICATION_TOKEN"/>
+  <meta name="msvalidate.01" content="BING_VERIFICATION_TOKEN"/>
+  <meta name="seznam-wmt" content="SEZNAM_VERIFICATION_TOKEN"/>
+<style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#0f172a;color:#f1f5f9;margin:0}
+    .wrap{max-width:1100px;margin:0 auto;padding:22px}
+    .card{background:#111827;border:1px solid #233047;border-radius:14px;padding:16px;margin:14px 0}
+    input,select{background:#0b1220;border:1px solid #233047;color:#f1f5f9;border-radius:10px;padding:10px 12px;width:100%}
+    button{background:#e63946;border:0;color:#fff;font-weight:800;padding:10px 14px;border-radius:10px;cursor:pointer}
+    button:hover{filter:brightness(1.05)}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px;border-bottom:1px solid #233047;text-align:left;font-size:.92rem}
+    th{color:#94a3b8;font-weight:700}
+    .row{display:grid;grid-template-columns:1fr 180px 140px;gap:12px}
+    .muted{color:#94a3b8}
+    .pill{display:inline-block;padding:4px 10px;border:1px solid #233047;border-radius:999px;color:#94a3b8;font-size:.82rem}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1 style="margin:0 0 8px">Revenue Dashboard</h1>
+  <div class="muted">Admin token ile /api/admin/revenue/summary endpoint'inden gelir özetini çeker.</div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <label class="muted">ADMIN_SECRET_TOKEN</label>
+        <input id="token" placeholder="Bearer token (sadece token kısmı)"/>
+      </div>
+      <div>
+        <label class="muted">Gün (days)</label>
+        <select id="days">
+          <option value="7">7</option>
+          <option value="30" selected>30</option>
+          <option value="90">90</option>
+          <option value="365">365</option>
+        </select>
+      </div>
+      <div style="display:flex;align-items:end">
+        <button id="load">Yükle</button>
+      </div>
+    </div>
+    <div style="margin-top:10px" class="muted">
+      Token tarayıcıda saklanır (localStorage). Paylaşma.
+    </div>
+  </div>
+
+  <div class="card" id="totals"></div>
+
+  <div class="card">
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+      <span class="pill">Top Keywords</span>
+      <span class="pill">Top Slugs</span>
+      <span class="pill">Top Tools</span>
+      <span class="pill">Top Sources</span>
+    </div>
+    <div id="tables"></div>
+  </div>
+</div>
+
+<script>
+const $ = (id)=>document.getElementById(id);
+
+function money(n){ 
+  const x = Number(n||0);
+  return x.toLocaleString("tr-TR");
+}
+function table(title, rows, cols){
+  const thead = cols.map(c=>`<th>${c.label}</th>`).join("");
+  const body = (rows||[]).map(r=>`<tr>${cols.map(c=>`<td>${r[c.key] ?? ""}</td>`).join("")}</tr>`).join("");
+  return `
+    <h2 style="margin:0 0 10px">${title}</h2>
+    <table><thead><tr>${thead}</tr></thead><tbody>${body}</tbody></table>
+  `;
+}
+
+async function load(){
+  const token = $("token").value.trim();
+  const days = $("days").value;
+  if (token) localStorage.setItem("pdf3_admin_token", token);
+  const saved = localStorage.getItem("pdf3_admin_token") || "";
+  if (!saved){ alert("Token gerekli"); return; }
+
+  const res = await fetch(`/api/admin/revenue/summary?days=${encodeURIComponent(days)}`, {
+    headers: { "Authorization": "Bearer " + saved }
+  });
+  const j = await res.json().catch(()=>null);
+  if (!j?.ok){ $("totals").textContent = j?.error || "Hata"; return; }
+
+  const totals = j.data.totals || [];
+  $("totals").innerHTML = `
+    <h2 style="margin:0 0 10px">Toplam</h2>
+    <div class="muted">Son ${j.data.days} gün</div>
+    <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
+      ${totals.map(t=>`<span class="pill">${(t.currency||"").toUpperCase()} · ${money(t.revenue)} · ${t.purchases} satış</span>`).join("")}
+    </div>
+  `;
+
+  $("tables").innerHTML = 
+    table("Top Keywords", j.data.topKeywords, [
+      {key:"keyword", label:"keyword"},
+      {key:"revenue", label:"revenue"},
+      {key:"purchases", label:"purchases"},
+    ]) +
+    table("Top Slugs", j.data.topSlugs, [
+      {key:"seo_slug", label:"seo_slug"},
+      {key:"revenue", label:"revenue"},
+      {key:"purchases", label:"purchases"},
+    ]) +
+    table("Top Tools", j.data.topTools, [
+      {key:"tool_name", label:"tool_name"},
+      {key:"revenue", label:"revenue"},
+      {key:"purchases", label:"purchases"},
+    ]) +
+    table("Top Sources", j.data.topSources, [
+      {key:"utm_source", label:"utm_source"},
+      {key:"revenue", label:"revenue"},
+      {key:"purchases", label:"purchases"},
+    ]);
+}
+
+$("load").addEventListener("click", load);
+$("token").value = localStorage.getItem("pdf3_admin_token") || "";
+</script>
+</body>
+</html>

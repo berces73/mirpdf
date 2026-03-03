@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "online-vs-masaustu-pdf-araclari",
+    "title": "Online PDF Araçları mı, Masaüstü Program mı?",
+    "desc": "Hangisi daha iyi? Avantaj ve dezavantajlar.",
+    "a": "Online PDF Araçları",
+    "b": "Masaüstü Programlar",
+    "verdict": "Günlük hızlı işlemler için online araçlar; büyük dosya veya toplu işlem için masaüstü programlar önerilir."
+  },
+  {
+    "slug": "adobe-vs-ucretsiz-alternatifler",
+    "title": "Adobe Acrobat vs. Ücretsiz Alternatifler — 2025 Karşılaştırması",
+    "desc": "Adobe Acrobat ücretli mi tutmalısınız, yoksa ücretsiz araç yeterli mi?",
+    "a": "Adobe Acrobat Pro",
+    "b": "Ücretsiz Online Araçlar",
+    "verdict": "Temel PDF işlemleri için ücretsiz araçlar yeterlidir. Gelişmiş form, OCR veya toplu işlem gerekiyorsa Acrobat değerlendirilebilir."
+  },
+  {
+    "slug": "smallpdf-ilovepdf-pdfplatform",
+    "title": "Smallpdf vs ILovePDF vs MirPDF Karşılaştırması",
+    "desc": "Üç popüler PDF platformunun özellik ve fiyat karşılaştırması.",
+    "a": "Smallpdf / ILovePDF",
+    "b": "MirPDF",
+    "verdict": "MirPDF Türkçe arayüzü ve KVKK uyumlu veri işleme politikasıyla Türkiye kullanıcıları için öne çıkar."
+  }
+]

@@ -1,0 +1,71 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<!--  Ana Sayfa / Homepage  -->
+<url>
+<loc>https://siteniz.com/</loc>
+<lastmod>2026-02-15T00:00:00+00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+<image:image>
+<image:loc>https://siteniz.com/assets/social-share.jpg</image:loc>
+<image:title>MirPDF - Ücretsiz Online PDF Araçları</image:title>
+<image:caption>PDF dosyalarınızı ücretsiz ve güvenli şekilde işleyin</image:caption>
+</image:image>
+</url>
+<!--  Araçlar Ana Sayfa / Tools Index  -->
+<url>
+<loc>https://siteniz.com/tools/</loc>
+<lastmod>2026-02-15T00:00:00+00:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<!--  Blog Ana Sayfa / Blog Index  -->
+<url>
+<loc>https://siteniz.com/blog/</loc>
+<lastmod>2026-02-15T00:00:00+00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<!--  SSS / FAQ  -->
+<url>
+<loc>https://siteniz.com/sss.html</loc>
+<lastmod>2026-02-15T00:00:00+00:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<!--  Hakkımızda / About  -->
+<url>
+<loc>https://siteniz.com/hakkimizda.html</loc>
+<lastmod>2026-02-15T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<!--  İletişim / Contact  -->
+<url>
+<loc>https://siteniz.com/iletisim.html</loc>
+<lastmod>2026-02-15T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<!--  Gizlilik Politikası / Privacy Policy  -->
+<url>
+<loc>https://siteniz.com/gizlilik-politikasi.html</loc>
+<lastmod>2026-02-15T00:00:00+00:00</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.3</priority>
+</url>
+<!--  Kullanım Şartları / Terms of Service  -->
+<url>
+<loc>https://siteniz.com/kullanim-sartlari.html</loc>
+<lastmod>2026-02-15T00:00:00+00:00</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.3</priority>
+</url>
+<!--  Çerez Politikası / Cookie Policy  -->
+<url>
+<loc>https://siteniz.com/cerez-politikasi.html</loc>
+<lastmod>2026-02-15T00:00:00+00:00</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.3</priority>
+</url>
+</urlset>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#667eea">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Çevrimdışı - MirPDF</title>
+  
+  <!-- Verification (replace tokens) -->
+<style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      display:flex;align-items:center;justify-content:center;
+      min-height:100vh;
+      background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+      color:#fff;padding:20px;
+    }
+    .container{text-align:center;max-width:520px}
+    .icon{
+      width:120px;height:120px;margin:0 auto 30px;
+      background:rgba(255,255,255,.1);border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-size:60px;
+    }
+    h1{font-size:32px;margin-bottom:16px;font-weight:700}
+    p{font-size:18px;line-height:1.6;margin-bottom:30px;opacity:.92}
+    .btn{
+      display:inline-block;padding:14px 32px;
+      background:#fff;color:#667eea;text-decoration:none;
+      border-radius:8px;font-weight:700;
+      transition:transform .2s, box-shadow .2s;
+      box-shadow:0 4px 12px rgba(0,0,0,.2);
+      border:none;cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.3)}
+    .status{margin-top:26px;font-size:14px;opacity:.8}
+    .noscript{margin-top:14px;font-size:13px;opacity:.85}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">📡</div>
+    <h1>İnternet Bağlantınız Yok</h1>
+    <p>Şu anda çevrimdışısınız. İnternet bağlantınızı kontrol edin ve tekrar deneyin.</p>
+
+    <button type="button" class="btn" onclick="window.location.reload()">
+      Tekrar Dene
+    </button>
+
+    <noscript>
+      <div class="noscript">JavaScript kapalı — otomatik yeniden deneme çalışmaz.</div>
+    </noscript>
+
+    <div class="status" id="status"></div>
+  </div>
+
+  <script>
+    (function(){
+      function updateStatus(){
+        const el = document.getElementById("status");
+        if (!el) return;
+
+        if (navigator.onLine) {
+          el.textContent = "✓ Bağlantı var! Sayfa yenileniyor...";
+          setTimeout(() => window.location.reload(), 900);
+        } else {
+          el.textContent = "✕ Çevrimdışı";
+        }
+      }
+      window.addEventListener("online", updateStatus);
+      window.addEventListener("offline", updateStatus);
+      updateStatus();
+    })();
+  </script>
+</body>
+</html>

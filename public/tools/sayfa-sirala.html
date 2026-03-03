@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PDF Sayfa Sırala | PDF3</title>
+  
+  <!-- Verification (replace tokens) -->
+<link rel="stylesheet" href="/style.css">
+  <script type="module" src="/assets/js/toast.js"></script>
+  <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <style>
+    .card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;margin:14px 0}
+    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    input,select,button{padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(0,0,0,.2);color:#fff}
+    button{cursor:pointer}
+    small{opacity:.75}
+  </style>
+
+  <link rel="stylesheet" href="/assets/css/extra-seo.css"/>
+</head>
+<body>
+<div class="container" style="max-width:900px;margin:40px auto;padding:0 16px;">
+  <a href="/tools" style="opacity:.8">← Araçlar</a>
+  <h1 style="margin-top:10px">🔢 PDF Sayfa Sırala</h1>
+  <p style="opacity:.85">Sayfaları istediğin sıraya göre yeniden diz (tarayıcıda).</p>
+
+  <div class="card">
+    <div class="row">
+      <input id="file" type="file" accept="application/pdf">
+      <input id="order" type="text" placeholder="Yeni sıra (örn: 3,1,2,4)" style="min-width:280px">
+      <input id="outname" type="text" value="siralanmis.pdf" style="min-width:220px">
+      <button id="run">Sırala ve İndir</button>
+    </div>
+    <p style="opacity:.8;margin-top:10px"><small>Sayfa numaraları 1’den başlar. Tüm sayfaları yazmalısın.</small></p>
+  </div>
+
+<script>
+  function parseOrder(s,total){
+    s=(s||"").replace(/\s+/g,"");
+    if(!s) return null;
+    const arr=s.split(",").map(x=>parseInt(x,10));
+    if(arr.some(n=>!n||n<1||n>total)) return null;
+    if(arr.length!==total) return null;
+    const set=new Set(arr);
+    if(set.size!==total) return null;
+    return arr.map(n=>n-1);
+  }
+  function downloadBytes(bytes, filename){
+    const blob = new Blob([bytes], {type:"application/pdf"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href), 30000);
+  }
+
+  document.getElementById("run").addEventListener("click", async ()=>{
+    const f = document.getElementById("file").files[0];
+    if(!f) return alert("PDF seç.");
+    const src = await PDFLib.PDFDocument.load(await f.arrayBuffer());
+    const total = src.getPageCount();
+    const order = parseOrder(document.getElementById("order").value, total);
+    if(!order) return alert(`Sıra hatalı. Toplam ${total} sayfa için örn: 3,1,2,...`);
+    const out = await PDFLib.PDFDocument.create();
+    const copied = await out.copyPages(src, order);
+    copied.forEach(p=>out.addPage(p));
+    const bytes = await out.save();
+    downloadBytes(bytes, document.getElementById("outname").value || "siralanmis.pdf");
+  });
+</script>
+
+  <p style="opacity:.7;margin-top:18px"><small>İpucu: Bu araç tarayıcıda çalışır. Dosyalarınız sunucuya gönderilmez.</small></p>
+</div>
+
+<section class="related-guides" data-related-guides="1">
+  <div class="container">
+    <h2>İlgili Rehberler</h2>
+    <p class="muted">Benzer konularda en çok okunan rehberler.</p>
+    <ul class="related-list">
+      <li><a href="/seo/tools/pdf-sikistir/" class="rlink">PDF Sıkıştır</a></li><li><a href="/seo/tools/pdf-sikistir/rehber.html" class="rlink">PDF Sıkıştırma Rehberi: Kalite Kaybetmeden Küçültme</a></li><li><a href="/seo/tools/pdf-sikistir/sss.html" class="rlink">PDF Sıkıştırma SSS</a></li><li><a href="/seo/tools/pdf-sikistir/problemler/outlook-pdf-boyutu-buyuk.html" class="rlink">Outlook İçin PDF Küçültme (Dosya Boyutu Sorunu)</a></li><li><a href="/seo/tools/pdf-to-word/" class="rlink">PDF'ten Word'e</a></li><li><a href="/seo/tools/pdf-to-word/rehber.html" class="rlink">PDF’i Word’e Dönüştürme: En Kolay Yöntemler</a></li><li><a href="/seo/tools/pdf-to-word/sss.html" class="rlink">PDF → Word Dönüştürme SSS</a></li><li><a href="/seo/tools/ocr/" class="rlink">OCR</a></li>
+    
+      <li><a href="/articles/pdf-8-temel-islem-rehberi.html" class="rlink">PDF ile 8 Temel İşlem Rehberi →</a></li></ul>
+  </div>
+</section>
+</body>
+</html>

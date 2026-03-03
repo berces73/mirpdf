@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PDF Sayfa Numaralandırma | Otomatik</title>
+  <meta name="description" content="PDF dosyalarına sayfa numarası ekleme, baştan başlatma, farklı formatlarda numaralandırma. Online ve ücretsiz PDF sayfa numaralandırma araçları."/>
+  <link rel="canonical" href="https://mirpdf.com/pdf-sayfa-numaralandirma/"/>
+  <meta property="og:title" content="PDF Sayfa Numaralandırma | Otomatik"/>
+  <meta property="og:description" content="PDF dosyalarına sayfa numarası ekleme, baştan başlatma, farklı formatlarda numaralandırma. Online ve ücretsiz PDF sayfa numaralandırma araçları."/>
+  <meta property="og:url" content="https://mirpdf.com/cozum/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="MirPDF"/>
+  <meta name="robots" content="index, follow, noarchive"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="PDF Sayfa Numaralandırma | PDF'e Sayfa Numarası Ekleme Rehberi"/>
+  <meta name="twitter:description" content="PDF dosyalarına sayfa numarası ekleme, baştan başlatma, farklı formatlarda numaralandırma. Online ve ücretsiz PDF sayfa numaralandırma araçları."/>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana Sayfa",
+          "item": "https://mirpdf.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pdf Sayfa Numaralandirma",
+          "item": "https://mirpdf.com/pdf-sayfa-numaralandirma/"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "PDF Sayfa Numaralandırma | PDF'e Sayfa Numarası Ekleme Rehberi",
+      "description": "PDF dosyalarına sayfa numarası ekleme, baştan başlatma, farklı formatlarda numaralandırma. Online ve ücretsiz PDF sayfa numaralandırma araçları.",
+      "author": {
+        "@type": "Organization",
+        "name": "MirPDF - PDF Araçları"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "MirPDF - PDF Araçları",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://mirpdf.com/assets/logo.png"
+        }
+      },
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-01-01",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mirpdf.com/pdf-sayfa-numaralandirma/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "PDF'e sayfa numarası eklemek ücretsiz mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Online araçların bir kısmı ücretsizdir. Adobe Acrobat Pro ücretlidir. Xodo gibi mobil uygulamalar ücretsiz özellikler sunar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sayfa numaralarını istediğim yerden başlatabilir miyim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, Adobe Acrobat Pro ve bazı online araçlar başlangıç numarasını belirlemenize izin verir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "PDF'te sayfa numarası eklerken dosya boyutu artar mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Çok az artar, genelde hissedilmez."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sayfa numaralarını sonradan kaldırabilir miyim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, üstbilgi/altbilgi düzenleme araçlarıyla kaldırabilir veya düzeltebilirsiniz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Resmi başvurularda sayfa numarası zorunlu mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Genelde zorunlu değil ama çok sayfalı belgelerde profesyonellik ve kolaylık sağlar. Bazı kurumlar talep edebilir."
+          }
+        }
+      ]
+    }
+  ]
+}</script>
+  <style>
+:root {
+  --blue: #0056b3;
+  --blue-dark: #003d80;
+  --blue-light: #e8f0fe;
+  --green: #1a7f4b;
+  --red: #c0392b;
+  --text: #1a1a1a;
+  --text-muted: #555;
+  --border: #dde3ed;
+  --bg: #f8f9fc;
+  --white: #fff;
+  --radius: 10px;
+  --shadow: 0 2px 12px rgba(0,0,0,.08);
+  --font: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.72;font-size:16px}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+
+/* Layout */
+.wrapper{max-width:860px;margin:0 auto;padding:0 1.25rem}
+
+/* Header */
+.site-header{background:var(--blue-dark);padding:.9rem 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.site-header .wrapper{display:flex;align-items:center;gap:1rem}
+.site-header .logo{color:#fff;font-weight:700;font-size:1.25rem;letter-spacing:-.5px}
+.site-header .logo span{color:#7dd3fc}
+
+/* Breadcrumb */
+.breadcrumb{padding:.6rem 0;font-size:.83rem;color:var(--text-muted)}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--blue)}
+.breadcrumb span+span::before{content:" › ";margin:0 .35rem;color:#aaa}
+
+/* Article */
+article{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:2.5rem;margin:1.5rem 0}
+
+/* Typography */
+h1{font-size:clamp(1.6rem,4vw,2.1rem);font-weight:800;line-height:1.25;color:#0a0a0a;margin-bottom:1.1rem}
+h2{font-size:1.3rem;font-weight:700;color:#0d2240;margin:2rem 0 .7rem;padding-bottom:.35rem;border-bottom:2px solid var(--blue-light)}
+h3{font-size:1.08rem;font-weight:600;color:#1a3a5c;margin:1.4rem 0 .5rem}
+p{margin-bottom:1rem;color:#333}
+ul,ol{margin:.4rem 0 1rem 1.4rem}
+li{margin-bottom:.4rem}
+strong{font-weight:600;color:#111}
+
+/* Scenario box */
+.scenario{background:#f0f7ff;border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:1.1rem 1.3rem;margin:1rem 0}
+.scenario .label{font-size:.78rem;font-weight:700;text-transform:uppercase;color:var(--blue);letter-spacing:.5px;margin-bottom:.4rem}
+
+/* Steps */
+.steps-list{list-style:none;margin:0 0 1rem;padding:0;counter-reset:step}
+.steps-list li{counter-increment:step;display:flex;gap:.85rem;margin-bottom:.75rem;padding:.8rem 1rem;background:#fafbff;border-radius:8px;border:1px solid var(--border)}
+.steps-list li::before{content:counter(step);min-width:1.6rem;height:1.6rem;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;flex-shrink:0}
+
+/* Checklist */
+.checklist{list-style:none;margin:0 0 1rem;padding:0}
+.checklist li{padding:.5rem .7rem .5rem 2.2rem;position:relative;border-bottom:1px solid #f0f0f0}
+.checklist li::before{content:"☐";position:absolute;left:.5rem;color:var(--blue);font-size:1rem}
+
+/* Tips box */
+.tip-box{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:8px;padding:1rem 1.2rem;margin:1rem 0}
+.tip-box strong{color:var(--green)}
+
+/* Warning box */
+.warn-box{background:#fff7ed;border:1px solid #fdba74;border-radius:8px;padding:1rem 1.2rem;margin:1rem 0}
+.warn-box strong{color:#c05600}
+
+/* Security section */
+.security{background:#e8f5e9;border:1px solid #a5d6a7;border-radius:8px;padding:1.1rem 1.3rem;margin:1.5rem 0}
+.security strong{color:var(--green)}
+
+/* CTA Block */
+.cta-block{background:linear-gradient(135deg,#0056b3 0%,#003d80 100%);border-radius:var(--radius);padding:2.2rem 1.5rem;text-align:center;margin:2.5rem 0}
+.cta-block .cta-title{color:#fff;font-size:1.18rem;font-weight:700;margin-bottom:.4rem}
+.cta-block .cta-sub{color:#93c5fd;font-size:.9rem;margin-bottom:1.4rem}
+.cta-block .cta-privacy{color:#bfdbfe;font-size:.82rem;margin-top:.9rem}
+.cta-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.cta-btn{display:inline-flex;align-items:center;gap:.4rem;background:#fff;color:var(--blue);font-weight:700;font-size:.9rem;padding:.7rem 1.4rem;border-radius:8px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2);text-decoration:none;color:var(--blue-dark)}
+
+/* FAQ */
+.faq-list{list-style:none;padding:0;margin:0}
+.faq-item{border:1px solid var(--border);border-radius:8px;margin-bottom:.75rem;overflow:hidden}
+.faq-q{font-weight:600;padding:1rem 1.2rem;background:#fafbff;cursor:pointer;position:relative;padding-right:2.5rem}
+.faq-q::after{content:"＋";position:absolute;right:1rem;top:50%;transform:translateY(-50%);font-size:1.1rem;color:var(--blue)}
+.faq-a{padding:.9rem 1.2rem;font-size:.93rem;color:#444;background:#fff;border-top:1px solid var(--border)}
+
+/* Internal links widget */
+.related-links{background:var(--blue-light);border-radius:8px;padding:1.2rem 1.4rem;margin:1.5rem 0}
+.related-links h2{font-size:1rem;border:none;margin:0 0 .7rem;color:var(--blue)}
+.related-links ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.related-links li a{display:inline-block;background:#fff;padding:.35rem .75rem;border-radius:20px;font-size:.83rem;border:1px solid #c9d9f5;color:var(--blue)}
+.related-links li a:hover{background:var(--blue);color:#fff;text-decoration:none}
+
+/* Footer */
+.site-footer{background:#1a2340;color:#94a3b8;text-align:center;padding:1.5rem;font-size:.83rem;margin-top:2rem}
+.site-footer a{color:#7dd3fc}
+
+/* Responsive */
+@media(max-width:600px){
+  article{padding:1.5rem 1.1rem}
+  .cta-btn{padding:.6rem 1rem;font-size:.83rem}
+}
+</style>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-default.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-default.jpg"/>
+  <!-- Google Analytics GA4 — GA4_ID'yi kendi ID'nizle değiştirin -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA4_MEASUREMENT_ID', {'anonymize_ip': true});
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrapper">
+    <a class="logo" href="/"><span>PDF</span>7</a>
+  </div>
+</header>
+
+<div class="wrapper">
+  <nav class="breadcrumb" aria-label="breadcrumb"><span><a href="https://mirpdf.com/">Ana Sayfa</a></span><span aria-current="page">Pdf Sayfa Numaralandirma</span></nav>
+  <article>
+    <h1>PDF Sayfa Numaralandırma: PDF'e Sayfa Numarası Ekleme Rehberi</h1>
+
+  <p>Resmi başvurularda, özellikle çok sayfalı belgelerde (transkript, rapor, sözleşme) sayfa numaraları olması, belgenin düzenli görünmesini sağlar ve başvuru yetkililerinin işini kolaylaştırır. Peki PDF'e sayfa numarası nasıl eklenir? Hangi araçlar kullanılır? Bu rehberde, PDF'lerinize sayfa numarası ekleme yöntemlerini adım adım anlatıyoruz.</p>
+
+  <h2>PDF Sayfa Numaralandırma Yöntemleri</h2>
+  <ul>
+    <li><strong>Adobe Acrobat Pro:</strong> Profesyonel ve esnek numaralandırma (farklı başlangıç, farklı formatlar).</li>
+    <li><strong>Online PDF numaralandırma araçları:</strong> Hızlı çözüm, ancak dosyayı yüklemek gerekir.</li>
+    <li><strong>Microsoft Word:</strong> PDF'i Word'de açıp sayfa numarası ekleyip tekrar PDF kaydetme (format bozulabilir).</li>
+    <li><strong>PDF düzenleme yazılımları (Foxit, PDFelement, vb.):</strong> Benzer özellikler.</li>
+  </ul>
+
+  <h2>Adım Adım Sayfa Numarası Ekleme (Online Araç)</h2>
+  <p>Not: Kendi online sayfa numaralandırma aracımız henüz yok, ancak aşağıdaki genel adımlar benzer araçlar için geçerlidir. (Örn: ilovepdf, smallpdf, pdf24)</p>
+  <ol>
+    <li>Bir online PDF düzenleme sitesine gidin (örneğin PDF24, ilovepdf).</li>
+    <li>"PDF Sayfa Numaralandır" veya "PDF Düzenle" aracını seçin.</li>
+    <li>PDF dosyanızı yükleyin.</li>
+    <li>Sayfa numaralarının nereye ekleneceğini seçin (alt, üst, sağ, sol).</li>
+    <li>Başlangıç numarasını ve formatını (1,2,3... veya i,ii,iii...) belirleyin.</li>
+    <li>"Başlat" veya "Dönüştür" butonuna tıklayın.</li>
+    <li>Numaralandırılmış PDF'i indirin.</li>
+  </ol>
+
+  <h2>Adobe Acrobat Pro ile Sayfa Numaralandırma</h2>
+  <ol>
+    <li>PDF'i Adobe Acrobat Pro'da açın.</li>
+    <li>Araçlar > Sayfa Düzenle > Üstbilgi ve Altbilgi > Ekle'yi seçin.</li>
+    <li>Altbilgiye sayfa numarası eklemek için "Sayfa Numarası Ekle" butonuna tıklayın.</li>
+    <li>Yazı tipi, boyut, konum gibi ayarları yapın.</li>
+    <li>Başlangıç numarasını ve aralığı belirleyin (tüm sayfalar veya bir bölüm).</li>
+    <li>Tamam'a tıklayın ve kaydedin.</li>
+  </ol>
+
+  <h2>Gerçekçi Senaryo: Transkripte Sayfa Numarası Ekleme</h2>
+  <p><strong>Senaryo:</strong> Ayşe, yüksek lisans başvurusu için transkriptine sayfa numarası eklemek istiyor. Transkript 8 sayfa.</p>
+  <ul>
+    <li>Adobe Acrobat Pro kullanarak transkripti açtı.</li>
+    <li>Altbilgiye sayfa numarası ekledi, format olarak "Sayfa 1 / 8" seçti.</li>
+    <li>Böylece her sayfada "Sayfa 1 / 8", "Sayfa 2 / 8" şeklinde numaralar göründü.</li>
+    <li>PDF'i kaydetti ve başvuruya ekledi.</li>
+  </ul>
+
+  <h2>Mobil Cihazlarda Sayfa Numaralandırma</h2>
+  <p>Mobil cihazlarda PDF sayfa numaralandırmak için "Xodo PDF Reader & Editor" uygulaması (Android/iOS) iyi bir seçenektir. Uygulamada PDF'i açın, "Üstbilgi/Altbilgi Ekle" seçeneğini bulun (bazı sürümlerde mevcut). Alternatif olarak Adobe Acrobat mobil uygulamasını da deneyebilirsiniz.</p>
+
+  <h2>İpuçları ve Püf Noktaları</h2>
+  <ul>
+    <li>Sayfa numaralarını altbilgiye eklemek genelde daha profesyonel görünür.</li>
+    <li>Eğer belgede kapak sayfası varsa, numaralandırmayı kapaktan sonra başlatabilirsiniz.</li>
+    <li>Numaraların belge içindeki yazılarla çakışmadığından emin olun.</li>
+    <li>Online araç kullanırken dosya gizliliğine dikkat edin.</li>
+  </ul>
+
+  <h2>Sık Sorulan Sorular</h2><div class="faq-list">
+  <div class="faq-item"><div class="faq-q">
+    PDF'e sayfa numarası eklemek ücretsiz mi?
+    <div>
+      <p>Online araçların bir kısmı ücretsizdir. Adobe Acrobat Pro ücretlidir. Xodo gibi mobil uygulamalar ücretsiz özellikler sunar.</p>
+    </div><div class="faq-a"><div>
+      <p>Online araçların bir kısmı ücretsizdir. Adobe Acrobat Pro ücretlidir. Xodo gibi mobil uygulamalar ücretsiz özellikler sunar.</p></div></div>
+  </div>
+  <div class="faq-item"><div class="faq-q">
+    Sayfa numaralarını istediğim yerden başlatabilir miyim?
+    <div>
+      <p>Evet, Adobe Acrobat Pro ve bazı online araçlar başlangıç numarasını belirlemenize izin verir.</p>
+    </div><div class="faq-a"><div>
+      <p>Evet, Adobe Acrobat Pro ve bazı online araçlar başlangıç numarasını belirlemenize izin verir.</p></div></div>
+  </div>
+  <div class="faq-item"><div class="faq-q">
+    PDF'te sayfa numarası eklerken dosya boyutu artar mı?
+    <div>
+      <p>Çok az artar, genelde hissedilmez.</p>
+    </div><div class="faq-a"><div>
+      <p>Çok az artar, genelde hissedilmez.</p></div></div>
+  </div>
+  <div class="faq-item"><div class="faq-q">
+    Sayfa numaralarını sonradan kaldırabilir miyim?
+    <div>
+      <p>Evet, üstbilgi/altbilgi düzenleme araçlarıyla kaldırabilir veya düzeltebilirsiniz.</p>
+    </div><div class="faq-a"><div>
+      <p>Evet, üstbilgi/altbilgi düzenleme araçlarıyla kaldırabilir veya düzeltebilirsiniz.</p></div></div>
+  </div>
+  <div class="faq-item"><div class="faq-q">
+    Resmi başvurularda sayfa numarası zorunlu mu?
+    <div>
+      <p>Genelde zorunlu değil ama çok sayfalı belgelerde profesyonellik ve kolaylık sağlar. Bazı kurumlar talep edebilir.</p>
+    </div><div class="faq-a"><div>
+      <p>Genelde zorunlu değil ama çok sayfalı belgelerde profesyonellik ve kolaylık sağlar. Bazı kurumlar talep edebilir.</p></div></div>
+  </div>
+
+  </div><h2>İlgili Bağlantılar</h2>
+  <ul>
+    <li><a href="/resmi-basvurular-icin-pdf-cozumleri/">Resmi Başvurular İçin PDF Çözümleri (Ana Hub)</a></li>
+    <li><a href="/cozum/">PDF Çözümleri Ana Sayfa</a></li>
+    <li><a href="/pdf-birlestir/">PDF Birleştirme Aracı</a></li>
+    <li><a href="/pdf-sikistir/">PDF Sıkıştırma Aracı</a></li>
+    <li><a href="/pdf-okunabilirlik-rehberi/">PDF Okunabilirlik Rehberi</a></li>
+    <li><a href="/mobil/android-pdf-duzenleme">Android'de PDF Düzenleme</a></li>
+  </ul>
+
+  <!-- Conversion Bloğu -->
+  
+<div class="cta-block">
+  <p class="cta-title">📁 PDF işlemlerinizi hemen yapın</p>
+  <p class="cta-sub">Dosyalarınız sunucuda saklanmaz — tamamen güvende!</p>
+  <div class="cta-btns">
+    <a class="cta-btn" href="/pdf-sikistir/">📉 PDF Sıkıştır</a>
+    <a class="cta-btn" href="/pdf-birlestir/">📎 PDF Birleştir</a>
+    <a class="cta-btn" href="/pdf-kilit-ac/">🔓 PDF Kilit Aç</a>
+  </div>
+  <p class="cta-privacy">🔒 Tüm işlemler tarayıcınızda gerçekleşir. Verileriniz üçüncü şahıslarla paylaşılmaz.</p>
+</div>
+  </article>
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 PDF7 — Dosyalarınız sunucuda saklanmaz. <a href="/gizlilik/">Gizlilik Politikası</a></p>
+</footer>
+</body>
+</html>

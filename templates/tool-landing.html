@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="tr">
+<head>
+{{> head}}
+<title>{{name}} | MirPDF</title>
+<meta name="description" content="{{desc}}" />
+<meta name="keywords" content="{{keywords}}" />
+<link rel="canonical" href="{{baseUrl}}/seo/tools/{{slug}}/" />
+<meta property="og:title" content="{{name}} | MirPDF" />
+<meta property="og:description" content="{{desc}}" />
+<meta property="og:type" content="website" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MirPDF - {{name}}","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"{{desc}}","url":"{{baseUrl}}/tools/{{slug}}.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+<div class="bg"></div>
+<main class="wrap">
+{{> header}}
+
+<section class="card hero-section">
+  <h1>{{name}}</h1>
+  <p class="lead">{{desc}}</p>
+  <a href="/tools/{{slug}}.html" class="primary btn-cta">Hemen Kullan →</a>
+</section>
+
+<section class="card">
+  <h2>{{name}} Nasıl Kullanılır?</h2>
+  <ol class="how-to-steps">
+    <li>PDF dosyanızı aracımıza yükleyin</li>
+    <li>Gerekli ayarları yapın</li>
+    <li>İşlemi başlatın ve sonucu indirin</li>
+  </ol>
+</section>
+
+<section class="card faq-section">
+  <h2>Sık Sorulan Sorular</h2>
+  {{faqHtml}}
+</section>
+
+<section class="card related-section">
+  <h2>İlgili Rehberler</h2>
+  <ul>{{relatedLinks}}</ul>
+</section>
+
+{{> footer}}
+</main>
+<script type="application/ld+json">{{faqSchema}}</script>
+</body>
+</html>

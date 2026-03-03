@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Admin - SEO Pages</title>
+
+  <!-- Verification (replace tokens) -->
+  <meta name="google-site-verification" content="GOOGLE_VERIFICATION_TOKEN"/>
+  <meta name="yandex-verification" content="YANDEX_VERIFICATION_TOKEN"/>
+  <meta name="msvalidate.01" content="BING_VERIFICATION_TOKEN"/>
+  <meta name="seznam-wmt" content="SEZNAM_VERIFICATION_TOKEN"/>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:1000px;margin:0 auto;padding:24px}
+input,textarea,button,select{width:100%;padding:10px;border-radius:10px;border:1px solid #444;background:#111;color:#eee}
+label{display:block;margin:14px 0 6px}
+button{cursor:pointer}
+pre{white-space:pre-wrap;background:#0b0b0b;border:1px solid #333;padding:12px;border-radius:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.small{opacity:.8}
+</style>
+</head>
+<body>
+<h1>SEO Pages Editor</h1>
+<p class="small">Authorization: Bearer <b>ADMIN_SECRET_TOKEN</b> gerektirir.</p>
+
+<label>Admin Token</label>
+<input id="token" placeholder="ADMIN_SECRET_TOKEN"/>
+
+<div class="grid">
+  <div>
+    <label>Mevcut Sayfalar</label>
+    <select id="pages"></select>
+    <button id="load">Yükle</button>
+  </div>
+  <div>
+    <label>Slug</label>
+    <input id="slug" placeholder="word-to-pdf-telefonda"/>
+    <button id="new">Yeni Sayfa</button>
+  </div>
+</div>
+
+<label>Title</label>
+<input id="title"/>
+
+<label>Description</label>
+<textarea id="description" rows="2"></textarea>
+
+<label>H1</label>
+<input id="h1"/>
+
+<label>Tool Name (opsiyonel)</label>
+<input id="tool_name" placeholder="compress | merge | convert ..."/>
+
+<label>Content (HTML)</label>
+<textarea id="content" rows="10"></textarea>
+
+<div class="grid">
+  <button id="save">Kaydet (PUT)</button>
+  <button id="del">Sil (DELETE)</button>
+</div>
+
+<h2>Sonuç</h2>
+<pre id="out">-</pre>
+
+<script>
+function authHeaders() {
+  const token = document.getElementById('token').value.trim();
+  return { 'authorization': 'Bearer ' + token, 'content-type': 'application/json' };
+}
+
+async function refreshList() {
+  const res = await fetch('/api/admin/seo-pages?limit=500', { headers: authHeaders() });
+  const data = await res.json();
+  const sel = document.getElementById('pages');
+  sel.innerHTML = '';
+  (data?.data?.pages || []).forEach(p => {
+    const opt = document.createElement('option');
+    opt.value = p.slug;
+    opt.textContent = p.slug + (p.title ? ' — ' + p.title : '');
+    sel.appendChild(opt);
+  });
+}
+
+async function loadSelected() {
+  const slug = document.getElementById('pages').value || document.getElementById('slug').value;
+  if (!slug) return;
+  const res = await fetch('/api/admin/seo-pages/' + encodeURIComponent(slug), { headers: authHeaders() });
+  const data = await res.json();
+  document.getElementById('out').textContent = JSON.stringify(data, null, 2);
+  if (data?.ok && data?.data?.page) {
+    const p = data.data.page;
+    document.getElementById('slug').value = p.slug;
+    document.getElementById('title').value = p.title || '';
+    document.getElementById('description').value = p.description || '';
+    document.getElementById('h1').value = p.h1 || '';
+    document.getElementById('tool_name').value = p.tool_name || '';
+    document.getElementById('content').value = p.content || '';
+  }
+}
+
+async function save() {
+  const slug = document.getElementById('slug').value.trim();
+  const body = {
+    title: document.getElementById('title').value,
+    description: document.getElementById('description').value,
+    h1: document.getElementById('h1').value,
+    tool_name: document.getElementById('tool_name').value,
+    content: document.getElementById('content').value,
+  };
+  const res = await fetch('/api/admin/seo-pages/' + encodeURIComponent(slug), {
+    method: 'PUT',
+    headers: authHeaders(),
+    body: JSON.stringify(body),
+  });
+  const data = await res.json();
+  document.getElementById('out').textContent = JSON.stringify(data, null, 2);
+  await refreshList();
+}
+
+async function del() {
+  const slug = document.getElementById('slug').value.trim();
+  const res = await fetch('/api/admin/seo-pages/' + encodeURIComponent(slug), {
+    method: 'DELETE',
+    headers: authHeaders(),
+  });
+  const data = await res.json();
+  document.getElementById('out').textContent = JSON.stringify(data, null, 2);
+  await refreshList();
+}
+
+document.getElementById('load').addEventListener('click', loadSelected);
+document.getElementById('save').addEventListener('click', save);
+document.getElementById('del').addEventListener('click', del);
+document.getElementById('new').addEventListener('click', async () => {
+  document.getElementById('slug').value = '';
+  document.getElementById('title').value = '';
+  document.getElementById('description').value = '';
+  document.getElementById('h1').value = '';
+  document.getElementById('tool_name').value = '';
+  document.getElementById('content').value = '';
+});
+refreshList();
+</script>
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>PDF Boyutu Neden Büyük Olur? Küçültme Yöntemleri | MirPDF</title>
+  <meta name="description" content="PDF boyutunu küçültmenin 6 yolu: online sıkıştırma, Ghostscript, görüntü optimizasyonu ve font kaldırma teknikleri."/>
+  <link rel="canonical" href="https://mirpdf.com/seo/rehberler/pdf-kucultme-rehberi.html"/>
+  <meta name="robots" content="index,follow"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="PDF Boyutu Neden Büyük Olur? Küçültme Yöntemleri"/>
+  <meta property="og:description" content="PDF boyutunu küçültmenin 6 yolu: online sıkıştırma, Ghostscript, görüntü optimizasyonu ve font kaldırma teknikleri."/>
+  <meta property="og:url" content="https://mirpdf.com/seo/rehberler/pdf-kucultme-rehberi.html"/>
+  <meta property="og:locale" content="tr_TR"/>
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ═══ RESET & BASE ═══════════════════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#07101f;
+  --bg2:#0c1828;
+  --card:#0f1e35;
+  --card2:#132238;
+  --text:#ddeaf8;
+  --muted:#7a9bbf;
+  --accent:#3b82f6;
+  --accent2:#60a5fa;
+  --green:#22c55e;
+  --yellow:#f59e0b;
+  --red:#ef4444;
+  --border:#1a2d4a;
+  --border2:#1f3558;
+  --radius:16px;
+  --shadow:0 8px 32px rgba(0,0,0,.45);
+}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Sora',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.72;
+  font-size:16px;
+}
+
+/* ═══ PROGRESS BAR ═══════════════════════════════════════════════════════════ */
+#progress-bar{
+  position:fixed;top:0;left:0;width:0%;height:3px;
+  background:linear-gradient(90deg,#3b82f6,#60a5fa,#34d399);
+  z-index:9999;transition:width .1s linear;
+  box-shadow:0 0 10px #3b82f680;
+}
+
+/* ═══ LAYOUT ═════════════════════════════════════════════════════════════════ */
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px}
+
+/* ═══ HEADER ════════════════════════════════════════════════════════════════ */
+.site-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 20px;border-bottom:1px solid var(--border);
+  max-width:860px;margin:0 auto;
+}
+.brand{font-weight:700;font-size:18px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.brand span{
+  background:linear-gradient(135deg,#3b82f6,#60a5fa);
+  padding:3px 8px;border-radius:8px;font-size:13px;color:#fff;font-weight:600;
+}
+.site-nav{display:flex;gap:6px}
+.site-nav a{
+  color:var(--muted);text-decoration:none;font-size:13px;
+  padding:5px 10px;border-radius:8px;transition:all .2s;
+}
+.site-nav a:hover{background:var(--card);color:var(--text)}
+
+/* ═══ BREADCRUMB ════════════════════════════════════════════════════════════ */
+.breadcrumb{
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+  font-size:13px;color:var(--muted);padding:16px 0 0;
+}
+.breadcrumb a{color:var(--muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--accent2)}
+.breadcrumb .sep{opacity:.4}
+
+/* ═══ ARTICLE HERO ══════════════════════════════════════════════════════════ */
+.article-hero{
+  background:linear-gradient(135deg,var(--card) 0%,#0a1628 100%);
+  border:1px solid var(--border);border-radius:var(--radius);
+  padding:32px;margin:16px 0 24px;
+  position:relative;overflow:hidden;
+}
+.article-hero::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:220px;height:220px;
+  background:radial-gradient(circle,#3b82f618 0%,transparent 70%);
+  border-radius:50%;
+}
+.article-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;font-weight:600;padding:4px 10px;
+  border-radius:999px;border:1px solid var(--border2);
+  background:var(--card2);color:var(--muted);letter-spacing:.02em;
+}
+.badge.blue{border-color:#3b82f640;background:#3b82f610;color:var(--accent2)}
+.badge.green{border-color:#22c55e40;background:#22c55e10;color:var(--green)}
+.badge.yellow{border-color:#f59e0b40;background:#f59e0b10;color:var(--yellow)}
+.article-hero h1{
+  font-size:clamp(22px,3vw,32px);font-weight:700;margin:0 0 12px;
+  line-height:1.25;letter-spacing:-.02em;
+}
+.article-intro{color:var(--muted);font-size:15px;margin:0;max-width:650px}
+
+/* ═══ TOC ═══════════════════════════════════════════════════════════════════ */
+.toc{
+  background:var(--card2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:20px 24px;margin:0 0 28px;
+}
+.toc-title{font-size:13px;font-weight:600;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.08em;margin:0 0 12px}
+.toc ol{margin:0;padding-left:18px}
+.toc li{margin:5px 0}
+.toc a{color:var(--accent2);text-decoration:none;font-size:14px;font-weight:500}
+.toc a:hover{color:var(--text)}
+
+/* ═══ SECTIONS ══════════════════════════════════════════════════════════════ */
+.section{margin:32px 0}
+.section-label{
+  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--accent);margin:0 0 6px;
+}
+h2.section-h{
+  font-size:22px;font-weight:700;margin:0 0 16px;letter-spacing:-.015em;
+  padding-bottom:10px;border-bottom:1px solid var(--border);
+}
+h3{font-size:17px;font-weight:600;margin:22px 0 10px;color:var(--text)}
+p{color:var(--muted);margin:0 0 14px;line-height:1.75}
+
+/* ═══ STEP CARDS ════════════════════════════════════════════════════════════ */
+.steps{display:flex;flex-direction:column;gap:12px;margin:20px 0}
+.step-card{
+  display:flex;gap:16px;align-items:flex-start;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:14px;padding:18px;
+  transition:border-color .2s,transform .2s;
+}
+.step-card:hover{border-color:var(--accent);transform:translateX(3px)}
+.step-num{
+  flex-shrink:0;width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,#3b82f6,#60a5fa);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:15px;color:#fff;
+}
+.step-body h4{margin:0 0 5px;font-size:15px;font-weight:600;color:var(--text)}
+.step-body p{margin:0;font-size:14px;color:var(--muted)}
+
+/* ═══ TOOL CARDS ════════════════════════════════════════════════════════════ */
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin:20px 0}
+.tool-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:14px;padding:18px;
+  transition:border-color .2s;
+}
+.tool-card:hover{border-color:var(--border2)}
+.tool-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.tool-name{font-weight:700;font-size:15px;color:var(--text)}
+.tool-tag{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--border2);color:var(--muted)}
+.tool-tag.free{border-color:#22c55e40;background:#22c55e10;color:var(--green)}
+.tool-tag.paid{border-color:#f59e0b40;background:#f59e0b10;color:var(--yellow)}
+.stars{color:#f59e0b;font-size:14px;margin-bottom:6px}
+.tool-desc{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* ═══ COMPARISON TABLE ══════════════════════════════════════════════════════ */
+.compare-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
+.compare-table th{
+  background:var(--card2);color:var(--muted);font-size:12px;
+  font-weight:600;text-transform:uppercase;letter-spacing:.06em;
+  padding:10px 14px;border:1px solid var(--border);text-align:left;
+}
+.compare-table td{
+  padding:11px 14px;border:1px solid var(--border);
+  color:var(--text);vertical-align:middle;
+}
+.compare-table tr:nth-child(even) td{background:var(--card2)}
+.compare-table .ck{color:var(--green);font-size:16px}
+.compare-table .cross{color:var(--red);font-size:16px}
+.compare-table .highlight td{background:#3b82f610!important;border-color:#3b82f640!important}
+
+/* ═══ CALLOUT BOXES ════════════════════════════════════════════════════════ */
+.callout{
+  display:flex;gap:14px;align-items:flex-start;
+  border-radius:14px;padding:16px 18px;margin:20px 0;
+  border:1px solid;
+}
+.callout-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.callout-body h4{margin:0 0 5px;font-size:14px;font-weight:600}
+.callout-body p{margin:0;font-size:14px;line-height:1.6}
+.callout.tip{background:#3b82f608;border-color:#3b82f630;color:var(--accent2)}
+.callout.tip .callout-body h4{color:var(--accent2)}
+.callout.tip .callout-body p{color:#7ab8ff}
+.callout.warn{background:#f59e0b08;border-color:#f59e0b30;color:var(--yellow)}
+.callout.warn .callout-body h4{color:var(--yellow)}
+.callout.warn .callout-body p{color:#d4a756}
+.callout.success{background:#22c55e08;border-color:#22c55e30;color:var(--green)}
+.callout.success .callout-body h4{color:var(--green)}
+.callout.success .callout-body p{color:#5dba80}
+.callout.danger{background:#ef444408;border-color:#ef444430;color:var(--red)}
+.callout.danger .callout-body h4{color:var(--red)}
+.callout.danger .callout-body p{color:#d47a7a}
+
+/* ═══ FAQ ACCORDION ════════════════════════════════════════════════════════ */
+.faq-list{display:flex;flex-direction:column;gap:10px;margin:20px 0}
+.faq-item{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:14px;overflow:hidden;
+}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 18px;cursor:pointer;font-weight:600;font-size:15px;
+  color:var(--text);user-select:none;gap:12px;
+  transition:background .2s;
+}
+.faq-q:hover{background:var(--card2)}
+.faq-q .arrow{
+  flex-shrink:0;width:22px;height:22px;border-radius:6px;
+  background:var(--card2);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;transition:transform .25s;color:var(--muted);
+}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg)}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;
+  padding:0 18px;color:var(--muted);font-size:14px;line-height:1.7;
+}
+.faq-item.open .faq-a{max-height:500px;padding:4px 18px 16px}
+.faq-a p{margin:0}
+.faq-a ul,ol{padding-left:18px;margin:8px 0 0}
+.faq-a li{margin:4px 0}
+
+/* ═══ CTA BANNER ════════════════════════════════════════════════════════════ */
+.cta-banner{
+  background:linear-gradient(135deg,#1a2d4a 0%,#0f1e35 100%);
+  border:1px solid var(--border2);border-radius:var(--radius);
+  padding:24px 28px;margin:32px 0;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+}
+.cta-banner-text h3{margin:0 0 5px;font-size:18px;font-weight:700;color:var(--text)}
+.cta-banner-text p{margin:0;font-size:14px;color:var(--muted)}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+  color:#fff;text-decoration:none;font-weight:600;font-size:14px;
+  padding:10px 18px;border-radius:10px;border:none;cursor:pointer;
+  transition:filter .2s,transform .15s;
+}
+.btn-primary:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--card2);color:var(--text);text-decoration:none;font-weight:500;font-size:14px;
+  padding:10px 18px;border-radius:10px;border:1px solid var(--border2);
+  transition:border-color .2s;
+}
+.btn-secondary:hover{border-color:var(--accent)}
+
+/* ═══ RELATED CARDS ════════════════════════════════════════════════════════ */
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:20px 0}
+.related-card{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:16px;text-decoration:none;transition:border-color .2s,transform .2s;
+  display:block;
+}
+.related-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.related-card .rc-tag{font-size:11px;color:var(--accent);font-weight:600;
+  text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.related-card .rc-title{font-size:14px;font-weight:600;color:var(--text);line-height:1.4}
+.related-card .rc-desc{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.5}
+
+/* ═══ CODE BLOCK ════════════════════════════════════════════════════════════ */
+.code-block{
+  background:#050e1a;border:1px solid var(--border);border-radius:12px;
+  padding:16px;margin:16px 0;overflow:auto;position:relative;
+}
+.code-block pre{margin:0;font-family:'JetBrains Mono',monospace;font-size:13px;color:#93c5fd;line-height:1.6}
+.copy-btn{
+  position:absolute;top:10px;right:10px;background:var(--card2);
+  border:1px solid var(--border);color:var(--muted);font-size:11px;
+  padding:4px 8px;border-radius:6px;cursor:pointer;font-family:'Sora',sans-serif;
+  transition:background .2s;
+}
+.copy-btn:hover{background:var(--card)}
+
+/* ═══ INFO BOX ══════════════════════════════════════════════════════════════ */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:20px 0}
+.info-box{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:16px;text-align:center;
+}
+.info-box .ib-val{font-size:26px;font-weight:700;color:var(--text);margin-bottom:4px}
+.info-box .ib-label{font-size:12px;color:var(--muted)}
+
+/* ═══ FOOTER ════════════════════════════════════════════════════════════════ */
+.site-footer{
+  text-align:center;padding:32px 20px;color:var(--muted);font-size:13px;
+  border-top:1px solid var(--border);margin-top:40px;
+}
+.site-footer a{color:var(--accent2);text-decoration:none}
+
+/* ═══ RESPONSIVE ════════════════════════════════════════════════════════════ */
+@media(max-width:600px){
+  .article-hero{padding:22px}
+  .article-hero h1{font-size:22px}
+  .cta-banner{flex-direction:column}
+  .site-nav{display:none}
+  .compare-table{font-size:12px}
+  .compare-table th,.compare-table td{padding:8px 10px}
+}
+</style>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://mirpdf.com/"},{"@type":"ListItem","position":2,"name":"Rehberler","item":"https://mirpdf.com/seo/"},{"@type":"ListItem","position":3,"name":"PDF Boyutu Küçültme","item":""}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"PDF Boyutu Neden Büyük Olur?","description":"PDF küçültme rehberi","datePublished":"2026-02-25","dateModified":"2026-02-25","author":{"@type":"Organization","name":"MirPDF"},"publisher":{"@type":"Organization","name":"MirPDF","logo":{"@type":"ImageObject","url":"https://mirpdf.com/assets/icons/logo-512.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mirpdf.com/seo/rehberler/pdf-kucultme-rehberi.html"}}</script>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-rehberler.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-rehberler.jpg"/>
+  <!-- Google Analytics GA4 — GA4_ID'yi kendi ID'nizle değiştirin -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA4_MEASUREMENT_ID', {'anonymize_ip': true});
+  </script>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<header style="border-bottom:1px solid var(--border);padding:0 0 0">
+  <div class="site-header">
+    <a class="brand" href="https://mirpdf.com/">MirPDF <span>TR</span></a>
+    <nav class="site-nav">
+      <a href="https://mirpdf.com/">Ana Sayfa</a>
+      <a href="https://mirpdf.com/pricing.html">Fiyatlar</a>
+      <a href="https://mirpdf.com/faq.html">SSS</a>
+      <a href="https://mirpdf.com/contact.html">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="breadcrumb"><a href="https://mirpdf.com/">Ana Sayfa</a><span class="sep">›</span><a href="https://mirpdf.com/seo/">Rehberler</a><span class="sep">›</span><span>PDF Boyutu Küçültme</span></div>
+
+  
+<div class="article-hero">
+  <div class="article-meta"><span class="badge blue">📘 Rehber</span><span class="badge">⏱ 6 dk</span><span class="badge green">✓ 2026-02-25</span></div>
+  <h1>PDF Boyutu Neden Büyük Olur?<br>Küçültme Yöntemleri</h1>
+  <p class="article-intro">100 MB'lık bir PDF'i e-postayla gönderemiyorsanız, yüklemesi çok yavaşsa veya depolamanızı dolduryorsa doğru yöntemle %80'e kadar küçültebilirsiniz.</p>
+</div>
+
+<div class="section">
+  <div class="section-label">Temel Nedenler</div>
+  <h2 class="section-h">PDF Neden Bu Kadar Büyük Olur?</h2>
+  <div class="info-grid">
+    <div class="info-box"><div class="ib-val">🖼️</div><div class="ib-label">Ham görüntüler (%60–80 boyut)</div></div>
+    <div class="info-box"><div class="ib-val">🖨️</div><div class="ib-label">Yüksek DPI tarama</div></div>
+    <div class="info-box"><div class="ib-val">🔡</div><div class="ib-label">Gömülü fontlar</div></div>
+    <div class="info-box"><div class="ib-val">📋</div><div class="ib-label">Gereksiz meta veriler</div></div>
+  </div>
+  <p>PDF boyutunun %80'inden fazlasını genellikle gömülü görüntüler oluşturur. Tarayıcılar varsayılan olarak 300–600 DPI ile çalışır; bu çözünürlük ekran görüntülemesi için gereksizdir.</p>
+</div>
+
+<div class="section">
+  <div class="section-label">Yöntemler</div>
+  <h2 class="section-h">6 Küçültme Yöntemi</h2>
+  <div class="steps">
+    <div class="step-card"><div class="step-num">1</div><div class="step-body"><h4>Online PDF sıkıştırma (En kolay)</h4><p>MirPDF'da "PDF Sıkıştır" aracıyla 1 dakikada boyutu küçültün. Kalite ayarı seçin, indir.</p></div></div>
+    <div class="step-card"><div class="step-num">2</div><div class="step-body"><h4>Görüntü DPI'ını düşürün</h4><p>Ekran için 150 DPI yeterlidir. Baskı için 300 DPI. 600 DPI'yı ekranda kimse ayırt edemez.</p></div></div>
+    <div class="step-card"><div class="step-num">3</div><div class="step-body"><h4>Gömülü fontları optimize edin</h4><p>Alt küme fontlar (font subsetting) sayfa boyutunu önemli ölçüde azaltır.</p></div></div>
+    <div class="step-card"><div class="step-num">4</div><div class="step-body"><h4>Metadata'yı temizleyin</h4><p>Yazar, düzenleme geçmişi, yorumlar gibi meta veriler MB'lara ulaşabilir.</p></div></div>
+    <div class="step-card"><div class="step-num">5</div><div class="step-body"><h4>Ghostscript kullanın</h4><p>Toplu işlem veya otomasyon için Ghostscript /ebook ayarı en iyi denge noktasıdır.</p></div></div>
+    <div class="step-card"><div class="step-num">6</div><div class="step-body"><h4>Gereksiz sayfaları silin</h4><p>Boş sayfalar, tekrarlayan kapaklar, gereğinden uzun ekler boyutu artırır.</p></div></div>
+  </div>
+</div>
+
+<div class="cta-banner">
+  <div class="cta-banner-text"><h3>PDF'inizi Hemen Küçültün</h3><p>Ücretsiz, KVKK uyumlu.</p></div>
+  <div class="cta-btns"><a href="https://mirpdf.com/#tools" class="btn-primary">📦 PDF Sıkıştır</a></div>
+</div>
+
+
+  <div class="section">
+    <div class="section-label">İlgili İçerikler</div>
+    <h2 class="section-h">Benzer Rehberler</h2>
+    <div class="related-grid"><a href="/seo/tools/pdf-birlestir/rehber.html" class="related-card">
+          <div class="rc-tag">Rehber</div>
+          <div class="rc-title">PDF Birleştirme</div>
+          <div class="rc-desc">Adım adım birleştirme kılavuzu</div>
+        </a><a href="/seo/tools/pdf-sikistir/rehber.html" class="related-card">
+          <div class="rc-tag">Rehber</div>
+          <div class="rc-title">PDF Sıkıştırma</div>
+          <div class="rc-desc">Kalite kaybetmeden boyutu küçültme</div>
+        </a><a href="/seo/tools/pdf-to-word/rehber.html" class="related-card">
+          <div class="rc-tag">Rehber</div>
+          <div class="rc-title">PDF → Word</div>
+          <div class="rc-desc">En kolay dönüştürme yöntemleri</div>
+        </a><a href="/seo/tools/ocr/rehber.html" class="related-card">
+          <div class="rc-tag">Rehber</div>
+          <div class="rc-title">OCR Metin Tanıma</div>
+          <div class="rc-desc">Taranmış PDF'den metin çıkarma</div>
+        </a><a href="/seo/tools/jpg-to-pdf/rehber.html" class="related-card">
+          <div class="rc-tag">Rehber</div>
+          <div class="rc-title">JPG → PDF</div>
+          <div class="rc-desc">Fotoğraftan PDF oluşturma</div>
+        </a><a href="/seo/rehberler/kvkk-uyumlu-pdf.html" class="related-card">
+          <div class="rc-tag">Güvenlik</div>
+          <div class="rc-title">KVKK Uyumlu PDF</div>
+          <div class="rc-desc">Veri güvenliği için doğru aracı seç</div>
+        </a></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 MirPDF — Türkiye'nin KVKK Uyumlu PDF Aracı</p>
+  <p><a href="https://mirpdf.com/privacy.html">Gizlilik</a> · <a href="https://mirpdf.com/terms.html">Kullanım</a> · <a href="https://mirpdf.com/contact.html">İletişim</a></p>
+</footer>
+
+
+<script>
+// Progress bar
+window.addEventListener('scroll',()=>{
+  const d=document.documentElement;
+  const pct=(d.scrollTop/(d.scrollHeight-d.clientHeight))*100;
+  document.getElementById('progress-bar').style.width=pct+'%';
+});
+
+// FAQ accordion
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const item=q.closest('.faq-item');
+      const isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Copy code
+  document.querySelectorAll('.copy-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const code=btn.closest('.code-block').querySelector('pre').textContent;
+      navigator.clipboard.writeText(code).then(()=>{
+        btn.textContent='Kopyalandı!';
+        setTimeout(()=>btn.textContent='Kopyala',2000);
+      });
+    });
+  });
+});
+</script>
+
+
+<section style="margin-top:40px;padding:20px;background:#0f1a30;border-radius:16px">
+<h2>İlgili İçerikler (SEO Cluster)</h2>
+
+<ul>
+<li><a href="/seo/tools/pdf-birlestir/rehber.html">PDF Birleştirme Rehberi</a></li>
+<li><a href="/seo/tools/pdf-sikistir/rehber.html">PDF Sıkıştırma Rehberi</a></li>
+<li><a href="/seo/tools/pdf-to-word/rehber.html">PDF → Word Rehberi</a></li>
+<li><a href="/seo/tools/ocr/rehber.html">OCR Metin Tanıma Rehberi</a></li>
+<li><a href="/seo/tools/jpg-to-pdf/rehber.html">JPG → PDF Rehberi</a></li>
+<li><a href="/seo/rehberler/pdf-kucultme-rehberi.html">PDF Boyutu Küçültme</a></li>
+<li><a href="/seo/rehberler/wordu-pdf-yapma.html">Word Dosyasını PDF Yapma</a></li>
+<li><a href="/seo/rehberler/kvkk-uyumlu-pdf.html">KVKK Uyumlu PDF Araçları</a></li>
+</ul>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+[
+  {
+    "toolSlug": "pdf-to-word",
+    "problems": [
+      { "slug": "pdf-word-cevirince-bozuluyor", "title": "PDF'i Word'e Çevirince Bozuluyor — Düzeltme Yolları", "desc": "PDF Word dönüşümünde format bozulmasının nedenleri ve çözümleri.", "body": "PDF'i Word'e dönüştürdüğünüzde metin kayması, bozuk karakter veya kaybolan resimlerle karşılaşabilirsiniz. Bu genellikle taranmış PDF ya da karmaşık sayfa düzeninden kaynaklanır. OCR tabanlı dönüşüm kullanmak ve düzenlenebilir PDF ile çalışmak sorunu büyük ölçüde çözer." },
+      { "slug": "telefonda-pdf-word-yapma", "title": "Telefonda PDF'i Word'e Çevirme (Android & iPhone)", "desc": "Mobil cihazda PDF Word dönüşümü nasıl yapılır — uygulama gerektirmez.", "body": "Android veya iPhone'da tarayıcı üzerinden online PDF to Word aracımızı kullanarak saniyeler içinde dönüştürme yapabilirsiniz. Uygulama indirmenize gerek yoktur." }
+    ]
+  },
+  {
+    "toolSlug": "pdf-sikistir",
+    "problems": [
+      { "slug": "pdf-boyutu-kuculmüyor", "title": "PDF Boyutu Neden Küçülmüyor? Sıkıştırma Sorunları", "desc": "PDF sıkıştırma çalışmıyorsa nedeni ve çözümü.", "body": "PDF içinde yüksek çözünürlüklü resimler veya gömülü fontlar varsa standart sıkıştırma yetersiz kalabilir. 'Güçlü sıkıştırma' modunu deneyin ya da önce görselleri optimize edin." },
+      { "slug": "pdf-sikistirma-nasil", "title": "PDF Sıkıştırma Nasıl Yapılır — Adım Adım Rehber", "desc": "PDF dosyasını küçültmenin en kolay yolu.", "body": "Dosyanızı yükleyin, sıkıştırma seviyesini seçin (Normal / Güçlü) ve 'Başlat' düğmesine basın. İşlem tamamlandığında küçültülmüş PDF'inizi indirin." }
+    ]
+  },
+  {
+    "toolSlug": "ocr",
+    "problems": [
+      { "slug": "ocr-turkce-karakter-tanimiyor", "title": "OCR Türkçe Karakter Tanımıyor — Nasıl Düzeltilir", "desc": "OCR'da ş, ğ, ü, ö gibi Türkçe karakterlerin yanlış okunması sorunu.", "body": "Türkçe OCR için Tesseract'ın Türkçe dil paketi (tur) seçili olmalıdır. Aracımız otomatik olarak Türkçe dil desteğiyle çalışır. Taramanın 300 DPI ve üzerinde olması doğruluğu artırır." },
+      { "slug": "taranmis-pdf-duzenlenebilir-yapma", "title": "Taranmış PDF'i Düzenlenebilir Hale Getirme (OCR)", "desc": "Kağıt taramasından elde edilen PDF'i düzenlenebilir metne çevirme.", "body": "OCR (Optik Karakter Tanıma) teknolojisiyle taranmış görüntüden metin çıkararak düzenlenebilir bir belge elde edersiniz. Aracımıza PDF'i yükleyin, OCR'ı çalıştırın ve Word veya metin olarak indirin." }
+    ]
+  },
+  {
+    "toolSlug": "pdf-kilitle",
+    "problems": [
+      { "slug": "pdf-sifre-koyma-nasil", "title": "PDF'e Şifre Koyma Nasıl Yapılır", "desc": "PDF belgesini şifreleyerek yetkisiz erişimi engelleme.", "body": "PDF'e şifre koymak için dosyanızı yükleyin, istediğiniz şifreyi girin ve 'Kilitle' butonuna basın. Şifreli PDF'i indirin. Açılış şifresi (user password) ve düzenleme şifresi (owner password) ayrı ayarlanabilir." }
+    ]
+  },
+  {
+    "toolSlug": "pdf-kilit-ac",
+    "problems": [
+      { "slug": "pdf-sifre-unuttum", "title": "PDF Şifresini Unuttum — Ne Yapabilirim?", "desc": "Şifreli PDF belgesine erişim yolları.", "body": "Şifreyi tamamen hatırlamıyorsanız kurtarma seçenekleri sınırlıdır. Belgeyi sizin oluşturduğunuzdan eminseniz şifre ipuçlarınızı deneyin. Yasal sahipliğiniz olan dosyalar için PDF Kilit Aç aracımızı kullanabilirsiniz." }
+    ]
+  },
+  {
+    "toolSlug": "pdf-birlestir",
+    "problems": [
+      { "slug": "toplu-pdf-birlestirme", "title": "Toplu PDF Birleştirme — Çok Sayfalı Rapor Hazırlama", "desc": "Onlarca PDF'i tek seferde birleştirmenin en hızlı yolu.", "body": "Birden fazla dosyayı sürükle-bırak ile yükleyin, sıralamayı ayarlayın ve birleştirin. Özellikle muhasebe raporları, toplantı tutanakları ve proje dosyaları için idealdir." }
+    ]
+  }
+]

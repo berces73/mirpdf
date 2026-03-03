@@ -1,0 +1,93 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<!--  Ana Sayfa Görselleri  -->
+<url>
+<loc>https://siteniz.com/</loc>
+<image:image>
+<image:loc>https://siteniz.com/assets/hero-image.jpg</image:loc>
+<image:title>MirPDF - Ücretsiz PDF Araçları</image:title>
+<image:caption>PDF dosyalarınızı ücretsiz ve güvenli şekilde yönetin</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://siteniz.com/assets/social-share.jpg</image:loc>
+<image:title>MirPDF OG Image</image:title>
+</image:image>
+<image:image>
+<image:loc>https://siteniz.com/assets/logo.svg</image:loc>
+<image:title>MirPDF Logo</image:title>
+</image:image>
+</url>
+<!--  PDF Birleştir Görselleri  -->
+<url>
+<loc>https://siteniz.com/pdf-birlestir</loc>
+<image:image>
+<image:loc>https://siteniz.com/assets/tools/merge-pdf-screenshot.jpg</image:loc>
+<image:title>PDF Birleştir Aracı Ekran Görüntüsü</image:title>
+<image:caption>Sürükle bırak ile kolay PDF birleştirme</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://siteniz.com/assets/tools/merge-pdf-og.jpg</image:loc>
+<image:title>PDF Birleştir - Social Media</image:title>
+</image:image>
+<image:image>
+<image:loc>https://siteniz.com/assets/icons/merge-icon.svg</image:loc>
+<image:title>PDF Birleştir İkon</image:title>
+</image:image>
+</url>
+<!--  PDF Sıkıştır Görselleri  -->
+<url>
+<loc>https://siteniz.com/pdf-sikistir</loc>
+<image:image>
+<image:loc>https://siteniz.com/assets/tools/compress-pdf-screenshot.jpg</image:loc>
+<image:title>PDF Sıkıştır Aracı Ekran Görüntüsü</image:title>
+<image:caption>PDF boyutunu %70'e kadar küçült</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://siteniz.com/assets/tools/compress-pdf-og.jpg</image:loc>
+<image:title>PDF Sıkıştır - Social Media</image:title>
+</image:image>
+<image:image>
+<image:loc>https://siteniz.com/assets/tools/compression-comparison.jpg</image:loc>
+<image:title>PDF Sıkıştırma Karşılaştırması</image:title>
+<image:caption>Önce ve sonra dosya boyutu karşılaştırması</image:caption>
+</image:image>
+</url>
+<!--  PDF Böl Görselleri  -->
+<url>
+<loc>https://siteniz.com/pdf-bol</loc>
+<image:image>
+<image:loc>https://siteniz.com/assets/tools/split-pdf-screenshot.jpg</image:loc>
+<image:title>PDF Böl Aracı Ekran Görüntüsü</image:title>
+<image:caption>PDF sayfalarını istediğiniz gibi ayırın</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://siteniz.com/assets/tools/split-pdf-og.jpg</image:loc>
+<image:title>PDF Böl - Social Media</image:title>
+</image:image>
+</url>
+<!--  Blog Görselleri  -->
+<url>
+<loc>https://siteniz.com/blog/pdf-birlestirme-rehberi</loc>
+<image:image>
+<image:loc>https://siteniz.com/assets/blog/pdf-merge-guide-featured.jpg</image:loc>
+<image:title>PDF Birleştirme Rehberi Öne Çıkan Görsel</image:title>
+<image:caption>Adım adım PDF birleştirme rehberi</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://siteniz.com/assets/blog/pdf-merge-steps.jpg</image:loc>
+<image:title>PDF Birleştirme Adımları İnfografik</image:title>
+</image:image>
+</url>
+<url>
+<loc>https://siteniz.com/blog/en-iyi-pdf-araclari-2026</loc>
+<image:image>
+<image:loc>https://siteniz.com/assets/blog/best-pdf-tools-2026.jpg</image:loc>
+<image:title>En İyi PDF Araçları 2026</image:title>
+<image:caption>2026 yılının en iyi ücretsiz PDF araçları</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://siteniz.com/assets/blog/tools-comparison-chart.jpg</image:loc>
+<image:title>PDF Araçları Karşılaştırma Tablosu</image:title>
+</image:image>
+</url>
+</urlset>

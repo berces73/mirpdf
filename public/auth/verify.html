@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Email Doğrulama</title>
+  
+  <!-- Verification (replace tokens) -->
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container" style="max-width:820px;margin:40px auto;padding:0 16px;">
+    <h1>Email Doğrulanıyor…</h1>
+    <p id="msg">Lütfen bekle.</p>
+    <div style="margin-top:16px;">
+      <a class="btn" href="/">Ana sayfa</a>
+    </div>
+  </div>
+
+  <script type="module">
+    import { toast } from "/assets/js/toast.js";
+    const qs = new URLSearchParams(location.search);
+    const token = qs.get("token") || "";
+    const msg = document.getElementById("msg");
+    if (!token) {
+      msg.textContent = "Token bulunamadı.";
+      toast("err", "Token bulunamadı.");
+    } else {
+      msg.textContent = "Doğrulama isteği gönderiliyor…";
+      fetch("/api/auth/verify", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ token })
+      }).then(r=>r.json()).then(j=>{
+        if (j.ok) {
+          msg.textContent = "✅ Email doğrulandı. Giriş yapabilirsin.";
+          toast("success", "Email doğrulandı.");
+          setTimeout(()=>location.href="/", 1200);
+        } else {
+          msg.textContent = "❌ Doğrulama başarısız: " + (j.message || j.error || "Hata");
+          toast("err", "Doğrulama başarısız.");
+        }
+      }).catch(()=>{
+        msg.textContent = "❌ Ağ hatası";
+        toast("err", "Ağ hatası");
+      });
+    }
+  </script>
+  <script type="module" src="/assets/js/toast.js"></script>
+</body>
+</html>

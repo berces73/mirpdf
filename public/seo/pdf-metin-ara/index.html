@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PDF'de Metin Arama | PDF İçinde Kelime Arama Rehberi</title>
+  <meta name="description" content="PDF dosyalarında metin arama (kelime bulma) işlemi nasıl yapılır? Bilgisayar, mobil ve online araçlarla PDF içinde arama yöntemleri."/>
+  <link rel="canonical" href="https://mirpdf.com/pdf-metin-ara/"/>
+  <meta property="og:title" content="PDF'de Metin Arama | PDF İçinde Kelime Arama Rehberi"/>
+  <meta property="og:description" content="PDF dosyalarında metin arama (kelime bulma) işlemi nasıl yapılır? Bilgisayar, mobil ve online araçlarla PDF içinde arama yöntemleri."/>
+  <meta property="og:url" content="https://mirpdf.com/cozum/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="MirPDF"/>
+  <meta name="robots" content="index, follow, noarchive"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="PDF'de Metin Arama | PDF İçinde Kelime Arama Rehberi"/>
+  <meta name="twitter:description" content="PDF dosyalarında metin arama (kelime bulma) işlemi nasıl yapılır? Bilgisayar, mobil ve online araçlarla PDF içinde arama yöntemleri."/>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana Sayfa",
+          "item": "https://mirpdf.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pdf Metin Ara",
+          "item": "https://mirpdf.com/pdf-metin-ara/"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "PDF'de Metin Arama | PDF İçinde Kelime Arama Rehberi",
+      "description": "PDF dosyalarında metin arama (kelime bulma) işlemi nasıl yapılır? Bilgisayar, mobil ve online araçlarla PDF içinde arama yöntemleri.",
+      "author": {
+        "@type": "Organization",
+        "name": "MirPDF - PDF Araçları"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "MirPDF - PDF Araçları",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://mirpdf.com/assets/logo.png"
+        }
+      },
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-01-01",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mirpdf.com/pdf-metin-ara/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "PDF'de neden arama yapamıyorum?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PDF taranmış bir belge olabilir (resim formatında). OCR işlemi uygulamanız gerekir. Ayrıca bazı PDF okuyucular arama özelliğini desteklemeyebilir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Taranmış PDF'i aranabilir hale nasıl getirebilirim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Adobe Acrobat Pro'da \"OCR Metin Tanıma\" aracını kullanabilirsiniz. Online OCR araçları da mevcuttur (Google Drive, OnlineOCR.net)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "PDF'de arama yapmak için hangi programı önerirsiniz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Adobe Acrobat Reader ücretsiz ve her platformda çalışır. Mobilde Xodo da iyidir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "PDF'de arama yaparken kelimenin tüm hallerini nasıl bulurum?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gelişmiş arama seçeneklerinde \"kelimenin tüm halleri\" veya \"joker karakterler\" kullanabilirsiniz. Örneğin \"çalış*\" yazarak çalışan, çalışma, çalıştı gibi kelimeleri bulabilirsiniz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "PDF'de arama sonuçlarını nasıl kaydederim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Adobe Acrobat Pro'da arama sonuçlarını PDF olarak kaydedebilirsiniz. Ücretsiz okuyucularda genelde bu özellik yoktur."
+          }
+        }
+      ]
+    }
+  ]
+}</script>
+  <style>
+:root {
+  --blue: #0056b3;
+  --blue-dark: #003d80;
+  --blue-light: #e8f0fe;
+  --green: #1a7f4b;
+  --red: #c0392b;
+  --text: #1a1a1a;
+  --text-muted: #555;
+  --border: #dde3ed;
+  --bg: #f8f9fc;
+  --white: #fff;
+  --radius: 10px;
+  --shadow: 0 2px 12px rgba(0,0,0,.08);
+  --font: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.72;font-size:16px}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+
+/* Layout */
+.wrapper{max-width:860px;margin:0 auto;padding:0 1.25rem}
+
+/* Header */
+.site-header{background:var(--blue-dark);padding:.9rem 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.site-header .wrapper{display:flex;align-items:center;gap:1rem}
+.site-header .logo{color:#fff;font-weight:700;font-size:1.25rem;letter-spacing:-.5px}
+.site-header .logo span{color:#7dd3fc}
+
+/* Breadcrumb */
+.breadcrumb{padding:.6rem 0;font-size:.83rem;color:var(--text-muted)}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--blue)}
+.breadcrumb span+span::before{content:" › ";margin:0 .35rem;color:#aaa}
+
+/* Article */
+article{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:2.5rem;margin:1.5rem 0}
+
+/* Typography */
+h1{font-size:clamp(1.6rem,4vw,2.1rem);font-weight:800;line-height:1.25;color:#0a0a0a;margin-bottom:1.1rem}
+h2{font-size:1.3rem;font-weight:700;color:#0d2240;margin:2rem 0 .7rem;padding-bottom:.35rem;border-bottom:2px solid var(--blue-light)}
+h3{font-size:1.08rem;font-weight:600;color:#1a3a5c;margin:1.4rem 0 .5rem}
+p{margin-bottom:1rem;color:#333}
+ul,ol{margin:.4rem 0 1rem 1.4rem}
+li{margin-bottom:.4rem}
+strong{font-weight:600;color:#111}
+
+/* Scenario box */
+.scenario{background:#f0f7ff;border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:1.1rem 1.3rem;margin:1rem 0}
+.scenario .label{font-size:.78rem;font-weight:700;text-transform:uppercase;color:var(--blue);letter-spacing:.5px;margin-bottom:.4rem}
+
+/* Steps */
+.steps-list{list-style:none;margin:0 0 1rem;padding:0;counter-reset:step}
+.steps-list li{counter-increment:step;display:flex;gap:.85rem;margin-bottom:.75rem;padding:.8rem 1rem;background:#fafbff;border-radius:8px;border:1px solid var(--border)}
+.steps-list li::before{content:counter(step);min-width:1.6rem;height:1.6rem;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;flex-shrink:0}
+
+/* Checklist */
+.checklist{list-style:none;margin:0 0 1rem;padding:0}
+.checklist li{padding:.5rem .7rem .5rem 2.2rem;position:relative;border-bottom:1px solid #f0f0f0}
+.checklist li::before{content:"☐";position:absolute;left:.5rem;color:var(--blue);font-size:1rem}
+
+/* Tips box */
+.tip-box{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:8px;padding:1rem 1.2rem;margin:1rem 0}
+.tip-box strong{color:var(--green)}
+
+/* Warning box */
+.warn-box{background:#fff7ed;border:1px solid #fdba74;border-radius:8px;padding:1rem 1.2rem;margin:1rem 0}
+.warn-box strong{color:#c05600}
+
+/* Security section */
+.security{background:#e8f5e9;border:1px solid #a5d6a7;border-radius:8px;padding:1.1rem 1.3rem;margin:1.5rem 0}
+.security strong{color:var(--green)}
+
+/* CTA Block */
+.cta-block{background:linear-gradient(135deg,#0056b3 0%,#003d80 100%);border-radius:var(--radius);padding:2.2rem 1.5rem;text-align:center;margin:2.5rem 0}
+.cta-block .cta-title{color:#fff;font-size:1.18rem;font-weight:700;margin-bottom:.4rem}
+.cta-block .cta-sub{color:#93c5fd;font-size:.9rem;margin-bottom:1.4rem}
+.cta-block .cta-privacy{color:#bfdbfe;font-size:.82rem;margin-top:.9rem}
+.cta-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.cta-btn{display:inline-flex;align-items:center;gap:.4rem;background:#fff;color:var(--blue);font-weight:700;font-size:.9rem;padding:.7rem 1.4rem;border-radius:8px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2);text-decoration:none;color:var(--blue-dark)}
+
+/* FAQ */
+.faq-list{list-style:none;padding:0;margin:0}
+.faq-item{border:1px solid var(--border);border-radius:8px;margin-bottom:.75rem;overflow:hidden}
+.faq-q{font-weight:600;padding:1rem 1.2rem;background:#fafbff;cursor:pointer;position:relative;padding-right:2.5rem}
+.faq-q::after{content:"＋";position:absolute;right:1rem;top:50%;transform:translateY(-50%);font-size:1.1rem;color:var(--blue)}
+.faq-a{padding:.9rem 1.2rem;font-size:.93rem;color:#444;background:#fff;border-top:1px solid var(--border)}
+
+/* Internal links widget */
+.related-links{background:var(--blue-light);border-radius:8px;padding:1.2rem 1.4rem;margin:1.5rem 0}
+.related-links h2{font-size:1rem;border:none;margin:0 0 .7rem;color:var(--blue)}
+.related-links ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.related-links li a{display:inline-block;background:#fff;padding:.35rem .75rem;border-radius:20px;font-size:.83rem;border:1px solid #c9d9f5;color:var(--blue)}
+.related-links li a:hover{background:var(--blue);color:#fff;text-decoration:none}
+
+/* Footer */
+.site-footer{background:#1a2340;color:#94a3b8;text-align:center;padding:1.5rem;font-size:.83rem;margin-top:2rem}
+.site-footer a{color:#7dd3fc}
+
+/* Responsive */
+@media(max-width:600px){
+  article{padding:1.5rem 1.1rem}
+  .cta-btn{padding:.6rem 1rem;font-size:.83rem}
+}
+</style>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-default.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-default.jpg"/>
+  <!-- Google Analytics GA4 — GA4_ID'yi kendi ID'nizle değiştirin -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA4_MEASUREMENT_ID', {'anonymize_ip': true});
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrapper">
+    <a class="logo" href="/"><span>PDF</span>7</a>
+  </div>
+</header>
+
+<div class="wrapper">
+  <nav class="breadcrumb" aria-label="breadcrumb"><span><a href="https://mirpdf.com/">Ana Sayfa</a></span><span aria-current="page">Pdf Metin Ara</span></nav>
+  <article>
+    <h1>PDF'de Metin Arama: PDF İçinde Kelime Arama Rehberi</h1>
+
+  <p>Uzun bir PDF belgesinde belirli bir kelimeyi veya ifadeyi bulmak zaman alıcı olabilir. Neyse ki, çoğu PDF okuyucu ve tarayıcı, belge içinde metin arama özelliği sunar. Bu rehberde, bilgisayar, mobil cihaz ve online araçlarla PDF içinde nasıl kelime arayacağınızı adım adım anlatıyoruz.</p>
+
+  <h2>PDF'de Metin Arama Neden Önemlidir?</h2>
+  <p>Özellikle uzun raporlar, kitaplar, sözleşmeler veya transkriptler gibi belgelerde ihtiyacınız olan bilgiye hızlıca ulaşmak için metin arama kritiktir. Ayrıca, belgenin taranmış bir görüntü mü yoksa seçilebilir metin mi içerdiğini de bu sayede anlayabilirsiniz.</p>
+
+  <h2>Bilgisayarda PDF'de Metin Arama (Adobe Acrobat Reader)</h2>
+  <ol>
+    <li>PDF'i Adobe Acrobat Reader'da açın.</li>
+    <li>Klavyeden Ctrl+F (Windows) veya Cmd+F (Mac) tuşlarına basın.</li>
+    <li>Ekranın sağ üstünde veya altında bir arama kutusu açılır.</li>
+    <li>Aramak istediğiniz kelimeyi yazın.</li>
+    <li>Sonuçlar listelenecek ve belgede vurgulanacaktır. Sonraki/sonraki sonuçlara gitmek için okları kullanın.</li>
+  </ol>
+
+  <h2>Mobil Cihazda PDF'de Metin Arama</h2>
+  <h3>iPhone/iPad (Dosyalar uygulaması veya Adobe Acrobat)</h3>
+  <ol>
+    <li>PDF'i Dosyalar uygulamasında veya Adobe Acrobat'ta açın.</li>
+    <li>Ekranın üst kısmındaki büyüteç simgesine tıklayın (veya üç nokta menüsünden "Bul" seçeneğini seçin).</li>
+    <li>Kelimeyi girin, sonuçlar görünecektir.</li>
+  </ol>
+
+  <h3>Android (Xodo veya Adobe Acrobat)</h3>
+  <ol>
+    <li>PDF'i Xodo'da açın.</li>
+    <li>Ekranın üst kısmındaki büyüteç simgesine tıklayın.</li>
+    <li>Kelimeyi girin, sonuçlar listelenecektir.</li>
+  </ol>
+
+  <h2>Online Araçlarla PDF'de Metin Arama</h2>
+  <p>Bazı online PDF okuyucular da arama özelliği sunar. Örneğin Google Drive'da PDF'i açıp Ctrl+F ile arama yapabilirsiniz. Ayrıca PDF24, ilovepdf gibi sitelerde de arama özelliği vardır (genelde önizleme modunda).</p>
+
+  <h2>Taranmış PDF'lerde Metin Arama (OCR)</h2>
+  <p>Eğer PDF taranmış bir belge ise (yani metin değil resim olarak saklanmışsa), metin arama yapılamaz. Bu durumda önce OCR (Optik Karakter Tanıma) işlemi yapmanız gerekir. OCR ile PDF'i aranabilir hale getirebilirsiniz. (OCR aracımız ileride eklenecektir.)</p>
+
+  <h2>İpuçları ve Püf Noktaları</h2>
+  <ul>
+    <li><strong>Büyük-küçük harf duyarlılığı:</strong> Çoğu arama büyük-küçük harf duyarsızdır, ancak ayarlardan değiştirebilirsiniz.</li>
+    <li><strong>Tam kelime eşleşmesi:</strong> Bazı okuyucular tam kelime eşleşmesi seçeneği sunar.</li>
+    <li><strong>Gelişmiş arama:</strong> Adobe Acrobat Pro'da "Gelişmiş Arama" ile birden çok PDF'de arama yapabilirsiniz.</li>
+  </ul>
+
+  <h2>Sık Sorulan Sorular</h2><div class="faq-list">
+  <div class="faq-item"><div class="faq-q">
+    PDF'de neden arama yapamıyorum?
+    <div>
+      <p>PDF taranmış bir belge olabilir (resim formatında). OCR işlemi uygulamanız gerekir. Ayrıca bazı PDF okuyucular arama özelliğini desteklemeyebilir.</p>
+    </div><div class="faq-a"><div>
+      <p>PDF taranmış bir belge olabilir (resim formatında). OCR işlemi uygulamanız gerekir. Ayrıca bazı PDF okuyucular arama özelliğini desteklemeyebilir.</p></div></div>
+  </div>
+  <div class="faq-item"><div class="faq-q">
+    Taranmış PDF'i aranabilir hale nasıl getirebilirim?
+    <div>
+      <p>Adobe Acrobat Pro'da "OCR Metin Tanıma" aracını kullanabilirsiniz. Online OCR araçları da mevcuttur (Google Drive, OnlineOCR.net).</p>
+    </div><div class="faq-a"><div>
+      <p>Adobe Acrobat Pro'da "OCR Metin Tanıma" aracını kullanabilirsiniz. Online OCR araçları da mevcuttur (Google Drive, OnlineOCR.net).</p></div></div>
+  </div>
+  <div class="faq-item"><div class="faq-q">
+    PDF'de arama yapmak için hangi programı önerirsiniz?
+    <div>
+      <p>Adobe Acrobat Reader ücretsiz ve her platformda çalışır. Mobilde Xodo da iyidir.</p>
+    </div><div class="faq-a"><div>
+      <p>Adobe Acrobat Reader ücretsiz ve her platformda çalışır. Mobilde Xodo da iyidir.</p></div></div>
+  </div>
+  <div class="faq-item"><div class="faq-q">
+    PDF'de arama yaparken kelimenin tüm hallerini nasıl bulurum?
+    <div>
+      <p>Gelişmiş arama seçeneklerinde "kelimenin tüm halleri" veya "joker karakterler" kullanabilirsiniz. Örneğin "çalış*" yazarak çalışan, çalışma, çalıştı gibi kelimeleri bulabilirsiniz.</p>
+    </div><div class="faq-a"><div>
+      <p>Gelişmiş arama seçeneklerinde "kelimenin tüm halleri" veya "joker karakterler" kullanabilirsiniz. Örneğin "çalış*" yazarak çalışan, çalışma, çalıştı gibi kelimeleri bulabilirsiniz.</p></div></div>
+  </div>
+  <div class="faq-item"><div class="faq-q">
+    PDF'de arama sonuçlarını nasıl kaydederim?
+    <div>
+      <p>Adobe Acrobat Pro'da arama sonuçlarını PDF olarak kaydedebilirsiniz. Ücretsiz okuyucularda genelde bu özellik yoktur.</p>
+    </div><div class="faq-a"><div>
+      <p>Adobe Acrobat Pro'da arama sonuçlarını PDF olarak kaydedebilirsiniz. Ücretsiz okuyucularda genelde bu özellik yoktur.</p></div></div>
+  </div>
+
+  </div><h2>İlgili Bağlantılar</h2>
+  <ul>
+    <li><a href="/resmi-basvurular-icin-pdf-cozumleri/">Resmi Başvurular İçin PDF Çözümleri (Ana Hub)</a></li>
+    <li><a href="/cozum/">PDF Çözümleri Ana Sayfa</a></li>
+    <li><a href="/pdf-okunabilirlik-rehberi/">PDF Okunabilirlik Rehberi</a></li>
+    <li><a href="/pdf-tarama-ayarlari/">PDF Tarama Ayarları</a></li>
+    <li><a href="/limit/10-mb-pdf-siniri">10 MB PDF Sınırı</a></li>
+    <li><a href="/mobil/android-pdf-duzenleme">Android'de PDF Düzenleme</a></li>
+    <li><a href="/pdf-sikistir/">PDF Sıkıştır Aracı</a></li>
+  </ul>
+
+  <!-- Conversion Bloğu -->
+  
+<div class="cta-block">
+  <p class="cta-title">📁 PDF işlemlerinizi hemen yapın</p>
+  <p class="cta-sub">Dosyalarınız sunucuda saklanmaz — tamamen güvende!</p>
+  <div class="cta-btns">
+    <a class="cta-btn" href="/pdf-sikistir/">📉 PDF Sıkıştır</a>
+    <a class="cta-btn" href="/pdf-birlestir/">📎 PDF Birleştir</a>
+    <a class="cta-btn" href="/pdf-kilit-ac/">🔓 PDF Kilit Aç</a>
+  </div>
+  <p class="cta-privacy">🔒 Tüm işlemler tarayıcınızda gerçekleşir. Verileriniz üçüncü şahıslarla paylaşılmaz.</p>
+</div>
+  </article>
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 PDF7 — Dosyalarınız sunucuda saklanmaz. <a href="/gizlilik/">Gizlilik Politikası</a></p>
+</footer>
+</body>
+</html>

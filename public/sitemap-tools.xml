@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://mirpdf.com/pdf-birlestir</loc>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mirpdf.com/assets/icons/og-image.jpg</image:loc>
+      <image:title>PDF Birleştir</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mirpdf.com/pdf-sikistir</loc>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mirpdf.com/assets/icons/og-image.jpg</image:loc>
+      <image:title>PDF Sıkıştır</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mirpdf.com/pdf-bol</loc>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mirpdf.com/assets/icons/og-image.jpg</image:loc>
+      <image:title>PDF Böl</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mirpdf.com/pdf-to-jpg</loc>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mirpdf.com/assets/icons/og-image.jpg</image:loc>
+      <image:title>PDF → JPG</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mirpdf.com/jpg-to-pdf</loc>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mirpdf.com/assets/icons/og-image.jpg</image:loc>
+      <image:title>JPG → PDF</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mirpdf.com/pdf-dondur</loc>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mirpdf.com/assets/icons/og-image.jpg</image:loc>
+      <image:title>PDF Döndür</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mirpdf.com/sayfa-sil</loc>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mirpdf.com/assets/icons/og-image.jpg</image:loc>
+      <image:title>Sayfa Sil</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mirpdf.com/sayfa-sirala</loc>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mirpdf.com/assets/icons/og-image.jpg</image:loc>
+      <image:title>Sayfa Sırala</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mirpdf.com/pdf-kilitle</loc>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mirpdf.com/assets/icons/og-image.jpg</image:loc>
+      <image:title>PDF Kilitle</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mirpdf.com/qr-kod-ekle</loc>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mirpdf.com/assets/icons/og-image.jpg</image:loc>
+      <image:title>QR Kod Ekle</image:title>
+    </image:image>
+  </url>
+</urlset>

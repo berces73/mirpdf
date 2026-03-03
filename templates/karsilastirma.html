@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="tr">
+<head>
+{{> head}}
+<title>{{title}} | MirPDF</title>
+<meta name="description" content="{{desc}}" />
+<link rel="canonical" href="{{baseUrl}}/seo/karsilastirma/{{slug}}.html" />
+<meta property="og:title" content="{{title}}" />
+<meta property="og:description" content="{{desc}}" />
+<meta property="og:type" content="article" />
+</head>
+<body>
+<div class="bg"></div>
+<main class="wrap">
+{{> header}}
+
+<article class="card comparison-article">
+  <h1>{{title}}</h1>
+  <p class="lead">{{desc}}</p>
+
+  <div class="comparison-grid">
+    <div class="comparison-col">
+      <h2>{{a}}</h2>
+    </div>
+    <div class="comparison-col">
+      <h2>{{b}}</h2>
+    </div>
+  </div>
+
+  <div class="verdict-box">
+    <h3>Sonuç</h3>
+    <p>{{verdict}}</p>
+  </div>
+
+  <div class="cta-box">
+    <a href="/" class="primary">Ücretsiz PDF Araçlarını Dene →</a>
+  </div>
+</article>
+
+{{> footer}}
+</main>
+</body>
+</html>

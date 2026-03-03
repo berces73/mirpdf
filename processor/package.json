@@ -1,0 +1,14 @@
+{
+  "name": "mirpdf-processor",
+  "version": "1.0.0",
+  "description": "MirPDF VPS Processor — Ghostscript, LibreOffice, Tesseract",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {},
+  "license": "UNLICENSED"
+}

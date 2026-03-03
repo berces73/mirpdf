@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" href="../styles.css" />
+  <title>Şifre Sıfırla | MirPDF</title>
+</head>
+<body>
+  <div class="bg"></div>
+  <main class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">PDF</div>
+        <div>
+          <h1>Şifre Sıfırla</h1>
+          <p>Yeni şifreni belirle.</p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="ghost" href="../index.html">Ana Sayfa</a>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="cardHead"><h2>Yeni Şifre</h2><span class="muted">En az 8 karakter.</span></div><div class="row"><div class="field" style="flex:1"><label>Yeni Şifre</label><input id="pw" class="input" type="password" placeholder="********"/></div></div><button class="primary full" id="go">Şifreyi Güncelle</button>
+      <div class="small muted" id="msg"></div>
+    </section>
+
+    <footer class="muted footer">© 2026 MirPDF</footer>
+  </main>
+
+<script>
+const qs = new URLSearchParams(location.hash.replace(/^#/, ""));
+function setMsg(t){ document.getElementById("msg").textContent = t; }
+async function post(url, data){
+  const r = await fetch(url,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(data)});
+  const j = await r.json().catch(()=>null);
+  return {r,j};
+}
+</script>
+<script>
+
+document.getElementById("go").onclick = async ()=>{
+  const token = qs.get("token") || "";
+  const password = document.getElementById("pw").value||"";
+  if(!token){ setMsg("Token yok."); return; }
+  if(password.length < 8){ setMsg("Şifre en az 8 karakter olmalı."); return; }
+  setMsg("Güncelleniyor...");
+  const {r,j} = await post("/api/auth/reset",{token,password});
+  if(r.ok && j?.ok){ setMsg("✅ Şifre güncellendi. Giriş yapabilirsin."); }
+  else setMsg("❌ Hata: " + (j?.error||j?.message||""));
+};
+
+</script>
+</body>
+</html>

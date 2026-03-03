@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#0f0f14" />
+<link rel="stylesheet" href="/styles.css" />
+<title>PDF'den Sayfa Nasıl Silinir — Adım Adım Rehber | MirPDF</title>
+<meta name="description" content="PDF belgenizdeki gereksiz sayfaları silmenin adım adım anlatımı. Format ipuçları, sık hatalar ve çözümler." />
+<meta name="keywords" content="pdf sayfa silme nasıl yapılır, pdf den sayfa kaldırma rehber" />
+<link rel="canonical" href="https://mirpdf.com/seo/tools/sayfa-sil/rehber.html" />
+<meta property="og:title" content="PDF'den Sayfa Nasıl Silinir — Adım Adım Rehber | MirPDF" />
+<meta property="og:description" content="PDF belgenizdeki gereksiz sayfaları silmenin adım adım anlatımı. Format ipuçları, sık hatalar ve çözümler." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mirpdf.com/seo/tools/sayfa-sil/rehber.html" />
+<meta property="og:image" content="https://mirpdf.com/assets/og-home.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="PDF'den Sayfa Nasıl Silinir — Adım Adım Rehber | MirPDF" />
+<meta name="twitter:description" content="PDF belgenizdeki gereksiz sayfaları silmenin adım adım anlatımı. Format ipuçları, sık hatalar ve çözümler." />
+<meta name="twitter:image" content="https://mirpdf.com/assets/og-home.png" />
+<link rel="alternate" hreflang="tr" href="https://mirpdf.com/seo/tools/sayfa-sil/rehber.html" />
+<link rel="alternate" hreflang="x-default" href="https://mirpdf.com/seo/tools/sayfa-sil/rehber.html" />
+
+  <!-- Google Analytics GA4 — GA4_ID'yi kendi ID'nizle değiştirin -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA4_MEASUREMENT_ID', {'anonymize_ip': true});
+  </script>
+</head>
+<body>
+<div class="bg"></div>
+<main class="wrap">
+<header class="top">
+  <div class="brand">
+    <a href="/" class="logo-link">
+      <div class="logo">PDF</div>
+      <div>
+        <div class="siteTitle">MirPDF</div>
+        <p>Ücretsiz Online PDF Araçları</p>
+      </div>
+    </a>
+  </div>
+  <nav class="main-nav" aria-label="Ana Menü">
+    <a href="/pdf-birlestir">Birleştir</a>
+    <a href="/pdf-bol">Böl</a>
+    <a href="/pdf-sikistir">Sıkıştır</a>
+    <a href="/seo/">Rehberler</a>
+  </nav>
+</header>
+
+
+<article class="card">
+  <nav aria-label="Breadcrumb" style="font-size:13px;margin-bottom:16px">
+    <a href="/">Ana Sayfa</a> › <a href="/seo/">Rehberler</a> › <a href="/seo/tools/sayfa-sil/">Sayfa Sil</a> › Rehber
+  </nav>
+  <h1>PDF'den Sayfa Silme — Kapsamlı Rehber</h1>
+  <p class="lead">Boş sayfalar, hatalı taramalar veya gizli bilgiler içeren sayfaları PDF belgenizden kalıcı olarak kaldırmanın en kolay yolu.</p>
+
+  <h2>Sayfa Silmeden Önce: Ne Yapmalısınız?</h2>
+  <p>Silmek istediğiniz sayfa numaralarını önceden not alın. Bunun için belgeyi PDF okuyucunuzda açıp hangi sayfaların gereksiz olduğuna bakın. Sayfa numaraları genellikle okuyucunun alt çubuğunda görünür (çoğunlukla "sayfa X / toplam Y" şeklinde).</p>
+  <p><strong>Önemli:</strong> Araç yüklendiğinde PDF'inizin toplam sayfa sayısını gösterir. Bu sayıyı referans alarak aralıklarınızı belirleyin.</p>
+
+  <h2>Adım Adım Sayfa Silme</h2>
+
+  <h3>1. PDF Yükleyin</h3>
+  <p><a href="/sayfa-sil">Sayfa Sil</a> sayfasına gidin ve dosyanızı sürükleyip bırakın veya seçin. Sayfa sayısı bilgisi otomatik görüntülenir.</p>
+
+  <h3>2. Silinecek Sayfaları Girin</h3>
+  <p>Metin kutusuna silinecek sayfa numaralarını şu formatlarda girebilirsiniz:</p>
+  <ul style="padding-left:1.4em;line-height:2;font-family:monospace">
+    <li><code>3</code> — yalnızca 3. sayfayı sil</li>
+    <li><code>2,5,9</code> — 2., 5. ve 9. sayfaları sil</li>
+    <li><code>4-8</code> — 4, 5, 6, 7 ve 8. sayfaları sil</li>
+    <li><code>2,4-6,10</code> — 2., 4., 5., 6. ve 10. sayfaları sil</li>
+  </ul>
+
+  <h3>3. Sil ve İndir</h3>
+  <p>"🗑️ Sayfaları Sil ve İndir" butonuna tıklayın. İşlem tamamlandığında dosya <em>orijinal_ad_duzenlenmis.pdf</em> adıyla indirilir. Kalan sayfa sayısı işlem öncesi size bildirilir.</p>
+
+  <h2>Pratik Senaryolar</h2>
+
+  <h3>Senaryo 1: Sondaki boş sayfaları sil</h3>
+  <p>20 sayfalık belgede 18., 19. ve 20. sayfalar boşsa: <code>18,19,20</code> veya <code>18-20</code> girin.</p>
+
+  <h3>Senaryo 2: Kişisel bilgi içeren tek sayfa</h3>
+  <p>Bir sözleşmenin 7. sayfasında TC kimlik numaranız varsa ve bu sayfayı çıkarmak istiyorsanız: <code>7</code> girin.</p>
+
+  <h3>Senaryo 3: Çift sayfaları sil (tek taraflı baskı hazırlığı)</h3>
+  <p>Çift yönlü taramada boş arka yüzleri (2, 4, 6, 8…) silmek için PDF Böl ile ayırıp tek sayfaları alabilirsiniz. Ya da sayfa numaralarını elle girin: <code>2,4,6,8,10,12...</code></p>
+
+  <h2>Dikkat Edilmesi Gerekenler</h2>
+  <ul style="padding-left:1.4em;line-height:2">
+    <li>Silme işlemi <strong>geri alınamaz</strong>. Orijinal dosyanızı önce yedekleyin.</li>
+    <li>Belgede yazılı sayfa numaraları (örn. baskı numaraları) <strong>değişmez</strong>; yalnızca fiziksel sayfa sırası güncellenir.</li>
+    <li>Tüm sayfaları silmeye çalışırsanız araç uyarı verir ve işlemi durdurul.</li>
+    <li>Silme sonrası boyutu daha da küçültmek için <a href="/pdf-sikistir">PDF Sıkıştır</a> aracını kullanabilirsiniz.</li>
+  </ul>
+
+  <div class="cta-box" style="margin-top:24px;text-align:center">
+    <a href="/sayfa-sil" class="primary">🗑️ Sayfa Sil Aracını Kullan →</a>
+  </div>
+</article>
+
+<footer class="site-footer muted">
+  <div class="footer-links">
+    <a href="/pdf-birlestir">PDF Birleştir</a>
+    <a href="/pdf-sikistir">PDF Sıkıştır</a>
+    <a href="/pdf-bol">PDF Böl</a>
+    <a href="/pdf-to-word">PDF → Word</a>
+    <a href="/ocr">OCR</a>
+    <a href="/pdf-imzala">PDF İmzala</a>
+    <a href="/pdf-kilitle">PDF Kilitle</a>
+    <a href="/seo/">Tüm Rehberler</a>
+  </div>
+  <p>© 2026 MirPDF — Tüm hakları saklıdır.</p>
+</footer>
+</main>
+</body>
+</html>

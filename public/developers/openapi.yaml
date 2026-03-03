@@ -1,0 +1,42 @@
+openapi: 3.0.3
+info:
+  title: PDF Platform API
+  version: "1.0"
+servers:
+  - url: https://FILL_ACTUAL_DOMAIN
+paths:
+  /api/compress:
+    post:
+      summary: Compress PDF (FormData upload)
+      responses:
+        "200": { description: OK }
+  /api/pdf-to-word:
+    post:
+      summary: Convert PDF to Word (FormData upload)
+      responses:
+        "200": { description: OK }
+  /api/ocr:
+    post:
+      summary: OCR PDF (FormData upload)
+      responses:
+        "200": { description: OK }
+  /api/jobs/{jobId}/status:
+    get:
+      summary: Get job status
+      parameters:
+        - in: path
+          name: jobId
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: OK }
+  /api/jobs/{jobId}/result:
+    get:
+      summary: Get job result
+      parameters:
+        - in: path
+          name: jobId
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: OK }

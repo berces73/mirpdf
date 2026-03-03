@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "pdf-birlestir",
+    "name": "PDF Birleştir",
+    "desc": "Birden fazla PDF dosyasını tek bir belgede birleştir.",
+    "keywords": "pdf birleştirme, pdf merge"
+  },
+  {
+    "slug": "pdf-sikistir",
+    "name": "PDF Sıkıştır",
+    "desc": "PDF boyutunu kaliteyi koruyarak küçült.",
+    "keywords": "pdf sıkıştırma, pdf küçültme, pdf compress, pdf boyut küçültme"
+  },
+  {
+    "slug": "pdf-bol",
+    "name": "PDF Böl",
+    "desc": "PDF dosyanı sayfalara göre böl ve ayrı dosyalar oluştur.",
+    "keywords": "pdf bölme, pdf split"
+  },
+  {
+    "slug": "pdf-den-jpg",
+    "name": "PDF'den JPG",
+    "desc": "PDF sayfalarını yüksek kaliteli JPG görsellerine dönüştür.",
+    "keywords": "pdf jpg dönüştürme, pdf resim"
+  },
+  {
+    "slug": "jpg-den-pdf",
+    "name": "JPG'den PDF",
+    "desc": "JPG veya PNG görsellerini PDF dosyasına dönüştür.",
+    "keywords": "jpg pdf, resimden pdf"
+  },
+  {
+    "slug": "pdf-duzenle",
+    "name": "PDF Düzenle",
+    "desc": "PDF dosyanı online olarak düzenle, metin ve şekil ekle.",
+    "keywords": "pdf düzenleme, pdf edit"
+  },
+  {
+    "slug": "pdf-imzala",
+    "name": "PDF İmzala",
+    "desc": "PDF belgene dijital imza ekle — yazdırmadan.",
+    "keywords": "pdf imza, dijital imza pdf"
+  },
+  {
+    "slug": "pdf-kilitle",
+    "name": "PDF Kilitle",
+    "desc": "PDF dosyana şifre koy ve yetkisiz erişimi önle.",
+    "keywords": "pdf şifre koyma, pdf koruma"
+  },
+  {
+    "slug": "pdf-kilit-ac",
+    "name": "PDF Kilit Aç",
+    "desc": "Şifreli PDF dosyasının kilidini aç ve serbestçe kullan.",
+    "keywords": "pdf kilit açma, pdf unlock"
+  },
+  {
+    "slug": "pdf-dondur",
+    "name": "PDF Döndür",
+    "desc": "PDF sayfalarını 90°, 180° veya 270° döndür.",
+    "keywords": "pdf döndürme, pdf rotate"
+  },
+  {
+    "slug": "sayfa-sil",
+    "name": "Sayfa Sil",
+    "desc": "PDF dosyasından istemediğin sayfaları kolayca sil.",
+    "keywords": "pdf sayfa silme, pdf sayfa kaldırma"
+  },
+  {
+    "slug": "sayfa-sirala",
+    "name": "Sayfa Sırala",
+    "desc": "PDF sayfalarını sürükle-bırak ile yeniden sırala.",
+    "keywords": "pdf sayfa sıralama, pdf reorder"
+  },
+  {
+    "slug": "filigran-ekle",
+    "name": "Filigran Ekle",
+    "desc": "PDF belgene metin veya görsel filigran ekle.",
+    "keywords": "pdf filigran, pdf watermark"
+  },
+  {
+    "slug": "qr-kod-ekle",
+    "name": "QR Kod Ekle",
+    "desc": "PDF dosyasına otomatik QR kod ekle.",
+    "keywords": "pdf qr kod ekleme"
+  },
+  {
+    "slug": "ocr",
+    "name": "OCR",
+    "desc": "Taranmış PDF ve görsellerden metin çıkar — Türkçe destekli.",
+    "keywords": "pdf ocr, taranmış pdf metin"
+  },
+  {
+    "slug": "pdf-to-word",
+    "name": "PDF'den Word",
+    "desc": "PDF dosyanı Word (DOCX) formatına dönüştür.",
+    "keywords": "pdf word dönüştürme, pdf docx"
+  }
+]

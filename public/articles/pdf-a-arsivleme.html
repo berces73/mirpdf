@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PDF/A: Uzun Vadeli Dijital Arşivleme Standartları (2026)</title>
+<!-- Verification (replace tokens) -->
+<meta content="Dijital arşivlemede neden PDF/A kullanmalısınız? ISO 19005 standartları, PDF/A-1, A-2, A-3 farkları ve kendi kendine yeterlilik ilkesi." name="description"/>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+          "@type": "Question",
+          "name": "PDF/A ile normal PDF arasındaki fark nedir?",
+          "acceptedAnswer": { "@type": "Answer", "text": "PDF/A, belgenin dış kaynaklara (internet, font dosyaları) bağımlı olmasını yasaklar. Her şey dosya içine gömülüdür." }
+        },
+        {
+          "@type": "Question",
+          "name": "Hangi PDF/A versiyonunu kullanmalıyım?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Genel arşivleme için PDF/A-2b yeterlidir. Eğer e-fatura gibi gömülü dosya ihtiyacınız varsa PDF/A-3 kullanmalısınız." }
+        }]
+    }
+    </script>
+<style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; margin: 0; padding: 0; color: #333; }
+        .container { max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; padding: 20px; }
+        .main-content { flex: 3; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .sidebar { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+        .sidebar-box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .sidebar-link { display: block; padding: 10px 0; text-decoration: none; color: #555; border-bottom: 1px solid #f0f0f0; transition: 0.3s; }
+        .sidebar-link:hover { color: #007bff; padding-left: 5px; }
+        h1 { color: #2c3e50; font-size: 2rem; margin-top: 0; }
+        .breadcrumbs { font-size: 0.9em; color: #666; margin-bottom: 20px; }
+        .cta-btn { display: inline-block; background: #6f42c1; color: white; padding: 12px 25px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 10px; }
+        .cta-btn:hover { background: #5a32a3; }
+        .sidebar-box h4 { margin-top: 0; color: #007bff; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .author-box { display: flex; align-items: center; gap: 15px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; }
+    </style>
+<link href="https://mirpdf.com/articles/pdf-a-arsivleme.html" rel="canonical"/><meta content="PDF/A: Uzun Vadeli Dijital Arşivleme Standartları (2026)" property="og:title"/><meta content="Dijital arşivlemede neden PDF/A kullanmalısınız? ISO 19005 standartları, PDF/A-1, A-2, A-3 farkları ve kendi kendine yeterlilik ilkesi." property="og:description"/><meta content="https://mirpdf.com/assets/icons/og-image.jpg" property="og:image"/><meta content="article" property="og:type"/><meta content="https://mirpdf.com/articles/pdf-a-arsivleme.html" property="og:url"/><meta content="summary_large_image" name="twitter:card"/><meta content="PDF/A: Uzun Vadeli Dijital Arşivleme Standartları (2026)" name="twitter:title"/><meta content="Dijital arşivlemede neden PDF/A kullanmalısınız? ISO 19005 standartları, PDF/A-1, A-2, A-3 farkları ve kendi kendine yeterlilik ilkesi." name="twitter:description"/><meta content="https://mirpdf.com/assets/icons/og-image.jpg" name="twitter:image"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://mirpdf.com/articles/pdf-a-arsivleme.html"},"headline":"PDF/A: Uzun Vadeli Dijital Arşivleme Standartları","description":"Dijital arşivlemede neden PDF/A kullanmalısınız? ISO 19005 standartları, PDF/A-1, A-2, A-3 farkları ve kendi kendine yeterlilik ilkesi.","author":{"@type":"Organization","name":"MirPDF"},"publisher":{"@type":"Organization","name":"MirPDF","logo":{"@type":"ImageObject","url":"https://mirpdf.com/assets/logo.png"}},"image":"https://mirpdf.com/assets/icons/og-image.jpg","datePublished":"2026-02-26","dateModified":"2026-02-26"}</script>
+</head>
+<body>
+<div style="background:#fff; padding:15px; border-bottom:1px solid #ddd; text-align:center; font-weight:bold;">
+<a href="/" style="text-decoration:none; color:#333; margin:0 10px;">Ana Sayfa</a>
+<a href="/blog" style="text-decoration:none; color:#007bff; margin:0 10px;">Blog</a>
+</div>
+<div class="container">
+<main class="main-content">
+<div class="breadcrumbs">Anasayfa &gt; Blog &gt; PDF/A Arşivleme</div>
+<h1>PDF/A: Uzun Vadeli Dijital Arşivleme Standartları</h1>
+<p>PDF/A (Portable Document Format for Archiving), belgelerin on yıllar sonra bile aynı şekilde görüntülenebilmesini sağlamak için kısıtlanmış bir PDF türüdür. Bu format, "visual reproducibility" (görsel yeniden üretilebilirlik) ilkesine dayanır.</p>
+<h3>Neden PDF/A?</h3>
+<p>Standart bir PDF, bilgisayarınızdaki bir fonta veya bir web sitesindeki veriye referans verebilir. Eğer o dış kaynak silinirse, PDF bozulur. PDF/A'da ise her şey (fontlar, renk profilleri) belgenin içine gömülüdür. <strong>Javascript</strong> ve ses/video gibi dinamik içerikler PDF/A formatında kesinlikle yasaktır.</p>
+<div style="background:#f3f0ff; border:1px solid #d6bcfa; padding:20px; border-radius:5px; margin:20px 0;">
+<h3 style="margin-top:0; color:#6b46c1;">Geleceğe Yatırım Yapın</h3>
+<p>Belgelerinizi uluslararası arşiv standardına (PDF/A) dönüştürün.</p>
+<a class="cta-btn" href="/pdf-to-pdfa">🏛️ PDF/A Dönüştür</a>
+</div>
+<h3>Standart Seviyeleri: a, b, u</h3>
+<p>PDF/A-1b temel görsel uyumluluğu sağlarken, PDF/A-1a belgenin yapısal hiyerarşisini (erişilebilirlik) de korur. PDF/A-3 ise PDF içine başka herhangi bir dosya formatının (örneğin orijinal Excel tablosu) gömülmesine izin vererek modern arşivleme ihtiyaçlarını karşılar.</p>
+<div class="author-box">
+<div style="width:50px; height:50px; background:#ddd; border-radius:50%;"></div>
+<div>
+<strong>Yazar: PDF Teknik Ekibi</strong>
+</div>
+</div>
+</main>
+<aside class="sidebar">
+<div class="sidebar-box">
+<h4>İlgili Araçlar</h4>
+<a class="sidebar-link" href="/pdf-sifrele">🔒 PDF Şifrele</a>
+<a class="sidebar-link" href="/pdf-birlestir">📂 PDF Birleştir</a>
+</div>
+</aside>
+</div>
+<section style="margin-top:40px;padding:20px;background:#0f1a30;border-radius:16px">
+<h2>İlgili İçerikler (SEO Cluster)</h2>
+<ul>
+<li><a href="/seo/tools/pdf-birlestir/rehber.html">PDF Birleştirme Rehberi</a></li>
+<li><a href="/seo/tools/pdf-sikistir/rehber.html">PDF Sıkıştırma Rehberi</a></li>
+<li><a href="/seo/tools/pdf-to-word/rehber.html">PDF → Word Rehberi</a></li>
+<li><a href="/seo/tools/ocr/rehber.html">OCR Metin Tanıma Rehberi</a></li>
+<li><a href="/seo/tools/jpg-to-pdf/rehber.html">JPG → PDF Rehberi</a></li>
+<li><a href="/seo/rehberler/pdf-kucultme-rehberi.html">PDF Boyutu Küçültme</a></li>
+<li><a href="/seo/rehberler/wordu-pdf-yapma.html">Word Dosyasını PDF Yapma</a></li>
+<li><a href="/seo/rehberler/kvkk-uyumlu-pdf.html">KVKK Uyumlu PDF Araçları</a></li>
+</ul>
+</section>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sayfa Yönetimi: PDF Hiyerarşisini ve İndeksleri Düzenleme</title>
+<!-- Verification (replace tokens) -->
+<meta content="PDF sayfalarını silme, döndürme ve yeniden sıralama süreçlerinin teknik arka planı. Sayfa ağacı (page tree) yönetimi ve oryantasyon düzeltme." name="description"/>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+          "@type": "Question",
+          "name": "Sayfa silince dosya boyutu neden düşmedi?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sayfa silindiğinde bazen sadece referansı silinir, verisi kalır. 'Optimize Et' seçeneği ile yetim objeleri temizlemelisiniz." }
+        },
+        {
+          "@type": "Question",
+          "name": "Ters duran sayfaları nasıl düzeltebilirim?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sayfa Döndürme (Rotate) aracı ile sayfayı 90 veya 180 derece çevirip kaydedebilirsiniz." }
+        }]
+    }
+    </script>
+<style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; margin: 0; padding: 0; color: #333; }
+        .container { max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; padding: 20px; }
+        .main-content { flex: 3; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .sidebar { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+        .sidebar-box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .sidebar-box h4 { margin-top: 0; color: #007bff; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .sidebar-link { display: block; padding: 10px 0; text-decoration: none; color: #555; border-bottom: 1px solid #f0f0f0; transition: 0.3s; }
+        .sidebar-link:hover { color: #007bff; padding-left: 5px; }
+        h1 { color: #2c3e50; font-size: 2rem; margin-top: 0; }
+        .breadcrumbs { font-size: 0.9em; color: #666; margin-bottom: 20px; }
+        .cta-btn { display: inline-block; background: #28a745; color: white; padding: 12px 25px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 10px; }
+        .cta-btn:hover { background: #218838; }
+        .author-box { display: flex; align-items: center; gap: 15px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; }
+    </style>
+<link href="https://mirpdf.com/articles/pdf-sayfa-duzenleme.html" rel="canonical"/><meta content="Sayfa Yönetimi: PDF Hiyerarşisini ve İndeksleri Düzenleme" property="og:title"/><meta content="PDF sayfalarını silme, döndürme ve yeniden sıralama süreçlerinin teknik arka planı. Sayfa ağacı (page tree) yönetimi ve oryantasyon düzeltme." property="og:description"/><meta content="https://mirpdf.com/assets/icons/og-image.jpg" property="og:image"/><meta content="article" property="og:type"/><meta content="https://mirpdf.com/articles/pdf-sayfa-duzenleme.html" property="og:url"/><meta content="summary_large_image" name="twitter:card"/><meta content="Sayfa Yönetimi: PDF Hiyerarşisini ve İndeksleri Düzenleme" name="twitter:title"/><meta content="PDF sayfalarını silme, döndürme ve yeniden sıralama süreçlerinin teknik arka planı. Sayfa ağacı (page tree) yönetimi ve oryantasyon düzeltme." name="twitter:description"/><meta content="https://mirpdf.com/assets/icons/og-image.jpg" name="twitter:image"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://mirpdf.com/articles/pdf-sayfa-duzenleme.html"},"headline":"Sayfa Yönetimi: PDF Hiyerarşisini ve İndeksleri Düzenleme","description":"PDF sayfalarını silme, döndürme ve yeniden sıralama süreçlerinin teknik arka planı. Sayfa ağacı (page tree) yönetimi ve oryantasyon düzeltme.","author":{"@type":"Organization","name":"MirPDF"},"publisher":{"@type":"Organization","name":"MirPDF","logo":{"@type":"ImageObject","url":"https://mirpdf.com/assets/logo.png"}},"image":"https://mirpdf.com/assets/icons/og-image.jpg","datePublished":"2026-02-26","dateModified":"2026-02-26"}</script>
+</head>
+<body>
+<div style="background:#fff; padding:15px; border-bottom:1px solid #ddd; text-align:center; font-weight:bold;">
+<a href="/" style="text-decoration:none; color:#333; margin:0 10px;">Ana Sayfa</a>
+<a href="/blog" style="text-decoration:none; color:#007bff; margin:0 10px;">Blog</a>
+</div>
+<div class="container">
+<main class="main-content">
+<div class="breadcrumbs">Anasayfa &gt; Blog &gt; Sayfa Yönetimi</div>
+<h1>Sayfa Yönetimi: PDF Hiyerarşisini ve İndeksleri Düzenleme</h1>
+<p>Bir PDF belgesi, objelerden oluşan bir veri ağacıdır. Sayfa yönetimi (silme, döndürme, taşıma), aslında bu veri ağacındaki referansların yerini değiştirmektir. Her sayfa bir "Page Object" ($/Page$) olarak tanımlanır ve bir ebeveyn düğüme (Parent) bağlıdır.</p>
+<h3>XRef Tablosu ve Sayfa Silme</h3>
+<p>Bir sayfayı sildiğinizde, PDF'in sonundaki <strong>Cross-Reference (XRef)</strong> tablosu güncellenir. Sayfa verisi fiziksel olarak dosyada kalabilir ancak referansı silindiği için artık görünmez. Dosyayı "optimize" ederek kaydettiğinizde, bu yetim objeler tamamen temizlenir ve dosya boyutu küçülür.</p>
+<div style="background:#f0fff4; border:1px solid #c6f6d5; padding:20px; border-radius:5px; margin:20px 0;">
+<h3 style="margin-top:0; color:#2f855a;">Sayfalarınız Karışık mı?</h3>
+<p>Gereksiz sayfaları silin, ters duranları düzeltin.</p>
+<a class="cta-btn" href="/pdf-duzenle">📃 Sayfaları Yönet</a>
+</div>
+<h3>Oryantasyon ve Dönüş Matrisleri</h3>
+<p>Sayfa döndürme işlemi, PDF standardında bir "Rotate" parametresiyle yapılır. Bu değer genellikle $90, 180$ veya $270$ derece olabilir. Sayfanın içeriği ($content stream$) aslında dönmez; sadece görüntüleme motoruna sayfayı kaç derece çevirerek göstermesi gerektiği söylenir.</p>
+<div class="author-box">
+<div style="width:50px; height:50px; background:#ddd; border-radius:50%;"></div>
+<div>
+<strong>Yazar: PDF Teknik Ekibi</strong>
+</div>
+</div>
+</main>
+<aside class="sidebar">
+<div class="sidebar-box">
+<h4>Hızlı Araçlar</h4>
+<a class="sidebar-link" href="/pdf-birlestir">📂 PDF Birleştir</a>
+<a class="sidebar-link" href="/pdf-sikistir">📉 PDF Sıkıştır</a>
+<a class="sidebar-link" href="/ocr-pdf">🔍 OCR</a>
+</div>
+</aside>
+</div>
+<section style="margin-top:40px;padding:20px;background:#0f1a30;border-radius:16px">
+<h2>İlgili İçerikler (SEO Cluster)</h2>
+<ul>
+<li><a href="/seo/tools/pdf-birlestir/rehber.html">PDF Birleştirme Rehberi</a></li>
+<li><a href="/seo/tools/pdf-sikistir/rehber.html">PDF Sıkıştırma Rehberi</a></li>
+<li><a href="/seo/tools/pdf-to-word/rehber.html">PDF → Word Rehberi</a></li>
+<li><a href="/seo/tools/ocr/rehber.html">OCR Metin Tanıma Rehberi</a></li>
+<li><a href="/seo/tools/jpg-to-pdf/rehber.html">JPG → PDF Rehberi</a></li>
+<li><a href="/seo/rehberler/pdf-kucultme-rehberi.html">PDF Boyutu Küçültme</a></li>
+<li><a href="/seo/rehberler/wordu-pdf-yapma.html">Word Dosyasını PDF Yapma</a></li>
+<li><a href="/seo/rehberler/kvkk-uyumlu-pdf.html">KVKK Uyumlu PDF Araçları</a></li>
+</ul>
+</section>
+</body>
+</html>
