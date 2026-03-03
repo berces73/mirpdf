@@ -13,7 +13,7 @@ new_classes = ["CreditCounter"]
 [[d1_databases]]
 binding = "DB"
 database_name = "mirpdf-db"
-database_id = "FILL_FROM_WRANGLER_D1_CREATE"  # wrangler d1 create mirpdf-db
+database_id = "bc17d385-2ca6-49fe-9774-51f132982188"  # wrangler d1 create mirpdf-db
 
 [[r2_buckets]]
 binding = "PDF_R2"
@@ -42,15 +42,15 @@ max_retries = 3
 # KV namespaces
 [[kv_namespaces]]
 binding = "RATE_KV"
-id = "FILL_FROM_WRANGLER_KV_CREATE"  # wrangler kv namespace create RATE_KV
+id = "51b9508f38c34b2289344c276c7f0400"  # wrangler kv namespace create RATE_KV
 
 [[kv_namespaces]]
 binding = "CACHE_INDEX"
-id = "FILL_FROM_WRANGLER_KV_CREATE"  # wrangler kv namespace create CACHE_INDEX
+id = "51b9508f38c34b2289344c276c7f0400"  # wrangler kv namespace create CACHE_INDEX
 
 [[kv_namespaces]]
 binding = "CIRCUIT_KV"
-id = "FILL_FROM_WRANGLER_KV_CREATE"  # wrangler kv namespace create CIRCUIT_KV
+id = "51b9508f38c34b2289344c276c7f0400"  # wrangler kv namespace create CIRCUIT_KV
 
 [triggers]
 crons = ["*/10 * * * *", "0 3 1 * *"]
