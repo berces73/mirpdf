@@ -1,352 +1,178 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>KVKK Uyumlu PDF Aracı Nasıl Seçilir? | MirPDF</title>
-  <meta name="description" content="KVKK kapsamında PDF işleme: hangi araçlar güvenli, sunucu konumu neden önemli ve veri güvenliği kontrol listesi."/>
-  <link rel="canonical" href="https://mirpdf.com/seo/rehberler/kvkk-uyumlu-pdf.html"/>
-  <meta name="robots" content="index,follow"/>
-  <meta property="og:type" content="article"/>
-  <meta property="og:title" content="KVKK Uyumlu PDF Aracı Nasıl Seçilir?"/>
-  <meta property="og:description" content="KVKK kapsamında PDF işleme: hangi araçlar güvenli, sunucu konumu neden önemli ve veri güvenliği kontrol listesi."/>
-  <meta property="og:url" content="https://mirpdf.com/seo/rehberler/kvkk-uyumlu-pdf.html"/>
-  <meta property="og:locale" content="tr_TR"/>
-  
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>KVKK Uyumlu PDF Aracı Nasıl Seçilir? | MirPDF</title>
+<meta name="description" content="KVKK kapsamında PDF işleme: hangi araçlar güvenli, sunucu konumu neden önemli ve veri güvenliği kontrol listesi."/>
+<link rel="canonical" href="https://mirpdf.com/seo/rehberler/kvkk-uyumlu-pdf.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="KVKK Uyumlu PDF Aracı Nasıl Seçilir?"/>
+<meta property="og:description" content="KVKK kapsamında PDF işleme: hangi araçlar güvenli, sunucu konumu neden önemli ve veri güvenliği kontrol listesi."/>
+<meta property="og:url" content="https://mirpdf.com/seo/rehberler/kvkk-uyumlu-pdf.html"/>
+<meta property="og:locale" content="tr_TR"/>
+<meta property="og:image" content="https://mirpdf.com/assets/og/og-rehberler.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:image" content="https://mirpdf.com/assets/og/og-rehberler.jpg"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://mirpdf.com/"},{"@type":"ListItem","position":2,"name":"Rehberler","item":"https://mirpdf.com/seo/"},{"@type":"ListItem","position":3,"name":"KVKK Uyumlu PDF","item":""}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"KVKK Uyumlu PDF Aracı Nasıl Seçilir?","description":"KVKK PDF güvenlik","datePublished":"2026-02-25","dateModified":"2026-02-25","author":{"@type":"Organization","name":"MirPDF"},"publisher":{"@type":"Organization","name":"MirPDF","logo":{"@type":"ImageObject","url":"https://mirpdf.com/assets/icons/logo-512.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mirpdf.com/seo/rehberler/kvkk-uyumlu-pdf.html"}}</script>
+<link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 <style>
-/* ═══ RESET & BASE ═══════════════════════════════════════════════════════════ */
-*,*::before,*::after{box-sizing:border-box}
-:root{
-  --bg:#07101f;
-  --bg2:#0c1828;
-  --card:#0f1e35;
-  --card2:#132238;
-  --text:#ddeaf8;
-  --muted:#7a9bbf;
-  --accent:#3b82f6;
-  --accent2:#60a5fa;
-  --green:#22c55e;
-  --yellow:#f59e0b;
-  --red:#ef4444;
-  --border:#1a2d4a;
-  --border2:#1f3558;
-  --radius:16px;
-  --shadow:0 8px 32px rgba(0,0,0,.45);
+:root {
+  --bg: #ffffff; --bg-soft: #f7f8fc; --bg-mute: #eef0f7;
+  --border: #e3e6f0; --text: #0d0f1a; --muted: #64748b;
+  --light: #94a3b8; --radius: 18px;
 }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:'Sora',system-ui,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.72;
-  font-size:16px;
-}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 
-/* ═══ PROGRESS BAR ═══════════════════════════════════════════════════════════ */
-#progress-bar{
-  position:fixed;top:0;left:0;width:0%;height:3px;
-  background:linear-gradient(90deg,#3b82f6,#60a5fa,#34d399);
-  z-index:9999;transition:width .1s linear;
-  box-shadow:0 0 10px #3b82f680;
-}
+/* HEADER */
+.header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:66px;gap:1rem}
+.logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--text);font-weight:800;font-size:1.18rem}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:var(--text);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem}
+.main-nav{display:flex;align-items:center;gap:.1rem}
+.main-nav a{text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:500;padding:.45rem .9rem;border-radius:10px;transition:background .15s,color .15s}
+.main-nav a:hover{background:var(--bg-soft);color:var(--text)}
+.btn-premium{background:var(--text)!important;color:#fff!important;padding:.45rem 1.2rem!important;border-radius:10px;font-weight:700!important}
+.btn-premium:hover{opacity:.82!important}
+#mobileToggle{display:none;background:none;border:1px solid var(--border);color:var(--text);padding:.4rem .7rem;border-radius:9px;cursor:pointer;font-size:1rem}
 
-/* ═══ LAYOUT ═════════════════════════════════════════════════════════════════ */
-.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px}
+/* FOOTER */
+.footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 0 2rem}
+.footer-grid{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:3rem;margin-bottom:3rem}
+.footer-brand p{font-size:.86rem;color:var(--muted);margin-top:.7rem;line-height:1.65;max-width:250px}
+.footer-col h4{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin-bottom:.9rem}
+.footer-col a{display:block;font-size:.86rem;color:var(--muted);text-decoration:none;margin-bottom:.5rem;transition:color .14s}
+.footer-col a:hover{color:var(--text)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;font-size:.8rem;color:var(--muted)}
+.footer-bottom a{color:var(--muted);text-decoration:none}
+.footer-bottom a:hover{color:var(--text)}
+.footer-links-row{display:flex;gap:1.25rem}
 
-/* ═══ HEADER ════════════════════════════════════════════════════════════════ */
-.site-header{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:14px 20px;border-bottom:1px solid var(--border);
-  max-width:860px;margin:0 auto;
-}
-.brand{font-weight:700;font-size:18px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
-.brand span{
-  background:linear-gradient(135deg,#3b82f6,#60a5fa);
-  padding:3px 8px;border-radius:8px;font-size:13px;color:#fff;font-weight:600;
-}
-.site-nav{display:flex;gap:6px}
-.site-nav a{
-  color:var(--muted);text-decoration:none;font-size:13px;
-  padding:5px 10px;border-radius:8px;transition:all .2s;
-}
-.site-nav a:hover{background:var(--card);color:var(--text)}
+/* ARTICLE LAYOUT */
+.article-wrap{max-width:800px;margin:0 auto;padding:3rem 1.5rem 5rem}
+.article-breadcrumb{display:flex;align-items:center;gap:.4rem;font-size:.82rem;color:var(--muted);margin-bottom:2rem;flex-wrap:wrap}
+.article-breadcrumb a{color:var(--muted);text-decoration:none}
+.article-breadcrumb a:hover{color:var(--text)}
+.article-breadcrumb span{color:var(--light)}
+.article-category{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2563eb;background:#eff6ff;padding:.2rem .7rem;border-radius:100px;margin-bottom:1rem;text-decoration:none}
+.article-title{font-family:'Instrument Serif',serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:400;line-height:1.15;letter-spacing:-.02em;color:var(--text);margin-bottom:1rem}
+.article-lead{font-size:1.08rem;color:var(--muted);line-height:1.7;margin-bottom:1.75rem;max-width:64ch}
+.article-meta{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap;font-size:.83rem;color:var(--muted);padding:1rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:2.5rem}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--light)}
 
-/* ═══ BREADCRUMB ════════════════════════════════════════════════════════════ */
-.breadcrumb{
-  display:flex;align-items:center;gap:6px;flex-wrap:wrap;
-  font-size:13px;color:var(--muted);padding:16px 0 0;
-}
-.breadcrumb a{color:var(--muted);text-decoration:none}
-.breadcrumb a:hover{color:var(--accent2)}
-.breadcrumb .sep{opacity:.4}
+/* ARTICLE BODY */
+.article-body{font-size:17px;line-height:1.75;color:#374151}
+.article-body > * + *{margin-top:1.25rem}
+.article-body h2{font-family:'Instrument Serif',serif;font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:400;color:var(--text);margin-top:3rem;margin-bottom:.75rem;letter-spacing:-.01em;scroll-margin-top:80px}
+.article-body h3{font-size:1.1rem;font-weight:700;color:var(--text);margin-top:2rem;margin-bottom:.5rem;scroll-margin-top:80px}
+.article-body p{color:#374151;margin-bottom:.75rem}
+.article-body strong{color:var(--text);font-weight:700}
+.article-body a{color:#2563eb;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.article-body a:hover{color:#1d4ed8}
+.article-body img{border-radius:12px;border:1px solid var(--border);width:100%;margin:1.5rem 0}
 
-/* ═══ ARTICLE HERO ══════════════════════════════════════════════════════════ */
-.article-hero{
-  background:linear-gradient(135deg,var(--card) 0%,#0a1628 100%);
-  border:1px solid var(--border);border-radius:var(--radius);
-  padding:32px;margin:16px 0 24px;
-  position:relative;overflow:hidden;
-}
-.article-hero::before{
-  content:'';position:absolute;top:-60px;right:-60px;
-  width:220px;height:220px;
-  background:radial-gradient(circle,#3b82f618 0%,transparent 70%);
-  border-radius:50%;
-}
-.article-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-.badge{
-  display:inline-flex;align-items:center;gap:5px;
-  font-size:12px;font-weight:600;padding:4px 10px;
-  border-radius:999px;border:1px solid var(--border2);
-  background:var(--card2);color:var(--muted);letter-spacing:.02em;
-}
-.badge.blue{border-color:#3b82f640;background:#3b82f610;color:var(--accent2)}
-.badge.green{border-color:#22c55e40;background:#22c55e10;color:var(--green)}
-.badge.yellow{border-color:#f59e0b40;background:#f59e0b10;color:var(--yellow)}
-.article-hero h1{
-  font-size:clamp(22px,3vw,32px);font-weight:700;margin:0 0 12px;
-  line-height:1.25;letter-spacing:-.02em;
-}
-.article-intro{color:var(--muted);font-size:15px;margin:0;max-width:650px}
+/* Numbered list */
+.article-body ol{list-style:none;counter-reset:step;margin:1.5rem 0;padding:0}
+.article-body ol li{counter-increment:step;display:grid;grid-template-columns:32px 1fr;column-gap:14px;align-items:start;padding:.6rem 0;border-bottom:1px solid var(--border);color:#374151}
+.article-body ol li:last-child{border-bottom:none}
+.article-body ol li::before{content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;margin-top:2px;border-radius:50%;background:var(--bg-mute);color:var(--text);font-weight:800;font-size:.75rem;border:1.5px solid var(--border);flex-shrink:0}
 
-/* ═══ TOC ═══════════════════════════════════════════════════════════════════ */
-.toc{
-  background:var(--card2);border:1px solid var(--border);
-  border-radius:var(--radius);padding:20px 24px;margin:0 0 28px;
-}
-.toc-title{font-size:13px;font-weight:600;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.08em;margin:0 0 12px}
-.toc ol{margin:0;padding-left:18px}
-.toc li{margin:5px 0}
-.toc a{color:var(--accent2);text-decoration:none;font-size:14px;font-weight:500}
-.toc a:hover{color:var(--text)}
+/* Unordered list */
+.article-body ul{list-style:none;margin:1.25rem 0;padding:0}
+.article-body ul li{padding:.35rem 0 .35rem 1.4rem;position:relative;color:#374151;border-bottom:1px solid var(--border)}
+.article-body ul li:last-child{border-bottom:none}
+.article-body ul li::before{content:'';position:absolute;left:4px;top:.75em;width:6px;height:6px;border-radius:50%;background:var(--muted);opacity:.5}
 
-/* ═══ SECTIONS ══════════════════════════════════════════════════════════════ */
-.section{margin:32px 0}
-.section-label{
-  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
-  color:var(--accent);margin:0 0 6px;
-}
-h2.section-h{
-  font-size:22px;font-weight:700;margin:0 0 16px;letter-spacing:-.015em;
-  padding-bottom:10px;border-bottom:1px solid var(--border);
-}
-h3{font-size:17px;font-weight:600;margin:22px 0 10px;color:var(--text)}
-p{color:var(--muted);margin:0 0 14px;line-height:1.75}
+/* Callouts */
+.callout{display:flex;gap:.85rem;padding:1.1rem 1.25rem;border-radius:12px;margin:1.75rem 0;border:1.5px solid}
+.callout-icon{font-size:1.1rem;flex-shrink:0;line-height:1.6}
+.callout p{margin:0;font-size:.92rem;line-height:1.6}
+.callout strong{display:block;font-size:.85rem;font-weight:700;margin-bottom:.15rem}
+.callout-tip{background:#f0fdf4;border-color:#bbf7d0;color:#166534}
+.callout-tip p{color:#166534}
+.callout-note{background:#eff6ff;border-color:#bfdbfe;color:#1e40af}
+.callout-note p{color:#1e40af}
+.callout-warning{background:#fffbeb;border-color:#fde68a;color:#92400e}
+.callout-warning p{color:#92400e}
 
-/* ═══ STEP CARDS ════════════════════════════════════════════════════════════ */
-.steps{display:flex;flex-direction:column;gap:12px;margin:20px 0}
-.step-card{
-  display:flex;gap:16px;align-items:flex-start;
-  background:var(--card);border:1px solid var(--border);
-  border-radius:14px;padding:18px;
-  transition:border-color .2s,transform .2s;
-}
-.step-card:hover{border-color:var(--accent);transform:translateX(3px)}
-.step-num{
-  flex-shrink:0;width:36px;height:36px;border-radius:10px;
-  background:linear-gradient(135deg,#3b82f6,#60a5fa);
-  display:flex;align-items:center;justify-content:center;
-  font-weight:700;font-size:15px;color:#fff;
-}
-.step-body h4{margin:0 0 5px;font-size:15px;font-weight:600;color:var(--text)}
-.step-body p{margin:0;font-size:14px;color:var(--muted)}
+/* TOC */
+.toc{background:var(--bg-soft);border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin:2rem 0}
+.toc-title{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.85rem}
+.toc a{display:block;text-decoration:none;color:var(--muted);font-size:.88rem;padding:.3rem 0 .3rem .6rem;border-left:2px solid transparent;transition:all .13s;margin-bottom:.1rem}
+.toc a:hover{color:var(--text);border-left-color:var(--text)}
 
-/* ═══ TOOL CARDS ════════════════════════════════════════════════════════════ */
-.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin:20px 0}
-.tool-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:14px;padding:18px;
-  transition:border-color .2s;
-}
-.tool-card:hover{border-color:var(--border2)}
-.tool-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.tool-name{font-weight:700;font-size:15px;color:var(--text)}
-.tool-tag{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--border2);color:var(--muted)}
-.tool-tag.free{border-color:#22c55e40;background:#22c55e10;color:var(--green)}
-.tool-tag.paid{border-color:#f59e0b40;background:#f59e0b10;color:var(--yellow)}
-.stars{color:#f59e0b;font-size:14px;margin-bottom:6px}
-.tool-desc{font-size:13px;color:var(--muted);line-height:1.5}
+/* Article CTA */
+.article-cta{background:var(--text);border-radius:16px;padding:2.5rem;text-align:center;margin:3rem 0;position:relative;overflow:hidden}
+.article-cta::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+.article-cta h3{font-family:'Instrument Serif',serif;font-size:1.6rem;font-weight:400;color:#fff;margin-bottom:.5rem;position:relative}
+.article-cta p{color:rgba(255,255,255,.65);font-size:.95rem;margin-bottom:1.5rem;position:relative;max-width:400px;margin-left:auto;margin-right:auto}
+.article-cta-btn{display:inline-flex;align-items:center;gap:.4rem;background:#fff;color:var(--text);font-weight:700;font-size:.92rem;padding:.7rem 1.75rem;border-radius:10px;text-decoration:none;transition:all .15s;position:relative}
+.article-cta-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.25);text-decoration:none}
 
-/* ═══ COMPARISON TABLE ══════════════════════════════════════════════════════ */
-.compare-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
-.compare-table th{
-  background:var(--card2);color:var(--muted);font-size:12px;
-  font-weight:600;text-transform:uppercase;letter-spacing:.06em;
-  padding:10px 14px;border:1px solid var(--border);text-align:left;
-}
-.compare-table td{
-  padding:11px 14px;border:1px solid var(--border);
-  color:var(--text);vertical-align:middle;
-}
-.compare-table tr:nth-child(even) td{background:var(--card2)}
-.compare-table .ck{color:var(--green);font-size:16px}
-.compare-table .cross{color:var(--red);font-size:16px}
-.compare-table .highlight td{background:#3b82f610!important;border-color:#3b82f640!important}
+/* Related articles */
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.25rem}
+.related-card{display:block;border:1px solid var(--border);border-radius:12px;padding:1.1rem;text-decoration:none;color:inherit;background:var(--bg-soft);transition:all .15s}
+.related-card:hover{border-color:#cbd5e1;transform:translateY(-1px);text-decoration:none}
+.related-card-cat{font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#2563eb;margin-bottom:.35rem}
+.related-card-title{font-size:.88rem;font-weight:700;line-height:1.35;color:var(--text)}
 
-/* ═══ CALLOUT BOXES ════════════════════════════════════════════════════════ */
-.callout{
-  display:flex;gap:14px;align-items:flex-start;
-  border-radius:14px;padding:16px 18px;margin:20px 0;
-  border:1px solid;
-}
-.callout-icon{font-size:20px;flex-shrink:0;margin-top:1px}
-.callout-body h4{margin:0 0 5px;font-size:14px;font-weight:600}
-.callout-body p{margin:0;font-size:14px;line-height:1.6}
-.callout.tip{background:#3b82f608;border-color:#3b82f630;color:var(--accent2)}
-.callout.tip .callout-body h4{color:var(--accent2)}
-.callout.tip .callout-body p{color:#7ab8ff}
-.callout.warn{background:#f59e0b08;border-color:#f59e0b30;color:var(--yellow)}
-.callout.warn .callout-body h4{color:var(--yellow)}
-.callout.warn .callout-body p{color:#d4a756}
-.callout.success{background:#22c55e08;border-color:#22c55e30;color:var(--green)}
-.callout.success .callout-body h4{color:var(--green)}
-.callout.success .callout-body p{color:#5dba80}
-.callout.danger{background:#ef444408;border-color:#ef444430;color:var(--red)}
-.callout.danger .callout-body h4{color:var(--red)}
-.callout.danger .callout-body p{color:#d47a7a}
+/* Reading progress */
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#ef4444,#9333ea);z-index:999;width:0%;transition:width 80ms linear}
 
-/* ═══ FAQ ACCORDION ════════════════════════════════════════════════════════ */
-.faq-list{display:flex;flex-direction:column;gap:10px;margin:20px 0}
-.faq-item{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:14px;overflow:hidden;
-}
-.faq-q{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:16px 18px;cursor:pointer;font-weight:600;font-size:15px;
-  color:var(--text);user-select:none;gap:12px;
-  transition:background .2s;
-}
-.faq-q:hover{background:var(--card2)}
-.faq-q .arrow{
-  flex-shrink:0;width:22px;height:22px;border-radius:6px;
-  background:var(--card2);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  font-size:11px;transition:transform .25s;color:var(--muted);
-}
-.faq-item.open .faq-q .arrow{transform:rotate(180deg)}
-.faq-a{
-  max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;
-  padding:0 18px;color:var(--muted);font-size:14px;line-height:1.7;
-}
-.faq-item.open .faq-a{max-height:500px;padding:4px 18px 16px}
-.faq-a p{margin:0}
-.faq-a ul,ol{padding-left:18px;margin:8px 0 0}
-.faq-a li{margin:4px 0}
+/* Code */
+code{font-family:ui-monospace,SFMono-Regular,monospace;font-size:.875em;background:var(--bg-mute);padding:2px 6px;border-radius:6px;border:1px solid var(--border)}
+pre{background:var(--text);color:#e2e8f0;border-radius:12px;padding:1.5rem;overflow-x:auto;font-family:ui-monospace,monospace;font-size:.875rem;line-height:1.65;margin:1.5rem 0}
+pre code{background:none;border:none;padding:0;color:inherit}
 
-/* ═══ CTA BANNER ════════════════════════════════════════════════════════════ */
-.cta-banner{
-  background:linear-gradient(135deg,#1a2d4a 0%,#0f1e35 100%);
-  border:1px solid var(--border2);border-radius:var(--radius);
-  padding:24px 28px;margin:32px 0;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
-}
-.cta-banner-text h3{margin:0 0 5px;font-size:18px;font-weight:700;color:var(--text)}
-.cta-banner-text p{margin:0;font-size:14px;color:var(--muted)}
-.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
-.btn-primary{
-  display:inline-flex;align-items:center;gap:8px;
-  background:linear-gradient(135deg,#3b82f6,#2563eb);
-  color:#fff;text-decoration:none;font-weight:600;font-size:14px;
-  padding:10px 18px;border-radius:10px;border:none;cursor:pointer;
-  transition:filter .2s,transform .15s;
-}
-.btn-primary:hover{filter:brightness(1.12);transform:translateY(-1px)}
-.btn-secondary{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--card2);color:var(--text);text-decoration:none;font-weight:500;font-size:14px;
-  padding:10px 18px;border-radius:10px;border:1px solid var(--border2);
-  transition:border-color .2s;
-}
-.btn-secondary:hover{border-color:var(--accent)}
-
-/* ═══ RELATED CARDS ════════════════════════════════════════════════════════ */
-.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:20px 0}
-.related-card{
-  background:var(--card);border:1px solid var(--border);border-radius:14px;
-  padding:16px;text-decoration:none;transition:border-color .2s,transform .2s;
-  display:block;
-}
-.related-card:hover{border-color:var(--accent);transform:translateY(-2px)}
-.related-card .rc-tag{font-size:11px;color:var(--accent);font-weight:600;
-  text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
-.related-card .rc-title{font-size:14px;font-weight:600;color:var(--text);line-height:1.4}
-.related-card .rc-desc{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.5}
-
-/* ═══ CODE BLOCK ════════════════════════════════════════════════════════════ */
-.code-block{
-  background:#050e1a;border:1px solid var(--border);border-radius:12px;
-  padding:16px;margin:16px 0;overflow:auto;position:relative;
-}
-.code-block pre{margin:0;font-family:'JetBrains Mono',monospace;font-size:13px;color:#93c5fd;line-height:1.6}
-.copy-btn{
-  position:absolute;top:10px;right:10px;background:var(--card2);
-  border:1px solid var(--border);color:var(--muted);font-size:11px;
-  padding:4px 8px;border-radius:6px;cursor:pointer;font-family:'Sora',sans-serif;
-  transition:background .2s;
-}
-.copy-btn:hover{background:var(--card)}
-
-/* ═══ INFO BOX ══════════════════════════════════════════════════════════════ */
-.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:20px 0}
-.info-box{
-  background:var(--card);border:1px solid var(--border);border-radius:12px;
-  padding:16px;text-align:center;
-}
-.info-box .ib-val{font-size:26px;font-weight:700;color:var(--text);margin-bottom:4px}
-.info-box .ib-label{font-size:12px;color:var(--muted)}
-
-/* ═══ FOOTER ════════════════════════════════════════════════════════════════ */
-.site-footer{
-  text-align:center;padding:32px 20px;color:var(--muted);font-size:13px;
-  border-top:1px solid var(--border);margin-top:40px;
-}
-.site-footer a{color:var(--accent2);text-decoration:none}
-
-/* ═══ RESPONSIVE ════════════════════════════════════════════════════════════ */
+/* Responsive */
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){
-  .article-hero{padding:22px}
-  .article-hero h1{font-size:22px}
-  .cta-banner{flex-direction:column}
-  .site-nav{display:none}
-  .compare-table{font-size:12px}
-  .compare-table th,.compare-table td{padding:8px 10px}
+  #mobileToggle{display:block}
+  .main-nav{display:none;flex-direction:column;position:absolute;top:66px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem;z-index:99}
+  .main-nav.show{display:flex}
+  .main-nav a{width:100%;padding:.65rem 1rem}
+  .footer-grid{grid-template-columns:1fr}
+  .related-grid{grid-template-columns:1fr}
+  .article-wrap{padding:2rem 1.25rem 4rem}
 }
 </style>
-
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://mirpdf.com/"},{"@type":"ListItem","position":2,"name":"Rehberler","item":"https://mirpdf.com/seo/"},{"@type":"ListItem","position":3,"name":"KVKK Uyumlu PDF","item":""}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"KVKK Uyumlu PDF Aracı Nasıl Seçilir?","description":"KVKK PDF güvenlik","datePublished":"2026-02-25","dateModified":"2026-02-25","author":{"@type":"Organization","name":"MirPDF"},"publisher":{"@type":"Organization","name":"MirPDF","logo":{"@type":"ImageObject","url":"https://mirpdf.com/assets/icons/logo-512.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mirpdf.com/seo/rehberler/kvkk-uyumlu-pdf.html"}}</script>
-  <meta property="og:image" content="https://mirpdf.com/assets/og/og-rehberler.jpg"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-rehberler.jpg"/>
-  <!-- Google Analytics GA4 — GA4_ID'yi kendi ID'nizle değiştirin -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'GA4_MEASUREMENT_ID', {'anonymize_ip': true});
-  </script>
 </head>
 <body>
-<div id="progress-bar"></div>
-
-<header style="border-bottom:1px solid var(--border);padding:0 0 0">
-  <div class="site-header">
-    <a class="brand" href="https://mirpdf.com/">MirPDF <span>TR</span></a>
-    <nav class="site-nav">
-      <a href="https://mirpdf.com/">Ana Sayfa</a>
-      <a href="https://mirpdf.com/pricing.html">Fiyatlar</a>
-      <a href="https://mirpdf.com/faq.html">SSS</a>
-      <a href="https://mirpdf.com/contact.html">İletişim</a>
-    </nav>
+<div class="reading-progress" id="rp"></div>
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" data-link="home" class="logo" aria-label="MirPDF Ana Sayfa">
+        <div class="logo-mark" aria-hidden="true"><i class="fas fa-file-pdf"></i></div>
+        MirPDF
+      </a>
+      <button id="mobileToggle" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="mainNav">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Ana navigasyon">
+        <a href="#tools" data-link="tools_anchor">Araçlar</a>
+        <a href="/articles/" data-link="blog_index">Blog</a>
+        <a href="/pricing.html" data-link="pricing">Fiyatlar</a>
+        <a href="/faq.html" data-link="faq">SSS</a>
+        <a href="/contact.html" data-link="contact">İletişim</a>
+        <a href="/pricing.html" data-link="pricing" class="btn-premium">Premium</a>
+      </nav>
+    </div>
   </div>
 </header>
+<div class="article-wrap">
+
+<div class="article-body">
+<div id="progress-bar"></div>
+
+
 
 <div class="wrap">
   <div class="breadcrumb"><a href="https://mirpdf.com/">Ana Sayfa</a><span class="sep">›</span><a href="https://mirpdf.com/seo/">Rehberler</a><span class="sep">›</span><span>KVKK Uyumlu PDF</span></div>
@@ -422,10 +248,7 @@ p{color:var(--muted);margin:0 0 14px;line-height:1.75}
   </div>
 </div>
 
-<footer class="site-footer">
-  <p>© 2026 MirPDF — Türkiye'nin KVKK Uyumlu PDF Aracı</p>
-  <p><a href="https://mirpdf.com/privacy.html">Gizlilik</a> · <a href="https://mirpdf.com/terms.html">Kullanım</a> · <a href="https://mirpdf.com/contact.html">İletişim</a></p>
-</footer>
+
 
 
 <script>
@@ -476,6 +299,80 @@ document.addEventListener('DOMContentLoaded',()=>{
 </ul>
 
 </section>
-
+</div>
+<div class="article-cta">
+<h3>PDF Dosyanı Hemen Düzenle</h3>
+<p>Kayıt olmadan, ücretsiz PDF araçlarını kullan.</p>
+<a href="/" class="article-cta-btn"><i class="fas fa-arrow-right"></i> MirPDF Araçlarını Aç</a>
+</div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" data-link="home" class="logo" aria-label="MirPDF Ana Sayfa">
+          <div class="logo-mark" aria-hidden="true"><i class="fas fa-file-pdf"></i></div>
+          MirPDF
+        </a>
+        <p>Türkçe, ücretsiz ve güvenli PDF araçları. 14+ araç, kayıt gerekmez.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Araçlar</h4>
+        <a href="/pdf-birlestir" data-link="tool_pdf_merge">PDF Birleştir</a>
+        <a href="/pdf-sikistir" data-link="tool_pdf_compress">PDF Sıkıştır</a>
+        <a href="/pdf-bol" data-link="tool_pdf_split">PDF Böl</a>
+        <a href="/pdf-to-word" data-link="tool_pdf_to_word">PDF → Word</a>
+        <a href="/ocr" data-link="tool_ocr">OCR / Metin</a>
+        <a href="/pdf-kilitle" data-link="tool_pdf_lock">PDF Kilitle</a>
+      </div>
+      <div class="footer-col">
+        <h4>Şirket</h4>
+        <a href="/about.html" data-link="about">Hakkımızda</a>
+        <a href="/contact.html" data-link="contact">İletişim</a>
+        <a href="/pricing.html" data-link="pricing">Fiyatlar</a>
+        <a href="/faq.html" data-link="faq">SSS</a>
+        <a href="/articles/" data-link="blog_index">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Yasal</h4>
+        <a href="/legal/privacy.html" data-link="legal_privacy">Gizlilik Politikası</a>
+        <a href="/legal/terms.html" data-link="legal_terms">Kullanım Şartları</a>
+        <a href="/legal/kvkk.html" data-link="legal_kvkk">KVKK</a>
+        <a href="/legal/security.html" data-link="legal_security">Güvenlik</a>
+        <a href="/sitemap.xml" data-link="sitemap">Site Haritası</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MirPDF — Tüm hakları saklıdır.</span>
+      <div class="footer-links-row">
+        <a href="/legal/privacy.html" data-link="legal_privacy">Gizlilik</a>
+        <a href="/legal/terms.html" data-link="legal_terms">Şartlar</a>
+        <a href="/legal/kvkk.html" data-link="legal_kvkk">KVKK</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+const toggle = document.getElementById('mobileToggle');
+const nav = document.getElementById('mainNav');
+if(toggle && nav){
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('show');
+    toggle.setAttribute('aria-expanded', open);
+  });
+}
+// mark active nav link
+const path = location.pathname;
+document.querySelectorAll('.main-nav a').forEach(a => {
+  if(a.getAttribute('href') && path.startsWith(a.getAttribute('href')) && a.getAttribute('href') !== '/') {
+    a.style.color = 'var(--text)';
+    a.style.background = 'var(--bg-soft)';
+  }
+});
+</script>
+<script>
+const rp=document.getElementById('rp');
+if(rp) window.addEventListener('scroll',()=>{rp.style.width=Math.min(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100,100)+'%';},{passive:true});
+</script>
 </body>
 </html>

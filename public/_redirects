@@ -3,7 +3,7 @@
 # Cloudflare Pages
 # ============================================
 
-# ── Clean URLs → static tool HTML (200 rewrite, no redirect chain) ──
+# ── Clean URLs → static tool HTML ──
 /pdf-birlestir      /tools/pdf-birlestir.html    200
 /pdf-sikistir       /tools/pdf-sikistir.html     200
 /pdf-bol            /tools/pdf-bol.html           200
@@ -16,12 +16,10 @@
 /qr-kod-ekle        /tools/qr-kod-ekle.html       200
 /pdf-to-word        /tools/pdf-to-word.html       200
 /ocr                /tools/ocr.html               200
-
-# Previously missing — added
-/filigran-ekle      /seo/tools/filigran-ekle/index.html          200
+/filigran-ekle      /tools/filigran-ekle.html     200
 /pdf-numaralandir   /seo/tools/pdf-sayfa-numaralandirma/index.html 200
 
-# ── Canonicalize /tools/*.html → clean URL (301) ──
+# ── Canonicalize /tools/*.html → clean URL ──
 /tools/pdf-birlestir.html   /pdf-birlestir   301
 /tools/pdf-sikistir.html    /pdf-sikistir    301
 /tools/pdf-bol.html         /pdf-bol         301
@@ -35,7 +33,7 @@
 /tools/pdf-to-word.html     /pdf-to-word     301
 /tools/ocr.html             /ocr             301
 
-# ── Legacy English → TR canonical (301) ──
+# ── Legacy English → TR ──
 /merge-pdf      /pdf-birlestir   301
 /compress-pdf   /pdf-sikistir    301
 /compress       /pdf-sikistir    301
@@ -57,5 +55,12 @@
 /seo/pdf-birlestir   /seo/tools/pdf-birlestir/index.html  200
 /seo/pdf-kilit-ac    /seo/tools/pdf-kilit-ac/index.html   200
 
-# ── SEO çözüm sayfaları ──
+# ── Articles - clean URLs ──
+/articles/:slug.html    /articles/:slug.html    200
+/articles/*             /articles/:splat        200
+
+# ── SEO wildcard ──
+/seo/*    /seo/:splat    200
+
+# ── Cozum pages ──
 /cozum/*    /seo/cozum/:splat    200
