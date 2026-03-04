@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Admin - Cache Purge</title>
+
+  <!-- Verification (replace tokens) -->
+  <meta name="google-site-verification" content="GOOGLE_VERIFICATION_TOKEN"/>
+  <meta name="yandex-verification" content="YANDEX_VERIFICATION_TOKEN"/>
+  <meta name="msvalidate.01" content="BING_VERIFICATION_TOKEN"/>
+  <meta name="seznam-wmt" content="SEZNAM_VERIFICATION_TOKEN"/>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:900px;margin:0 auto;padding:24px}
+input,textarea,button{width:100%;padding:10px;border-radius:10px;border:1px solid #444;background:#111;color:#eee}
+label{display:block;margin:14px 0 6px}
+button{cursor:pointer}
+pre{white-space:pre-wrap;background:#0b0b0b;border:1px solid #333;padding:12px;border-radius:12px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+small{opacity:.8}
+</style>
+</head>
+<body>
+<h1>Cache Purge</h1>
+<p><small>Authorization: Bearer <b>ADMIN_SECRET_TOKEN</b> gerektirir.</small></p>
+
+<label>Admin Token</label>
+<input id="token" placeholder="ADMIN_SECRET_TOKEN"/>
+
+<div class="row">
+  <div>
+    <label>URL (tam)</label>
+    <input id="url" placeholder="https://mirpdf.com/api/billing/plans"/>
+  </div>
+  <div>
+    <label>Prefix (örn: /api/tools)</label>
+    <input id="prefix" placeholder="/api/tools"/>
+  </div>
+</div>
+
+<label>Çalıştır</label>
+<button id="run">Purge</button>
+
+<h2>Sonuç</h2>
+<pre id="out">-</pre>
+
+<script>
+async function run() {
+  const token = document.getElementById('token').value.trim();
+  const url = document.getElementById('url').value.trim();
+  const prefix = document.getElementById('prefix').value.trim();
+  const body = {};
+  if (url) body.url = url;
+  if (prefix) body.prefix = prefix;
+
+  const res = await fetch('/api/admin/cache/purge', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', 'authorization': 'Bearer ' + token },
+    body: JSON.stringify(body),
+  });
+  const data = await res.json().catch(() => ({ ok:false, error:'BAD_JSON' }));
+  document.getElementById('out').textContent = JSON.stringify(data, null, 2);
+}
+document.getElementById('run').addEventListener('click', run);
+</script>
+</body>
+</html>

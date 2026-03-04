@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>E-Devlet'ten İndirilen PDF Çok Büyük — Sıkıştırma Çözümü | MirPDF</title>
+  <meta name="description" content="E-devlet'ten indirilen PDF belgesi çok büyük mü? Müracaat formu, tapu, SGK belgelerini nasıl sıkıştırırsınız? Adım adım çözüm."/>
+  <link rel="canonical" href="https://mirpdf.com/seo/tools/pdf-sikistir/problemler/edevlet-pdf-boyutu-buyuk.html"/>
+  <meta name="robots" content="index,follow"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="E-Devlet'ten İndirilen PDF Çok Büyük — Sıkıştırma Çözümü"/>
+  <meta property="og:description" content="E-devlet belgelerini e-posta veya başvuru portalına yükleyemiyorsanız MirPDF ile sıkıştırın."/>
+  <meta property="og:url" content="https://mirpdf.com/seo/tools/pdf-sikistir/problemler/edevlet-pdf-boyutu-buyuk.html"/>
+  <meta property="og:locale" content="tr_TR"/>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://mirpdf.com/"},{"@type":"ListItem","position":2,"name":"PDF Sıkıştır","item":"https://mirpdf.com/seo/tools/pdf-sikistir/"},{"@type":"ListItem","position":3,"name":"E-Devlet PDF Boyutu Büyük","item":"https://mirpdf.com/seo/tools/pdf-sikistir/problemler/edevlet-pdf-boyutu-buyuk.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"E-Devlet'ten İndirilen PDF Çok Büyük — Sıkıştırma Çözümü","description":"E-devlet PDF belgelerini sıkıştırarak e-posta ve portallara yükleme","datePublished":"2026-02-25","dateModified":"2026-02-25","author":{"@type":"Organization","name":"MirPDF"},"publisher":{"@type":"Organization","name":"MirPDF","logo":{"@type":"ImageObject","url":"https://mirpdf.com/assets/icons/logo-512.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mirpdf.com/seo/tools/pdf-sikistir/problemler/edevlet-pdf-boyutu-buyuk.html"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"E-Devlet PDF Nasıl Sıkıştırılır?","description":"E-devlet'ten indirilen büyük PDF belgelerini küçültme adımları","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"E-Devlet PDF'ini İndir","text":"E-devlet.gov.tr üzerinden belgenizi PDF formatında indirin."},{"@type":"HowToStep","position":2,"name":"MirPDF'u Aç","text":"mirpdf.com/tools/pdf-sikistir adresine gidin."},{"@type":"HowToStep","position":3,"name":"Belgeyi Yükle","text":"İndirdiğiniz e-devlet PDF'ini sürükleyip bırakın veya 'Dosya Seç' ile yükleyin."},{"@type":"HowToStep","position":4,"name":"Orta Sıkıştırma Seç","text":"E-devlet belgelerinde 'Orta' sıkıştırma seviyesini seçin. QR kod ve dijital imza okunabilirliğini korur."},{"@type":"HowToStep","position":5,"name":"İndir ve Yükle","text":"Küçülen PDF'yi indirin ve başvuru portalı veya e-postanıza yükleyin."}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"E-devlet belgeleri neden bu kadar büyük?","acceptedAnswer":{"@type":"Answer","text":"E-devlet PDF'leri genellikle yüksek çözünürlüklü QR kod, dijital imza katmanı ve güvenlik damgası içerir. Bu unsurlar dosya boyutunu 2-10 MB arasında tutar."}},{"@type":"Question","name":"E-devlet PDF sıkıştırılırsa geçerliliği bozulur mu?","acceptedAnswer":{"@type":"Answer","text":"Hayır. MirPDF 'orta' sıkıştırma ile QR kodu ve dijital imzayı koruyan optimize dosya üretir. Belgenin yasal geçerliliği etkilenmez."}},{"@type":"Question","name":"Üniversite başvuru portalları hangi boyut sınırı uyguluyor?","acceptedAnswer":{"@type":"Answer","text":"Türkiye'deki üniversitelerin başvuru portallarının çoğu 2-5 MB limit uygular. E-devlet belgelerini bu sınır altına indirmek için 'orta' veya 'yüksek' sıkıştırma yeterlidir."}}]}</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#07101f;--bg2:#0c1828;--card:#0f1e35;--card2:#132238;--text:#ddeaf8;--muted:#7a9bbf;--accent:#3b82f6;--accent2:#60a5fa;--green:#22c55e;--yellow:#f59e0b;--red:#ef4444;--border:#1a2d4a;--border2:#1f3558;--radius:16px}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.72;font-size:16px}
+#progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:linear-gradient(90deg,#3b82f6,#60a5fa,#34d399);z-index:9999;transition:width .1s linear;box-shadow:0 0 10px #3b82f680}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border);max-width:860px;margin:0 auto}
+.brand{font-weight:700;font-size:18px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.brand span{background:linear-gradient(135deg,#3b82f6,#60a5fa);padding:3px 8px;border-radius:8px;font-size:13px;color:#fff;font-weight:600}
+.site-nav{display:flex;gap:6px}
+.site-nav a{color:var(--muted);text-decoration:none;font-size:13px;padding:5px 10px;border-radius:8px;transition:all .2s}
+.site-nav a:hover{background:var(--card);color:var(--text)}
+.breadcrumb{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:13px;color:var(--muted);padding:16px 0 0}
+.breadcrumb a{color:var(--muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--accent2)}
+.breadcrumb .sep{opacity:.4}
+.article-hero{background:linear-gradient(135deg,var(--card) 0%,#0a1628 100%);border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin:16px 0 24px;position:relative;overflow:hidden}
+.article-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;background:radial-gradient(circle,#3b82f618 0%,transparent 70%);border-radius:50%}
+.article-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;border:1px solid var(--border2);background:var(--card2);color:var(--muted)}
+.badge.blue{border-color:#3b82f640;background:#3b82f610;color:var(--accent2)}
+.badge.green{border-color:#22c55e40;background:#22c55e10;color:var(--green)}
+.badge.yellow{border-color:#f59e0b40;background:#f59e0b10;color:var(--yellow)}
+.article-hero h1{font-size:clamp(22px,3vw,32px);font-weight:700;margin:0 0 12px;line-height:1.25;letter-spacing:-.02em}
+.article-intro{color:var(--muted);font-size:15px;margin:0;max-width:650px}
+.toc{background:var(--card2);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin:0 0 28px}
+.toc-title{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:0 0 12px}
+.toc ol{margin:0;padding-left:18px}
+.toc li{margin:5px 0}
+.toc a{color:var(--accent2);text-decoration:none;font-size:14px;font-weight:500}
+.section{margin:32px 0}
+.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin:0 0 6px}
+h2.section-h{font-size:22px;font-weight:700;margin:0 0 16px;letter-spacing:-.015em;padding-bottom:10px;border-bottom:1px solid var(--border)}
+p{color:var(--muted);margin:0 0 14px;line-height:1.75}
+.callout{display:flex;gap:14px;align-items:flex-start;border-radius:14px;padding:16px 18px;margin:16px 0;border:1px solid}
+.callout-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.callout-body h4{margin:0 0 5px;font-size:14px;font-weight:600}
+.callout-body p{margin:0;font-size:14px;line-height:1.6}
+.callout.warn{background:#f59e0b08;border-color:#f59e0b30;color:var(--yellow)}
+.callout.warn .callout-body h4{color:var(--yellow)}
+.callout.warn .callout-body p{color:#d4a756}
+.callout.success{background:#22c55e08;border-color:#22c55e30;color:var(--green)}
+.callout.success .callout-body h4{color:var(--green)}
+.callout.success .callout-body p{color:#5dba80}
+.callout.tip{background:#3b82f608;border-color:#3b82f630;color:var(--accent2)}
+.callout.tip .callout-body h4{color:var(--accent2)}
+.callout.tip .callout-body p{color:#7ab8ff}
+.callout.danger{background:#ef444408;border-color:#ef444430;color:var(--red)}
+.callout.danger .callout-body h4{color:var(--red)}
+.callout.danger .callout-body p{color:#d47a7a}
+.steps{display:flex;flex-direction:column;gap:12px;margin:20px 0}
+.step-card{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;transition:border-color .2s,transform .2s}
+.step-card:hover{border-color:var(--accent);transform:translateX(3px)}
+.step-num{flex-shrink:0;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#3b82f6,#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#fff}
+.step-body h4{margin:0 0 5px;font-size:15px;font-weight:600;color:var(--text)}
+.step-body p{margin:0;font-size:14px;color:var(--muted)}
+.limit-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
+.limit-table th{background:var(--card2);color:var(--muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;padding:10px 14px;border:1px solid var(--border);text-align:left}
+.limit-table td{padding:11px 14px;border:1px solid var(--border);color:var(--text)}
+.limit-table tr:nth-child(even) td{background:var(--card2)}
+.faq-list{display:flex;flex-direction:column;gap:10px;margin:20px 0}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;cursor:pointer;font-weight:600;font-size:15px;color:var(--text);user-select:none;gap:12px;transition:background .2s}
+.faq-q:hover{background:var(--card2)}
+.faq-q .arrow{flex-shrink:0;width:22px;height:22px;border-radius:6px;background:var(--card2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;transition:transform .25s;color:var(--muted)}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;padding:0 18px;color:var(--muted);font-size:14px;line-height:1.7}
+.faq-item.open .faq-a{max-height:500px;padding:4px 18px 16px}
+.faq-a p{margin:0}
+.cta-banner{background:linear-gradient(135deg,#1a2d4a 0%,#0f1e35 100%);border:1px solid var(--border2);border-radius:var(--radius);padding:24px 28px;margin:32px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.cta-banner-text h3{margin:0 0 5px;font-size:18px;font-weight:700;color:var(--text)}
+.cta-banner-text p{margin:0;font-size:14px;color:var(--muted)}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#3b82f6,#2563eb);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:10px 18px;border-radius:10px;border:none;cursor:pointer;transition:filter .2s,transform .15s}
+.btn-primary:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:20px 0}
+.related-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;text-decoration:none;transition:border-color .2s,transform .2s;display:block}
+.related-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.related-card .rc-tag{font-size:11px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.related-card .rc-title{font-size:14px;font-weight:600;color:var(--text);line-height:1.4}
+.related-card .rc-desc{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.5}
+.site-footer{text-align:center;padding:32px 20px;color:var(--muted);font-size:13px;border-top:1px solid var(--border);margin-top:40px}
+.site-footer a{color:var(--accent2);text-decoration:none}
+@media(max-width:600px){.article-hero{padding:22px}.article-hero h1{font-size:22px}.cta-banner{flex-direction:column}.site-nav{display:none}}
+</style>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <!-- Google Analytics GA4 — GA4_ID'yi kendi ID'nizle değiştirin -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA4_MEASUREMENT_ID', {'anonymize_ip': true});
+  </script>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<header style="border-bottom:1px solid var(--border)">
+  <div class="site-header">
+    <a class="brand" href="https://mirpdf.com/">MirPDF <span>TR</span></a>
+    <nav class="site-nav">
+      <a href="https://mirpdf.com/">Ana Sayfa</a>
+      <a href="https://mirpdf.com/pricing.html">Fiyatlar</a>
+      <a href="https://mirpdf.com/faq.html">SSS</a>
+      <a href="https://mirpdf.com/contact.html">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="breadcrumb">
+    <a href="https://mirpdf.com/">Ana Sayfa</a><span class="sep">›</span>
+    <a href="https://mirpdf.com/seo/tools/pdf-sikistir/">PDF Sıkıştır</a><span class="sep">›</span>
+    <span>E-Devlet PDF Boyutu Büyük</span>
+  </div>
+
+  <div class="article-hero">
+    <div class="article-meta">
+      <span class="badge yellow">🔧 Problem Çözümü</span>
+      <span class="badge green">✓ Güncellendi 2026-02-25</span>
+      <span class="badge blue">🏛️ E-Devlet</span>
+    </div>
+    <h1>E-Devlet'ten İndirilen PDF<br>Çok Büyük — Nasıl Küçültülür?</h1>
+    <p class="article-intro">Tapu senedi, SGK belgesi, müracaat formu veya diploma denklik belgesi yüklerken "dosya çok büyük" hatası alıyorsunuz? E-devlet PDF'lerini KVKK uyumlu bir araçla sıkıştırın.</p>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">📋 İçindekiler</div>
+    <ol>
+      <li><a href="#neden">E-Devlet PDF'leri Neden Büyük?</a></li>
+      <li><a href="#limitler">Portal Boyut Limitleri</a></li>
+      <li><a href="#adimlar">Adım Adım Sıkıştırma</a></li>
+      <li><a href="#imza">Dijital İmza Korunur mu?</a></li>
+      <li><a href="#sss">SSS</a></li>
+    </ol>
+  </div>
+
+  <div class="section" id="neden">
+    <div class="section-label">Sebep</div>
+    <h2 class="section-h">E-Devlet PDF'leri Neden Büyük?</h2>
+    <p>E-devlet belgelerinin boyutu genellikle 2–10 MB arasındadır. Bu büyüklüğün temel nedenleri şunlardır:</p>
+    <div class="callout tip">
+      <div class="callout-icon">🔍</div>
+      <div class="callout-body"><h4>QR kod ve dijital imza katmanı</h4><p>Belgelerin doğrulanabilirliğini sağlayan QR kod ve elektronik imza, dosya boyutuna katkıda bulunur.</p></div>
+    </div>
+    <div class="callout tip">
+      <div class="callout-icon">🖨️</div>
+      <div class="callout-body"><h4>Yüksek DPI tarama</h4><p>Taranan resmi belgeler genellikle 300–600 DPI ile oluşturulur. Bu kalite seviyesi dosya boyutunu önemli ölçüde artırır.</p></div>
+    </div>
+    <div class="callout tip">
+      <div class="callout-icon">🗛</div>
+      <div class="callout-body"><h4>Gömülü fontlar ve meta veri</h4><p>Resmi belgeler özel fontlar ve kurumsal meta veri içerir. Bunlar dosya boyutunu artırır ama sıkıştırma sonrası korunur.</p></div>
+    </div>
+  </div>
+
+  <div class="section" id="limitler">
+    <div class="section-label">Boyut Limitleri</div>
+    <h2 class="section-h">Türkiye'deki Portallarda Boyut Limitleri</h2>
+    <table class="limit-table">
+      <thead>
+        <tr><th>Portal / Sistem</th><th>Tipik Limit</th><th>Önerilen Hedef</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Üniversite başvuru portalları</td><td>2–5 MB</td><td>2 MB altı</td></tr>
+        <tr><td>ÖSYM / YKS başvuruları</td><td>2 MB</td><td>1.5 MB altı</td></tr>
+        <tr><td>E-posta ekleri (kurumsal)</td><td>10–25 MB</td><td>5 MB altı</td></tr>
+        <tr><td>Devlet kurumu başvuru portalları</td><td>5–10 MB</td><td>3 MB altı</td></tr>
+        <tr><td>İş ilanı başvuru sistemleri</td><td>2–5 MB</td><td>2 MB altı</td></tr>
+      </tbody>
+    </table>
+    <div class="callout warn">
+      <div class="callout-icon">⚠️</div>
+      <div class="callout-body"><h4>Dikkat</h4><p>Boyut limitleri portala göre farklılık gösterebilir. Başvuru öncesi sistemin belirttiği limiti mutlaka kontrol edin.</p></div>
+    </div>
+  </div>
+
+  <div class="section" id="adimlar">
+    <div class="section-label">Çözüm</div>
+    <h2 class="section-h">E-Devlet PDF'ini Adım Adım Sıkıştır</h2>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-body"><h4>E-devlet.gov.tr'den Belgeyi İndir</h4><p>İlgili belgenizi (tapu, SGK, müracaat formu vb.) PDF formatında bilgisayarınıza veya telefonunuza kaydedin.</p></div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-body"><h4>MirPDF Sıkıştırma Aracını Aç</h4><p><strong>mirpdf.com/tools/pdf-sikistir</strong> adresine gidin. Kurulum gerektirmez, tarayıcınızda çalışır.</p></div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-body"><h4>Belgeyi Yükle</h4><p>E-devlet PDF'ini sürükleyip bırakın veya "Dosya Seç" butonuna tıklayın.</p></div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div class="step-body"><h4>"Orta" Sıkıştırma Seviyesini Seç</h4><p>E-devlet belgelerinde <strong>Orta</strong> sıkıştırma önerilir. QR kodu ve dijital imzayı okutabilir kalitede korurken boyutu %40–60 küçültür.</p></div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">5</div>
+        <div class="step-body"><h4>İndir ve Kontrol Et</h4><p>Sıkıştırılmış belgeyi indirin. Boyutu kontrol edin. Hâlâ büyükse "Yüksek" sıkıştırmayı deneyin.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="imza">
+    <div class="section-label">Önemli</div>
+    <h2 class="section-h">Dijital İmza ve QR Kod Korunur mu?</h2>
+    <div class="callout success">
+      <div class="callout-icon">✅</div>
+      <div class="callout-body"><h4>Evet, korunur</h4><p>MirPDF'un sıkıştırma motoru görüntü kalitesini optimize eder ancak dijital imza, QR kod ve metin katmanlarını değiştirmez. Belgenin e-devlet üzerinden doğrulanabilirliği bozulmaz.</p></div>
+    </div>
+    <div class="callout danger">
+      <div class="callout-icon">⚠️</div>
+      <div class="callout-body"><h4>Yüksek sıkıştırmada dikkat</h4><p>"Yüksek" sıkıştırma seviyesi bazı resmi belgelerde QR kod kalitesini düşürebilir. Önce "Orta" ile deneyin; yeterliyse yüksek sıkıştırmaya geçmeyin.</p></div>
+    </div>
+  </div>
+
+  <div class="cta-banner">
+    <div class="cta-banner-text">
+      <h3>E-Devlet Belgenizi Hemen Sıkıştırın</h3>
+      <p>KVKK uyumlu, ücretsiz. Dosyalar işlem sonrası otomatik silinir.</p>
+    </div>
+    <div class="cta-btns">
+      <a href="https://mirpdf.com/tools/pdf-sikistir.html" class="btn-primary">📦 PDF Sıkıştır</a>
+    </div>
+  </div>
+
+  <div class="section" id="sss">
+    <div class="section-label">SSS</div>
+    <h2 class="section-h">Sık Sorulan Sorular</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">E-devlet belgeleri neden bu kadar büyük?<span class="arrow">▾</span></div>
+        <div class="faq-a"><p>E-devlet PDF'leri yüksek çözünürlüklü QR kod, dijital imza katmanı ve güvenlik damgası içerir. Bu unsurlar dosya boyutunu 2-10 MB arasında tutar.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">E-devlet PDF sıkıştırılırsa geçerliliği bozulur mu?<span class="arrow">▾</span></div>
+        <div class="faq-a"><p>Hayır. MirPDF "orta" sıkıştırma ile QR kodu ve dijital imzayı koruyarak optimize dosya üretir. Belgenin yasal geçerliliği etkilenmez.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Üniversite başvuru portalları hangi boyut sınırı uyguluyor?<span class="arrow">▾</span></div>
+        <div class="faq-a"><p>Türkiye'deki üniversitelerin başvuru portallarının çoğu 2-5 MB limit uygular. E-devlet belgelerini bu sınır altına indirmek için "orta" veya "yüksek" sıkıştırma yeterlidir.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">E-devlet PDF'ini telefondan da sıkıştırabilir miyim?<span class="arrow">▾</span></div>
+        <div class="faq-a"><p>Evet. MirPDF mobil tarayıcılarda da çalışır. Telefon tarayıcınızdan mirpdf.com/tools/pdf-sikistir adresine girin ve işlemi yapın.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">ÖSYM başvurularında e-devlet belgesi yüklenemiyor, ne yapmalıyım?<span class="arrow">▾</span></div>
+        <div class="faq-a"><p>ÖSYM sistemi genellikle 2 MB limit uygular. Belgeyi "orta" sıkıştırmayla önce 2 MB altına indirin. Hâlâ yüklenemiyorsa "yüksek" sıkıştırmayı deneyin; belge okunabilirliği yeterli kalacaktır.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">İlgili Rehberler</div>
+    <h2 class="section-h">Benzer Problemler</h2>
+    <div class="related-grid">
+      <a href="/seo/tools/pdf-sikistir/problemler/outlook-pdf-boyutu-buyuk.html" class="related-card">
+        <div class="rc-tag">Problem</div>
+        <div class="rc-title">Outlook PDF Boyutu Büyük</div>
+        <div class="rc-desc">E-posta eki limiti aşan PDF'ler</div>
+      </a>
+      <a href="/seo/tools/pdf-birlestir/problemler/whatsapp-pdf-acilamiyor.html" class="related-card">
+        <div class="rc-tag">Problem</div>
+        <div class="rc-title">WhatsApp PDF Açılmıyor</div>
+        <div class="rc-desc">Telefonda PDF sorunları ve çözümleri</div>
+      </a>
+      <a href="/seo/tools/pdf-sikistir/rehber.html" class="related-card">
+        <div class="rc-tag">Rehber</div>
+        <div class="rc-title">PDF Sıkıştırma Rehberi</div>
+        <div class="rc-desc">Kalite kaybetmeden boyutu küçültme</div>
+      </a>
+      <a href="/seo/rehberler/kvkk-uyumlu-pdf.html" class="related-card">
+        <div class="rc-tag">Rehber</div>
+        <div class="rc-title">KVKK Uyumlu PDF Aracı</div>
+        <div class="rc-desc">Resmi belgeler için güvenli işlem</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 MirPDF — Türkiye'nin KVKK Uyumlu PDF Aracı</p>
+  <p><a href="https://mirpdf.com/legal/privacy.html">Gizlilik</a> · <a href="https://mirpdf.com/legal/terms.html">Kullanım</a> · <a href="https://mirpdf.com/contact.html">İletişim</a></p>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{const d=document.documentElement;document.getElementById('progress-bar').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight))*100+'%';});
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const item=q.closest('.faq-item');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!isOpen) item.classList.add('open');});});});
+</script>
+
+<section style="margin-top:40px;padding:20px;background:#0f1a30;border-radius:16px">
+<h2>İlgili İçerikler (SEO Cluster)</h2>
+
+<ul>
+<li><a href="/seo/tools/pdf-birlestir/rehber.html">PDF Birleştirme Rehberi</a></li>
+<li><a href="/seo/tools/pdf-sikistir/rehber.html">PDF Sıkıştırma Rehberi</a></li>
+<li><a href="/seo/tools/pdf-to-word/rehber.html">PDF → Word Rehberi</a></li>
+<li><a href="/seo/tools/ocr/rehber.html">OCR Metin Tanıma Rehberi</a></li>
+<li><a href="/seo/tools/jpg-to-pdf/rehber.html">JPG → PDF Rehberi</a></li>
+<li><a href="/seo/rehberler/pdf-kucultme-rehberi.html">PDF Boyutu Küçültme</a></li>
+<li><a href="/seo/rehberler/wordu-pdf-yapma.html">Word Dosyasını PDF Yapma</a></li>
+<li><a href="/seo/rehberler/kvkk-uyumlu-pdf.html">KVKK Uyumlu PDF Araçları</a></li>
+</ul>
+
+</section>
+
+</body>
+</html>

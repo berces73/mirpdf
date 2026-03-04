@@ -1,0 +1,61 @@
+# ============================================
+# MirPDF - REDIRECTS
+# Cloudflare Pages
+# ============================================
+
+# ── Clean URLs → static tool HTML (200 rewrite, no redirect chain) ──
+/pdf-birlestir      /tools/pdf-birlestir.html    200
+/pdf-sikistir       /tools/pdf-sikistir.html     200
+/pdf-bol            /tools/pdf-bol.html           200
+/pdf-to-jpg         /tools/pdf-to-jpg.html        200
+/jpg-to-pdf         /tools/jpg-to-pdf.html        200
+/pdf-dondur         /tools/pdf-dondur.html        200
+/sayfa-sil          /tools/sayfa-sil.html         200
+/sayfa-sirala       /tools/sayfa-sirala.html      200
+/pdf-kilitle        /tools/pdf-kilitle.html       200
+/qr-kod-ekle        /tools/qr-kod-ekle.html       200
+/pdf-to-word        /tools/pdf-to-word.html       200
+/ocr                /tools/ocr.html               200
+
+# Previously missing — added
+/filigran-ekle      /seo/tools/filigran-ekle/index.html          200
+/pdf-numaralandir   /seo/tools/pdf-sayfa-numaralandirma/index.html 200
+
+# ── Canonicalize /tools/*.html → clean URL (301) ──
+/tools/pdf-birlestir.html   /pdf-birlestir   301
+/tools/pdf-sikistir.html    /pdf-sikistir    301
+/tools/pdf-bol.html         /pdf-bol         301
+/tools/pdf-to-jpg.html      /pdf-to-jpg      301
+/tools/jpg-to-pdf.html      /jpg-to-pdf      301
+/tools/pdf-dondur.html      /pdf-dondur      301
+/tools/sayfa-sil.html       /sayfa-sil       301
+/tools/sayfa-sirala.html    /sayfa-sirala    301
+/tools/pdf-kilitle.html     /pdf-kilitle     301
+/tools/qr-kod-ekle.html     /qr-kod-ekle     301
+/tools/pdf-to-word.html     /pdf-to-word     301
+/tools/ocr.html             /ocr             301
+
+# ── Legacy English → TR canonical (301) ──
+/merge-pdf      /pdf-birlestir   301
+/compress-pdf   /pdf-sikistir    301
+/compress       /pdf-sikistir    301
+/split-pdf      /pdf-bol         301
+/rotate-pdf     /pdf-dondur      301
+/delete-page    /sayfa-sil       301
+/sort-pages     /sayfa-sirala    301
+/lock-pdf       /pdf-kilitle     301
+/add-qr-code    /qr-kod-ekle     301
+/pdf-to-image   /pdf-to-jpg      301
+/image-to-pdf   /jpg-to-pdf      301
+/jpg-den-pdf    /jpg-to-pdf      301
+
+# ── Misc ──
+/pricing        /pricing.html    301
+
+# ── SEO tool sayfaları ──
+/seo/pdf-sikistir    /seo/tools/pdf-sikistir/index.html   200
+/seo/pdf-birlestir   /seo/tools/pdf-birlestir/index.html  200
+/seo/pdf-kilit-ac    /seo/tools/pdf-kilit-ac/index.html   200
+
+# ── SEO çözüm sayfaları ──
+/cozum/*    /seo/cozum/:splat    200

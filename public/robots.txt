@@ -1,0 +1,14 @@
+# MirPDF robots.txt
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /billing/
+
+Sitemap: https://mirpdf.com/sitemap.xml
+Sitemap: https://mirpdf.com/sitemap-seo.xml
+Sitemap: https://mirpdf.com/sitemap-tools.xml
+Sitemap: https://mirpdf.com/sitemap-articles.xml

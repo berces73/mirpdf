@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#0f0f14" />
+<link rel="stylesheet" href="/styles.css" />
+<title>PDF'e Şifre Nasıl Konur — Adım Adım Rehber | MirPDF</title>
+<meta name="description" content="PDF belgenizi şifreyle korumanın adım adım anlatımı. Kullanıcı ve sahip şifresi, izin ayarları, ipuçları." />
+<meta name="keywords" content="pdf şifre koyma nasıl yapılır, pdf kilitleme rehber, pdf koruma adımlar" />
+<link rel="canonical" href="https://mirpdf.com/seo/tools/pdf-kilitle/rehber.html" />
+<meta property="og:title" content="PDF'e Şifre Nasıl Konur — Adım Adım Rehber | MirPDF" />
+<meta property="og:description" content="PDF belgenizi şifreyle korumanın adım adım anlatımı. Kullanıcı ve sahip şifresi, izin ayarları, ipuçları." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mirpdf.com/seo/tools/pdf-kilitle/rehber.html" />
+<meta property="og:image" content="https://mirpdf.com/assets/og-pdf-kilitle.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="PDF'e Şifre Nasıl Konur — Adım Adım Rehber | MirPDF" />
+<meta name="twitter:description" content="PDF belgenizi şifreyle korumanın adım adım anlatımı. Kullanıcı ve sahip şifresi, izin ayarları, ipuçları." />
+<meta name="twitter:image" content="https://mirpdf.com/assets/og-pdf-kilitle.png" />
+<link rel="alternate" hreflang="tr" href="https://mirpdf.com/seo/tools/pdf-kilitle/rehber.html" />
+<link rel="alternate" hreflang="x-default" href="https://mirpdf.com/seo/tools/pdf-kilitle/rehber.html" />
+
+  <!-- Google Analytics GA4 — GA4_ID'yi kendi ID'nizle değiştirin -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA4_MEASUREMENT_ID', {'anonymize_ip': true});
+  </script>
+</head>
+<body>
+<div class="bg"></div>
+<main class="wrap">
+<header class="top">
+  <div class="brand">
+    <a href="/" class="logo-link">
+      <div class="logo">PDF</div>
+      <div>
+        <div class="siteTitle">MirPDF</div>
+        <p>Ücretsiz Online PDF Araçları</p>
+      </div>
+    </a>
+  </div>
+  <nav class="main-nav" aria-label="Ana Menü">
+    <a href="/pdf-birlestir">Birleştir</a>
+    <a href="/pdf-bol">Böl</a>
+    <a href="/pdf-sikistir">Sıkıştır</a>
+    <a href="/seo/">Rehberler</a>
+  </nav>
+</header>
+
+
+<article class="card">
+  <nav aria-label="Breadcrumb" style="font-size:13px;margin-bottom:16px">
+    <a href="/">Ana Sayfa</a> › <a href="/seo/">Rehberler</a> › <a href="/seo/tools/pdf-kilitle/">PDF Kilitle</a> › Rehber
+  </nav>
+  <h1>PDF'e Şifre Koyma — Kapsamlı Rehber</h1>
+  <p class="lead">Hassas PDF belgelerinizi yetkisiz erişim, kopyalama ve düzenlemeye karşı korumak için bu rehberi kullanın.</p>
+
+  <h2>PDF Şifrelemenin Çalışma Mantığı</h2>
+  <p>PDF şifreleme standardı (ISO 32000), iki farklı şifre katmanı tanımlar. <strong>Kullanıcı şifresi</strong> (user password veya open password), PDF'in açılması için gereklidir. <strong>Sahip şifresi</strong> (owner password veya permissions password) ise belgeye uygulanan kısıtlamaları (yazdırma, kopyalama, düzenleme gibi) kaldırmak için kullanılır.</p>
+  <p>Bu iki şifreyi birbirinden bağımsız olarak kullanabilirsiniz. En yaygın senaryo: açma şifresini belgeyle birlikte paylaştığınız kişilere verirken, izin şifresini kendinizde saklarsınız.</p>
+
+  <h2>Adım Adım PDF Kilitleme</h2>
+
+  <h3>1. PDF Yükleyin</h3>
+  <p><a href="/pdf-kilitle">PDF Kilitle</a> sayfasına gidin ve korumak istediğiniz PDF'i yükleyin.</p>
+
+  <h3>2. Kullanıcı Şifresi Belirleyin (Açma Şifresi)</h3>
+  <p>Bu şifre PDF'i açmak için gereklidir. <strong>Güçlü bir şifre için:</strong></p>
+  <ul style="padding-left:1.4em;line-height:2">
+    <li>En az 12 karakter kullanın</li>
+    <li>Büyük-küçük harf, rakam ve özel karakter karıştırın</li>
+    <li>Kişisel bilgilerden (doğum tarihi, isim) kaçının</li>
+    <li>Şifreyi güvenli bir yerde (şifre yöneticisi) saklayın</li>
+  </ul>
+  <p>Bu alanı boş bırakırsanız PDF şifresiz açılır; yalnızca izin kısıtlamaları aktif olur.</p>
+
+  <h3>3. Sahip Şifresi Belirleyin (İzin Şifresi)</h3>
+  <p>Bu şifre, belgeye uyguladığınız kısıtlamaları kaldırmak için gereklidir. Kullanıcı şifresinden farklı, daha karmaşık olmasını öneririz.</p>
+
+  <h3>4. İzinleri Yapılandırın</h3>
+  <p>Üç temel izin kontrolü mevcuttur:</p>
+  <ul style="padding-left:1.4em;line-height:2">
+    <li><strong>Yazdırmaya izin ver:</strong> Kapalıysa kullanıcı PDF'i yazdıramaz. Sözleşme nüshalarını kağıda dökülemez hale getirmek için kapatın.</li>
+    <li><strong>Kopyalamaya izin ver:</strong> Kapalıysa Ctrl+C ile metin kopyalanamaz. Fikri mülkiyet koruması için kullanışlıdır.</li>
+    <li><strong>Düzenlemeye izin ver:</strong> Kapalıysa imzalama veya form doldurma dışında düzenleme engellenir.</li>
+  </ul>
+
+  <h3>5. Kilitle ve İndir</h3>
+  <p>"🔒 Kilitle ve İndir" butonuna tıklayın. Şifreli PDF <em>orijinal_ad_kilitli.pdf</em> adıyla indirilir.</p>
+
+  <h2>Güvenlik Önerileri</h2>
+  <ul style="padding-left:1.4em;line-height:2">
+    <li>Şifreleri asla e-posta ile göndermemeye çalışın; telefon veya farklı kanal kullanın.</li>
+    <li>Şifre listesini şifreli bir şifre yöneticisine (Bitwarden, 1Password) kaydedin.</li>
+    <li>Çok hassas belgeler için bulut depolama yerine yerel depolama tercih edin.</li>
+    <li>Şifreli PDF'i yedeklemeden önce şifreyi test edin; kaybettiğinizde geri alamazsınız.</li>
+  </ul>
+
+  <h2>Sınırlamalar</h2>
+  <p>PDF şifreleme güçlü bir caydırıcıdır, ancak mutlak koruma değildir. Teknik olarak:</p>
+  <ul style="padding-left:1.4em;line-height:2">
+    <li>Ekran görüntüsü ile içerik kopyalanabilir.</li>
+    <li>Özel PDF kırma araçları zayıf şifreleri atlayabilir.</li>
+    <li>Yazdırma kısıtlaması, "Yazdır → PDF olarak kaydet" ile bazen aşılabilir.</li>
+  </ul>
+  <p>Bu nedenle şifrelemeyi bir güvenlik katmanı olarak kullanın; tam gizlilik için ek önlemler alın.</p>
+
+  <div class="cta-box" style="margin-top:24px;text-align:center">
+    <a href="/pdf-kilitle" class="primary">🔒 PDF Kilitle Aracını Kullan →</a>
+  </div>
+</article>
+
+<footer class="site-footer muted">
+  <div class="footer-links">
+    <a href="/pdf-birlestir">PDF Birleştir</a>
+    <a href="/pdf-sikistir">PDF Sıkıştır</a>
+    <a href="/pdf-bol">PDF Böl</a>
+    <a href="/pdf-to-word">PDF → Word</a>
+    <a href="/ocr">OCR</a>
+    <a href="/pdf-imzala">PDF İmzala</a>
+    <a href="/pdf-kilitle">PDF Kilitle</a>
+    <a href="/seo/">Tüm Rehberler</a>
+  </div>
+  <p>© 2026 MirPDF — Tüm hakları saklıdır.</p>
+</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiyatlandırma - MirPDF | English</title>
+  
+    
+  <!-- Verification (replace tokens) -->
+<link rel="alternate" hreflang="tr" href="/index.html">
+    <link rel="alternate" hreflang="en" href="/en/index.html">
+    <link rel="alternate" hreflang="x-default" href="/index.html">
+<meta name="description" content="MirPDF fiyatlandırma planları. Ücretsiz günlük kullanım veya Pro plan ile sınırsız PDF işlemi.">
+  <meta name="robots" content="index, follow">
+  <li><i class="fas fa-check"></i> Toplu dosya işlemi</li>
+      <li><i class="fas fa-check"></i> Öncelikli sunucu</li>
+      <li><i class="fas fa-check"></i> E-posta desteği</li>
+      <li><i class="fas fa-check"></i> İstediğin zaman iptal</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- MANAGE SUBSCRIPTION -->
+<div class="manage-section" id="manageSection" style="display:none">
+  <p style="color:var(--text2);margin-bottom:12px">Aktif Pro aboneliğiniz var.</p>
+  <button class="manage-btn" onclick="openPortal()">
+    <i class="fas fa-cog"></i> Aboneliği Yönet / İptal Et
+  </button>
+</div>
+
+<!-- FAQ -->
+<div class="faq">
+  <h2>Sık Sorulan Sorular</h2>
+
+  <div class="faq-item">
+    <button class="faq-q">Kredi nedir, nasıl çalışır?
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="faq-a">Her PDF işlemi belirli sayıda kredi tüketir. Basit işlemler (birleştir, sıkıştır) 1 kredi, karmaşık işlemler (dönüştür, kilitle) 2-3 kredi kullanır. Krediler her gece sıfırlanır.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">Dosyalarım sunucuya yükleniyor mu?
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="faq-a">PDF işlemleri tarayıcınızda gerçekleşir, dosyalarınız sunucumuza yüklenmez. Gizliliğiniz bizim için önceliklidir.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">Pro aboneliği nasıl iptal ederim?
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="faq-a">"Aboneliği Yönet" butonuna tıklayıp Stripe portalı üzerinden istediğiniz zaman iptal edebilirsiniz. İptal sonrası dönem sonuna kadar Pro özelliklerini kullanmaya devam edersiniz.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">Ödeme güvenli mi?
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="faq-a">Ödemeler Stripe altyapısıyla işlenir. Kart bilgileriniz bizim sunucularımıza hiç ulaşmaz, doğrudan Stripe'ın güvenli sistemine gider.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">İade politikası nedir?
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="faq-a">İlk ödemenizden itibaren 7 gün içinde iade talep edebilirsiniz. contact.html sayfasından bizimle iletişime geçin.</div>
+  </div>
+</div>
+
+<script type="module">
+import { refreshCreditInfo } from "/assets/js/consume-credit.js";
+
+// ── Stripe Price IDs ────────────────────────────────────────
+// Stripe Dashboard'dan aldığınız Price ID'leri buraya girin
+const PRICE_MONTHLY = "price_XXXX_monthly";   // ← buraya gerçek price_id
+const PRICE_ANNUAL  = "price_XXXX_annual";    // ← buraya gerçek price_id
+
+
+// Pages Functions kullanıyoruz billing için (aynı domain):
+// Same-origin: no base needed  // boş = same origin (Pages Functions)
+
+// ── Billing toggle ──────────────────────────────────────────
+let isAnnual = false;
+const toggle = document.getElementById("billingToggle");
+
+toggle.addEventListener("click", () => {
+  isAnnual = !isAnnual;
+  toggle.classList.toggle("annual", isAnnual);
+  document.body.classList.toggle("annual-billing", isAnnual);
+  document.getElementById("lblMonthly").style.color = isAnnual ? "var(--text2)" : "var(--text)";
+  document.getElementById("lblAnnual").style.color = isAnnual ? "var(--text)" : "var(--text2)";
+});
+toggle.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle.click(); }
+});
+
+// ── URL params (success / cancel) ──────────────────────────
+const params = new URLSearchParams(location.search);
+const bannerArea = document.getElementById("bannerArea");
+
+if (params.get("success")) {
+  bannerArea.innerHTML = `
+    <div class="banner-inner banner-success">
+      <i class="fas fa-check-circle"></i>
+      <span>🎉 Pro aboneliğiniz aktif! Sayfayı yenilediğinizde kredileriniz güncellenecek.</span>
+    </div>`;
+  // Session verify et
+  const sessionId = params.get("session_id");
+  if (sessionId) {
+    fetch('/api/billing/status')
+      .then(r => r.json())
+      .then(d => { if (d.verified) document.getElementById("manageSection").style.display = "block"; })
+      .catch(() => {});
+  }
+}
+
+if (params.get("cancelled")) {
+  bannerArea.innerHTML = `
+    <div class="banner-inner banner-cancel">
+      <i class="fas fa-times-circle"></i>
+      <span>Ödeme iptal edildi. İstediğiniz zaman tekrar deneyebilirsiniz.</span>
+    </div>`;
+}
+
+// ── Checkout ────────────────────────────────────────────────
+window.startCheckout = async function() {
+  const btn = document.getElementById("checkoutBtn");
+  btn.disabled = true;
+  btn.textContent = "Yükleniyor...";
+
+  const priceId = isAnnual ? PRICE_ANNUAL : PRICE_MONTHLY;
+
+  try {
+    const resp = await fetch('/api/billing/checkout', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({
+        priceId,
+        successUrl: `${location.origin}/pricing.html?success=1`,
+        cancelUrl:  `${location.origin}/pricing.html?cancelled=1`,
+      }),
+    });
+
+    const data = await resp.json();
+
+    if (data.ok && data.url) {
+      location.href = data.url;
+    } else {
+      alert("Ödeme başlatılamadı. Lütfen tekrar deneyin.");
+      btn.disabled = false;
+      btn.textContent = "Pro'ya Geç";
+    }
+  } catch (e) {
+    console.error(e);
+    alert("Bağlantı hatası. Lütfen tekrar deneyin.");
+    btn.disabled = false;
+    btn.textContent = "Pro'ya Geç";
+  }
+};
+
+// ── Customer Portal ─────────────────────────────────────────
+window.openPortal = async function() {
+  try {
+    const resp = await fetch('/api/billing/portal', {
+      method: "POST",
+      credentials: "include",
+    });
+    const data = await resp.json();
+    if (data.ok && data.url) location.href = data.url;
+    else alert("Portal açılamadı. Lütfen tekrar deneyin.");
+  } catch {
+    alert("Bağlantı hatası.");
+  }
+};
+
+// ── FAQ accordion ───────────────────────────────────────────
+document.querySelectorAll(".faq-q").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const item = btn.closest(".faq-item");
+    const wasOpen = item.classList.contains("open");
+    document.querySelectorAll(".faq-item.open").forEach(i => i.classList.remove("open"));
+    if (!wasOpen) item.classList.add("open");
+  });
+});
+
+// ── Credit display ──────────────────────────────────────────
+refreshCreditInfo();
+</script>
+
+</body>
+</html>

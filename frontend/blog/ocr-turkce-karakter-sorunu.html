@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OCR Türkçe Karakter Tanımıyor: Sorunun Nedenleri ve Kesin Çözüm Yolları | MirPDF</title>
+  <meta name="description" content="OCR Türkçe Karakter Tanımıyor: Sorunun Nedenleri ve Kesin Çözüm Yolları" />
+  <meta name="keywords" content="ocr türkçe karakter, türkçe ocr sorunu, ocr hata" />
+  <link rel="canonical" href="https://mirpdf.com/blog/ocr-turkce-karakter-sorunu.html" />
+  <link rel="alternate" hreflang="tr" href="https://mirpdf.com/blog/ocr-turkce-karakter-sorunu.html" />
+  <link rel="alternate" hreflang="x-default" href="https://mirpdf.com/blog/ocr-turkce-karakter-sorunu.html" />
+  <meta property="og:title" content="OCR Türkçe Karakter Tanımıyor: Sorunun Nedenleri ve Kesin Çözüm Yolları | MirPDF" />
+  <meta property="og:description" content="OCR Türkçe Karakter Tanımıyor: Sorunun Nedenleri ve Kesin Çözüm Yolları" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mirpdf.com/blog/ocr-turkce-karakter-sorunu.html" />
+  <meta property="og:image" content="https://mirpdf.com/assets/og-ocr.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og-ocr.png" />
+  <meta name="theme-color" content="#0f0f14" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://mirpdf.com"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mirpdf.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "OCR Türkçe Karakter Tanımıyor: Sorunun Nedenleri ve Kesin Çözüm Yolları", "item": "https://mirpdf.com/blog/ocr-turkce-karakter-sorunu.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "OCR Türkçe Karakter Tanımıyor: Sorunun Nedenleri ve Kesin Çözüm Yolları", "description": "OCR Türkçe Karakter Tanımıyor: Sorunun Nedenleri ve Kesin Çözüm Yolları", "url": "https://mirpdf.com/blog/ocr-turkce-karakter-sorunu.html", "inLanguage": "tr", "publisher": {"@type": "Organization", "name": "MirPDF", "url": "https://mirpdf.com"}, "datePublished": "2026-02-26", "dateModified": "2026-02-26"}</script>
+</head>
+<body>
+  <div class="bg"></div>
+  <main class="wrap">
+    <header class="top">
+      <div class="brand">
+        <a href="/" class="logo-link">
+          <div class="logo">PDF</div>
+          <div>
+            <div class="siteTitle">MirPDF</div>
+            <p>PDF → Word • OCR • Sıkıştırma</p>
+          </div>
+        </a>
+      </div>
+      <nav class="main-nav" aria-label="Ana Menü">
+        <a href="../tools/pdf-birlestir.html">Birleştir</a>
+        <a href="../tools/pdf-sikistir.html">Sıkıştır</a>
+        <a href="../tools/ocr.html">OCR</a>
+        <a href="../seo/">Rehberler</a>
+      </nav>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Ana Sayfa</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li aria-current="page">OCR Türkçe Karakter Tanımıyor: Sorunun Nedenleri ve Kesin Çözüm Yolları</li>
+      </ol>
+    </nav>
+
+    <article class="card blog-article">
+      <header class="article-header">
+        <h1>OCR Türkçe Karakter Tanımıyor: Sorunun Nedenleri ve Kesin Çözüm Yolları</h1>
+        <p class="article-meta muted">MirPDF Rehberi</p>
+      </header>
+      <div class="article-body">
+<p>Taranmış bir belgeyi düzenlenebilir metne dönüştürmek için OCR (Optik Karakter Tanıma) kullandınız, ancak sonuçlar hayal kırıklığı yarattı. Özellikle Türkçe karakterler (İ, ı, Ç, ç, Ğ, ğ, Ö, ö, Ş, ş, Ü, ü) ya hiç tanınmadı ya da "I", "c", "g", "o", "s", "u" gibi yanlış harflere dönüştü. Bu, özellikle Türkçe belgelerle çalışırken sık karşılaşılan ve oldukça can sıkıcı bir sorundur. Bu rehberde, bu sorunun nedenlerini ve kesin çözüm yollarını adım adım açıklıyoruz.</p>
+<h2>Sorunun Nedenleri</h2>
+<ul>
+  <li>OCR Yazılımının Dil Desteği: Kullandığınız OCR yazılımı, Türkçe dilini ve karakter setini tam olarak desteklemiyor olabilir. Birçok uluslararası yazılım, İngilizce, Almanca, Fransızca gibi diller için optimize edilmiştir ve Türkçe'deki noktalı/noktasız harf ayrımını (I/İ, O/Ö, U/Ü, C/Ç, G/Ğ, S/Ş) yapmakta zorlanır.</li>
+  <li>Yazı Tipi (Font) Sorunu: Belgede kullanılan yazı tipi, OCR yazılımının tanımakta zorlandığı bir font olabilir. Özellikle el yazısı fontlar, süslü fontlar veya düşük kaliteli baskılar sorun yaratır.</li>
+  <li>Görüntü Kalitesi: Taranan belgenin veya fotoğrafın kalitesi düşükse (çok açık, çok koyu, bulanık, eğik), OCR yazılımı karakterleri doğru tanımakta güçlük çeker. Özellikle noktalı harflerdeki noktalar (İ, Ö, Ü) kaybolabilir.</li>
+  <li>Dil Seçimi Unutuldu: En basit hata! OCR işlemini başlatırken dil olarak "Türkçe"yi seçmeyi unutmuş olabilirsiniz. Yazılım varsayılan olarak İngilizce'ye ayarlıysa, Türkçe karakterleri doğru yorumlaması imkansızdır.</li>
+</ul>
+<h2>Adım Adım Çözüm Yolları</h2>
+<ol>
+  <li>En Kolay Çözüm: Google Drive ve Google Dokümanlar</li>
+</ol>
+<p>Google Drive'ın OCR motoru, birden fazla dili aynı anda işleyebilme yeteneğine sahiptir ve Türkçe karakter tanıma konusunda genellikle başarılıdır.</p>
+<ul>
+  <li>Nasıl Yapılır:</li>
+</ul>
+<ol>
+  <li>Taranmış PDF'inizi Google Drive'a yükleyin.</li>
+  <li>Dosyaya sağ tıklayın, "Uygulamayla aç" > "Google Dokümanlar" seçeneğini seçin.</li>
+  <li>Google Drive, belgeyi analiz edip metni tanıyarak (OCR) yeni bir Google Dokümanı oluşturacaktır. Dil otomatik olarak algılanır veya belge ayarlarından "Türkçe" olarak değiştirebilirsiniz.</li>
+  <li>Oluşan dokümandaki metinleri kontrol edin. Eğer hatalar varsa, manuel olarak düzeltip Word veya PDF olarak indirebilirsiniz.</li>
+</ol>
+<ol>
+  <li>Profesyonel Çözüm: Türkçe'ye Özel OCR Yazılımları</li>
+</ol>
+<p>Eğer profesyonel olarak çok sayıda Türkçe belge ile çalışıyorsanız, Türkçe için özel olarak geliştirilmiş veya eğitilmiş bir OCR yazılımı kullanmak en doğru seçenektir.</p>
+<ul>
+  <li>ManselVision: Bu, Türkçe belgeler için geliştirilmiş bir OCR yazılımıdır. Tarihi belgeler, eski gazeteler, daktilo yazıları ve düşük kaliteli faks çıktılarında bile yüksek doğruluk oranı sunar. Özellikle Türkçe karakterleri tanıma konusunda uzmanlaşmıştır.</li>
+  <li>ABBYY FineReader PDF: ABBYY, dünyanın en iyi OCR motorlarından birine sahiptir. Türkçe dil desteği oldukça gelişmiştir ve karakter tanıma doğruluğu yüksektir. Ücretli bir yazılımdır ancak deneme sürümü mevcuttur.</li>
+</ul>
+<ol>
+  <li>Kaliteli Çözüm: Adobe Acrobat</li>
+</ol>
+<p>Adobe Acrobat'ın OCR motoru da oldukça başarılıdır. Özellikle Acrobat Pro sürümünde, OCR ayarlarını detaylıca yapılandırabilirsiniz.</p>
+<ul>
+  <li>Nasıl Yapılır:</li>
+</ul>
+<ol>
+  <li>Taranmış PDF'inizi Adobe Acrobat'ta açın.</li>
+  <li>"Araçlar" > "PDF'yi Düzenle" seçeneğini tıklayın. Acrobat, belgenin taranmış olduğunu algılayıp OCR işlemini başlatacaktır.</li>
+  <li>"Metin Tanıma" veya "OCR Metin Tanıma" ayarlarına girin. Dil olarak mutlaka "Türkçe"yi seçin.</li>
+  <li>"Çıktı" olarak "Aranabilir Görüntü" veya "Düzenlenebilir Metin ve Görüntü" seçeneklerinden birini işaretleyin.</li>
+  <li>İşlemi başlatın.</li>
+</ol>
+<ol>
+  <li>İpuçları ve Püf Noktaları</li>
+</ol>
+<ul>
+  <li>Tarama Kalitesini Artırın: OCR başarısının temeli, iyi bir kaynak görüntüdür. Belgenizi en az 300 DPI çözünürlükte, düzgün ışıkta ve mümkünse siyah-beyaz modda tarayın.</li>
+  <li>Dili Manuel Seçin: Kullandığınız herhangi bir OCR aracında, otomatik algılamaya güvenmeyin. Dil seçeneğini manuel olarak "Türkçe" yapın.</li>
+  <li>Küçük Parçalar Halinde Deneyin: Çok uzun bir belgede sorun yaşıyorsanız, belgenin sadece sorunlu bir sayfasını veya bir paragrafını kırpıp, farklı araçlarla test edin. Bu, hangi aracın sizin belgeniz için daha iyi olduğunu anlamanızı sağlar.</li>
+</ul>
+      </div>
+      <div class="cta-box">
+        <h3>Bu rehberi uygulamaya koyun</h3>
+        <a href="/" class="primary">Tüm PDF Araçlarını Ücretsiz Kullan →</a>
+      </div>
+    </article>
+
+    <footer class="muted footer">
+      <div class="footer-links">
+        <a href="../tools/pdf-birlestir.html">PDF Birleştir</a>
+        <a href="../tools/pdf-sikistir.html">PDF Sıkıştır</a>
+        <a href="../tools/pdf-to-word.html">PDF → Word</a>
+        <a href="../tools/ocr.html">OCR</a>
+        <a href="../tools/pdf-imzala.html">PDF İmzala</a>
+        <a href="/blog/">Tüm Yazılar</a>
+      </div>
+      <p>© 2026 MirPDF</p>
+    </footer>
+  </main>
+  <script src="../../internal-linking.js" type="module"></script>
+</body>
+</html>

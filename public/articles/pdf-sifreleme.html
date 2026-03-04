@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PDF Güvenliği ve Şifreleme: AES-256 Standartları (2026)</title>
+<!-- Verification (replace tokens) -->
+<meta content="PDF dosyalarınızı AES-256 şifreleme ile nasıl koruyacağınızı öğrenin. Dijital imzalar ve erişim kısıtlamaları hakkında teknik rehber." name="description"/>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+          "@type": "Question",
+          "name": "AES-256 şifreleme kırılabilir mi?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Mevcut teknoloji ile AES-256 şifrelemenin kırılması pratikte imkansızdır (milyarlarca yıl sürer)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Sahip (Owner) şifresi nedir?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Dosyanın yazdırılmasını veya kopyalanmasını engelleyen, düzenleme haklarını kısıtlayan şifredir." }
+        }]
+    }
+    </script>
+<style>
+        /* GELİŞMİŞ TASARIM STİLLERİ */
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; margin: 0; padding: 0; color: #333; }
+        .container { max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; padding: 20px; }
+        
+        /* Ana İçerik Alanı */
+        .main-content { flex: 3; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        
+        /* Yan Menü (Sidebar) */
+        .sidebar { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+        .sidebar-box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .sidebar-box h4 { margin-top: 0; color: #007bff; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .sidebar-link { display: block; padding: 10px 0; text-decoration: none; color: #555; border-bottom: 1px solid #f0f0f0; transition: 0.3s; }
+        .sidebar-link:hover { color: #007bff; padding-left: 5px; }
+
+        /* Makale İçi Elementler */
+        h1 { color: #2c3e50; font-size: 2rem; margin-top: 0; }
+        .breadcrumbs { font-size: 0.9em; color: #666; margin-bottom: 20px; }
+        .toc { background: #f8f9fa; padding: 20px; border-left: 4px solid #28a745; margin-bottom: 30px; }
+        .toc h4 { margin-top: 0; }
+        
+        /* Yazar Kutusu */
+        .author-box { display: flex; align-items: center; gap: 15px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; }
+        .author-img { width: 50px; height: 50px; background: #ddd; border-radius: 50%; }
+        
+        /* CTA Butonu */
+        .cta-btn { display: inline-block; background: #d9534f; color: white; padding: 12px 25px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 10px; }
+        .cta-btn:hover { background: #c9302c; }
+        
+        @media (max-width: 768px) { .container { flex-direction: column; } }
+    </style>
+<link href="https://mirpdf.com/articles/pdf-sifreleme.html" rel="canonical"/><meta content="PDF Güvenliği ve Şifreleme: AES-256 Standartları (2026)" property="og:title"/><meta content="PDF dosyalarınızı AES-256 şifreleme ile nasıl koruyacağınızı öğrenin. Dijital imzalar ve erişim kısıtlamaları hakkında teknik rehber." property="og:description"/><meta content="https://mirpdf.com/assets/icons/og-image.jpg" property="og:image"/><meta content="article" property="og:type"/><meta content="https://mirpdf.com/articles/pdf-sifreleme.html" property="og:url"/><meta content="summary_large_image" name="twitter:card"/><meta content="PDF Güvenliği ve Şifreleme: AES-256 Standartları (2026)" name="twitter:title"/><meta content="PDF dosyalarınızı AES-256 şifreleme ile nasıl koruyacağınızı öğrenin. Dijital imzalar ve erişim kısıtlamaları hakkında teknik rehber." name="twitter:description"/><meta content="https://mirpdf.com/assets/icons/og-image.jpg" name="twitter:image"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://mirpdf.com/articles/pdf-sifreleme.html"},"headline":"PDF Güvenliği ve Şifreleme: AES-256 Standartları","description":"PDF dosyalarınızı AES-256 şifreleme ile nasıl koruyacağınızı öğrenin. Dijital imzalar ve erişim kısıtlamaları hakkında teknik rehber.","author":{"@type":"Organization","name":"MirPDF"},"publisher":{"@type":"Organization","name":"MirPDF","logo":{"@type":"ImageObject","url":"https://mirpdf.com/assets/logo.png"}},"image":"https://mirpdf.com/assets/icons/og-image.jpg","datePublished":"2026-02-26","dateModified":"2026-02-26"}</script>
+</head>
+<body>
+<div style="background:#fff; padding:15px; border-bottom:1px solid #ddd; text-align:center; font-weight:bold;">
+<a href="/" style="text-decoration:none; color:#333; margin:0 10px;">Ana Sayfa</a>
+<a href="/araclar" style="text-decoration:none; color:#333; margin:0 10px;">Araçlar</a>
+<a href="/blog" style="text-decoration:none; color:#007bff; margin:0 10px;">Blog</a>
+</div>
+<div class="container">
+<main class="main-content">
+<div class="breadcrumbs">Anasayfa &gt; Blog &gt; PDF Güvenliği</div>
+<h1>PDF Güvenliği ve Şifreleme: AES-256 Standartları</h1>
+<div class="toc">
+<h4>İçindekiler:</h4>
+<ul>
+<li><a href="#sifreleme">AES-256 Şifreleme Nedir?</a></li>
+<li><a href="#izinler">İzin Kısıtlamaları (Permissions)</a></li>
+<li><a href="#dijital-imza">Dijital İmzalar ve PKI</a></li>
+</ul>
+</div>
+<p>PDF güvenliği, verinin gizliliği ve bütünlüğünü korumak için tasarlanmış bir dizi protokolden oluşur. 2026 yılı itibarıyla en güvenilir standart <strong>AES-256 (Advanced Encryption Standard)</strong> olarak kabul edilir.</p>
+
+            
+
+[Image of AES encryption process diagram]
+
+
+            <h3 id="sifreleme">AES-128 vs AES-256</h3>
+<p>128-bit şifreleme geçmişte standart olsa da, günümüzde işlemci güçlerinin artmasıyla yetersiz kalabilir. 256-bit şifreleme, dosyayı açmak için gereken anahtarı matematiksel olarak milyarlarca kombinasyonla korur.</p>
+<div style="background:#fff5f5; border:1px solid #feb2b2; padding:20px; border-radius:5px; margin:20px 0;">
+<h3 style="margin-top:0; color:#c53030;">Belgenizi Şifrelemek İster misiniz?</h3>
+<p>Tarayıcınızda güvenli bir şekilde dosyanıza şifre koyun.</p>
+<a class="cta-btn" href="/pdf-sifrele">🔒 PDF Şifrele</a>
+</div>
+<h3 id="izinler">İzin Kısıtlamaları (Permissions)</h3>
+<p>Güvenlik sadece açılış şifresiyle sınırlı değildir. "Owner Password" (Sahip Şifresi) kullanarak; belgenin yazdırılmasını, metin kopyalanmasını veya sayfaların yerinin değiştirilmesini engelleyebilirsiniz.</p>
+<h3 id="dijital-imza">Dijital İmzalar ve Bütünlük</h3>
+<p>Dijital imzalar, belgenin içeriğinin değiştirilmediğini garanti eder. PKI (Public Key Infrastructure) altyapısı kullanan imzalar, belgenin "hash" değerini kilitler. Belgede tek bir harf değişse bile imza geçersiz sayılır.</p>
+<div class="author-box">
+<div class="author-img" style="background-image: url('https://via.placeholder.com/50'); background-size: cover;"></div>
+<div>
+<strong>Yazar: PDF Teknik Ekibi</strong><br/>
+<span style="font-size:0.9em; color:#777;">Siber Güvenlik Uzmanı &amp; Yazılım Mühendisi</span>
+</div>
+</div>
+</main>
+<aside class="sidebar">
+<div class="sidebar-box">
+<h4>Hızlı Araçlar</h4>
+<a class="sidebar-link" href="/pdf-birlestir">📂 PDF Birleştir</a>
+<a class="sidebar-link" href="/pdf-sikistir">📉 PDF Sıkıştır</a>
+<a class="sidebar-link" href="/pdf-to-word">📝 PDF'ten Word'e</a>
+<a class="sidebar-link" href="/ocr-pdf">🔍 OCR (Metin Tanıma)</a>
+</div>
+<div class="sidebar-box">
+<h4>Popüler Makaleler</h4>
+<a class="sidebar-link" href="/pdf-boyut-kucultme.html">Sıkıştırma Rehberi</a>
+<a class="sidebar-link" href="/pdf-birlestirme-rehberi.html">Birleştirme İpuçları</a>
+<a class="sidebar-link" href="/ocr-metin-tanima.html">OCR Teknolojisi Nedir?</a>
+</div>
+</aside>
+</div>
+<section style="margin-top:40px;padding:20px;background:#0f1a30;border-radius:16px">
+<h2>İlgili İçerikler (SEO Cluster)</h2>
+<ul>
+<li><a href="/seo/tools/pdf-birlestir/rehber.html">PDF Birleştirme Rehberi</a></li>
+<li><a href="/seo/tools/pdf-sikistir/rehber.html">PDF Sıkıştırma Rehberi</a></li>
+<li><a href="/seo/tools/pdf-to-word/rehber.html">PDF → Word Rehberi</a></li>
+<li><a href="/seo/tools/ocr/rehber.html">OCR Metin Tanıma Rehberi</a></li>
+<li><a href="/seo/tools/jpg-to-pdf/rehber.html">JPG → PDF Rehberi</a></li>
+<li><a href="/seo/rehberler/pdf-kucultme-rehberi.html">PDF Boyutu Küçültme</a></li>
+<li><a href="/seo/rehberler/wordu-pdf-yapma.html">Word Dosyasını PDF Yapma</a></li>
+<li><a href="/seo/rehberler/kvkk-uyumlu-pdf.html">KVKK Uyumlu PDF Araçları</a></li>
+</ul>
+</section>
+</body>
+</html>

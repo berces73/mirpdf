@@ -1,0 +1,46 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+site_url: "https://mirpdf.com"
+display_url: "https://mirpdf.com"
+
+collections:
+  - name: "articles"
+    label: "Blog Yazıları"
+    folder: "content/articles"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Başlık", name: "title", widget: "string" }
+      - { label: "Açıklama", name: "description", widget: "text", required: false }
+      - { label: "Tarih", name: "date", widget: "datetime", required: false }
+      - { label: "Slug", name: "slug", widget: "string", required: false, hint: "Boş bırakırsan dosya adından üretilir." }
+      - { label: "Etiketler", name: "tags", widget: "list", required: false }
+      - { label: "İçerik", name: "body", widget: "markdown" }
+
+  - name: "legal"
+    label: "Yasal Sayfalar"
+    files:
+      - label: "Gizlilik Politikası"
+        name: "privacy"
+        file: "public/legal/privacy.html"
+        fields:
+          - { label: "İçerik (HTML)", name: "body", widget: "text" }
+      - label: "Kullanım Şartları"
+        name: "terms"
+        file: "public/legal/terms.html"
+        fields:
+          - { label: "İçerik (HTML)", name: "body", widget: "text" }
+      - label: "KVKK"
+        name: "kvkk"
+        file: "public/legal/kvkk.html"
+        fields:
+          - { label: "İçerik (HTML)", name: "body", widget: "text" }

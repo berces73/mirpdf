@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="tr">
+<head>
+{{> head}}
+<title>{{name}} Rehberi | MirPDF</title>
+<meta name="description" content="{{name}} için kapsamlı rehber — adım adım kullanım kılavuzu." />
+<link rel="canonical" href="{{baseUrl}}/seo/tools/{{slug}}/rehber.html" />
+<meta property="og:title" content="{{name}} Rehberi | MirPDF" />
+<meta property="og:type" content="article" />
+</head>
+<body>
+<div class="bg"></div>
+<main class="wrap">
+{{> header}}
+
+<article class="card">
+  <h1>{{name}} Rehberi</h1>
+  <p class="lead">{{desc}}</p>
+
+  <h2>Adım Adım Kullanım</h2>
+  <ol>
+    <li>{{name}} sayfasını açın</li>
+    <li>PDF dosyanızı sürükleyip bırakın veya "Dosya Seç" ile yükleyin</li>
+    <li>Ayarları yapılandırın</li>
+    <li>"Başlat" butonuna tıklayın</li>
+    <li>İşlem tamamlandığında dosyayı indirin</li>
+  </ol>
+
+  <h2>İpuçları</h2>
+  <ul>
+    <li>Büyük dosyalar için Premium planı tercih edin</li>
+    <li>İşlem geçmişinizi "İşler" panelinden takip edebilirsiniz</li>
+    <li>Dosyalarınız işlem sonrası otomatik silinir</li>
+  </ul>
+
+  <div class="cta-box">
+    <a href="/tools/{{slug}}.html" class="primary">{{name}} Aracını Kullan →</a>
+  </div>
+</article>
+
+<section class="card related-section">
+  <h2>İlgili Sayfalar</h2>
+  <ul>{{relatedLinks}}</ul>
+</section>
+
+{{> footer}}
+</main>
+</body>
+</html>

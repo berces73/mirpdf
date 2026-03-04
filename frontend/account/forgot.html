@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" href="../styles.css" />
+  <title>Şifremi Unuttum | MirPDF</title>
+</head>
+<body>
+  <div class="bg"></div>
+  <main class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">PDF</div>
+        <div>
+          <h1>Şifremi Unuttum</h1>
+          <p>Email adresine sıfırlama linki gönder.</p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="ghost" href="../index.html">Ana Sayfa</a>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="cardHead"><h2>Şifre Sıfırlama</h2><span class="muted">Email gir ve link al.</span></div><div class="row"><div class="field" style="flex:1"><label>Email</label><input id="email" class="input" placeholder="ornek@mail.com"/></div></div><button class="primary full" id="go">Link Gönder</button>
+      <div class="small muted" id="msg"></div>
+    </section>
+
+    <footer class="muted footer">© 2026 MirPDF</footer>
+  </main>
+
+<script>
+const qs = new URLSearchParams(location.hash.replace(/^#/, ""));
+function setMsg(t){ document.getElementById("msg").textContent = t; }
+async function post(url, data){
+  const r = await fetch(url,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(data)});
+  const j = await r.json().catch(()=>null);
+  return {r,j};
+}
+</script>
+<script>
+
+document.getElementById("go").onclick = async ()=>{
+  const email = (document.getElementById("email").value||"").trim().toLowerCase();
+  if(!email){ setMsg("Email gerekli."); return; }
+  setMsg("Gönderiliyor...");
+  const {r,j} = await post("/api/auth/forgot",{email});
+  if(r.ok && j?.ok){ setMsg("✅ Eğer email kayıtlıysa link gönderildi."); }
+  else setMsg("❌ Hata: " + (j?.error||j?.message||""));
+};
+
+</script>
+</body>
+</html>

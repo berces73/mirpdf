@@ -1,0 +1,82 @@
+# PDF Platform — _headers
+# Pages-only, same-origin API. No external API domains in CSP.
+
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://pagead2.googlesyndication.com https://partner.googleadservices.com https://www.googletagmanager.com https://www.google-analytics.com blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://use.fontawesome.com; font-src 'self' https://fonts.gstatic.com https://use.fontawesome.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://pagead2.googlesyndication.com https://stats.g.doubleclick.net https://amcglobal.sc.omtrdc.net; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; worker-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
+
+# Admin pages — no cache, no index, strict CSP (K6+Y3)
+/admin/*
+  Cache-Control: no-store
+  X-Robots-Tag: noindex, nofollow
+  Content-Security-Policy: default-src 'self'; script-src 'self'; frame-ancestors 'none';
+
+# =============================================
+# Edge cache strategy
+# - Browser cache: very short (fast updates)
+# - Edge cache: longer + stale-while-revalidate (fast UX)
+# =============================================
+
+# Root + generic HTML
+/*.html
+  Cache-Control: public, max-age=0, s-maxage=900, stale-while-revalidate=3600
+
+# Tool pages (high-traffic)
+/tools/*
+  Cache-Control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
+
+# Programmatic SEO pages
+/seo/*
+  Cache-Control: public, max-age=0, s-maxage=7200, stale-while-revalidate=86400
+
+/e-devlet/*
+  Cache-Control: public, max-age=0, s-maxage=7200, stale-while-revalidate=86400
+
+/blog/*
+  Cache-Control: public, max-age=0, s-maxage=7200, stale-while-revalidate=86400
+
+# JS/CSS — long cache (fingerprinted or versioned)
+/assets/js/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts — long cache + CORS (needed for cross-origin font loads)
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# Images
+/assets/icons/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# API — no cache, no CORS header here (worker handles it)
+/api/*
+  Cache-Control: no-store, no-cache, must-revalidate
+  X-Robots-Tag: noindex, nofollow
+
+# Service worker — always revalidate
+/sw.js
+  Cache-Control: no-cache, must-revalidate
+
+# Manifests / SEO
+/manifest.json
+  Cache-Control: public, max-age=86400
+
+/sitemap*.xml
+  Cache-Control: public, max-age=3600
+
+/robots.txt
+  Cache-Control: public, max-age=3600

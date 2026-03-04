@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PDF Düzenle — Online PDF Metin ve Şekil Ekleme | MirPDF</title>
+  <meta name="description" content="PDF belgene metin, şekil ve not ekle. Yakında aktif olacak.">
+  <link rel="canonical" href="https://mirpdf.com/pdf-duzenle">
+  <meta property="og:title" content="PDF Düzenle — Online PDF Metin ve Şekil Ekleme | MirPDF">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/x-icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="/assets/css/drop-zone.css"/>
+  <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+<style>
+:root{--bg:#fff;--bg-soft:#f7f8fc;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--radius:18px;--ease:cubic-bezier(.22,.68,0,1.2)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.container{max-width:960px;margin:0 auto;padding:0 1.5rem}
+.header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:66px;gap:1rem}
+.logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--text);font-weight:800;font-size:1.18rem}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:var(--text);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem}
+.main-nav{display:flex;align-items:center;gap:.1rem}
+.main-nav a{text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:500;padding:.45rem .9rem;border-radius:10px;transition:background .15s,color .15s}
+.main-nav a:hover{background:var(--bg-soft);color:var(--text)}
+.btn-premium{background:var(--text)!important;color:#fff!important;padding:.45rem 1.2rem!important;border-radius:10px;font-weight:700!important}
+#mobileToggle{display:none;background:none;border:1px solid var(--border);color:var(--text);padding:.4rem .7rem;border-radius:9px;cursor:pointer;font-size:1rem}
+.tool-hero{padding:2rem 0 1rem}
+.tool-hero h1{font-family:'Instrument Serif',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.15;letter-spacing:-.02em;margin-bottom:.4rem}
+.tool-hero p{color:var(--muted);font-size:1rem;margin-bottom:1rem}
+.breadcrumb{display:flex;align-items:center;gap:.4rem;font-size:.82rem;color:var(--muted);margin-bottom:1rem}
+.breadcrumb a{color:var(--muted);text-decoration:none}.breadcrumb a:hover{color:var(--text)}
+.breadcrumb span{opacity:.5}
+.tool-wrap{background:#0d1117;border-radius:16px;padding:1.5rem;margin-bottom:2rem}
+.footer{background:var(--bg-soft);border-top:1px solid var(--border);padding:3rem 0 1.5rem;margin-top:3rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
+.footer-brand p{color:var(--muted);font-size:.88rem;margin-top:.75rem;line-height:1.6}
+.footer-col h4{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.9rem}
+.footer-col a{display:block;text-decoration:none;color:var(--muted);font-size:.88rem;margin-bottom:.5rem;transition:color .15s}
+.footer-col a:hover{color:var(--text)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.82rem;color:var(--muted);flex-wrap:wrap;gap:.5rem}
+.footer-links-row{display:flex;gap:1.25rem}.footer-links-row a{color:var(--muted);text-decoration:none;font-size:.82rem}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}#mobileToggle{display:block}.main-nav{display:none;flex-direction:column;position:absolute;top:66px;left:0;right:0;background:rgba(255,255,255,.98);border-bottom:1px solid var(--border);padding:1rem;gap:.25rem;z-index:199}.main-nav.open{display:flex}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-tool="pdf-duzenle">
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo"><div class="logo-mark"><i class="fas fa-file-pdf"></i></div>MirPDF</a>
+      <button id="mobileToggle" aria-label="Menüyü aç/kapat"><i class="fas fa-bars"></i></button>
+      <nav class="main-nav" id="mainNav">
+        <a href="/#tools">Araçlar</a><a href="/articles/">Blog</a>
+        <a href="/pricing.html">Fiyatlar</a><a href="/faq.html">SSS</a>
+        <a href="/contact.html">İletişim</a>
+        <a href="/pricing.html" class="btn-premium">Premium</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <div class="tool-hero">
+      <div class="breadcrumb">
+        <a href="/">Ana Sayfa</a><span>›</span>
+        <a href="/#tools">Araçlar</a><span>›</span>
+        <span>PDF Düzenle</span>
+      </div>
+      <h1>✏️ PDF Düzenle</h1>
+      <p>PDF belgene metin, şekil ve not ekle.</p>
+    </div>
+    <div class="tool-wrap">
+
+      <div style="text-align:center;padding:3rem 1rem;color:#e6edf3">
+        <div style="font-size:3rem;margin-bottom:1rem">✏️</div>
+        <h2 style="font-size:1.5rem;font-weight:600;margin-bottom:.75rem;color:#fff">PDF Düzenle</h2>
+        <p style="color:#94a3b8;max-width:400px;margin:0 auto 1.5rem">PDF belgene metin, şekil ve not ekle.</p>
+        <div style="display:inline-block;background:#1e293b;border:1px solid #334155;border-radius:10px;padding:.6rem 1.5rem;color:#64748b;font-size:.9rem">🚧 Bu araç yakında aktif olacak</div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo"><div class="logo-mark"><i class="fas fa-file-pdf"></i></div>MirPDF</a>
+        <p>Türkçe, ücretsiz ve güvenli PDF araçları.</p>
+      </div>
+      <div class="footer-col"><h4>Araçlar</h4>
+        <a href="/pdf-birlestir">PDF Birleştir</a><a href="/pdf-sikistir">PDF Sıkıştır</a>
+        <a href="/pdf-bol">PDF Böl</a><a href="/pdf-to-word">PDF → Word</a>
+        <a href="/ocr">OCR</a><a href="/pdf-kilitle">PDF Kilitle</a>
+      </div>
+      <div class="footer-col"><h4>Şirket</h4>
+        <a href="/about.html">Hakkımızda</a><a href="/contact.html">İletişim</a>
+        <a href="/pricing.html">Fiyatlar</a><a href="/articles/">Blog</a>
+      </div>
+      <div class="footer-col"><h4>Yasal</h4>
+        <a href="/legal/privacy.html">Gizlilik</a><a href="/legal/terms.html">Şartlar</a>
+        <a href="/legal/kvkk.html">KVKK</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MirPDF — Tüm hakları saklıdır.</span>
+      <div class="footer-links-row">
+        <a href="/legal/privacy.html">Gizlilik</a><a href="/legal/terms.html">Şartlar</a><a href="/legal/kvkk.html">KVKK</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('mobileToggle').addEventListener('click',function(){document.getElementById('mainNav').classList.toggle('open');});</script>
+
+</body>
+</html>

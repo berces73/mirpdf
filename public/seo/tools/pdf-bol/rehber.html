@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#0f0f14" />
+<link rel="stylesheet" href="/styles.css" />
+<title>PDF Nasıl Bölünür — Adım Adım Rehber | MirPDF</title>
+<meta name="description" content="PDF dosyasını sayfa aralıklarına göre bölmenin adım adım anlatımı. Üç farklı mod, ipuçları ve sık karşılaşılan sorunlar." />
+<meta name="keywords" content="pdf bölme nasıl yapılır, pdf sayfa ayırma rehber, pdf split adımlar" />
+<link rel="canonical" href="https://mirpdf.com/seo/tools/pdf-bol/rehber.html" />
+<meta property="og:title" content="PDF Nasıl Bölünür — Adım Adım Rehber | MirPDF" />
+<meta property="og:description" content="PDF dosyasını sayfa aralıklarına göre bölmenin adım adım anlatımı. Üç farklı mod, ipuçları ve sık karşılaşılan sorunlar." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mirpdf.com/seo/tools/pdf-bol/rehber.html" />
+<meta property="og:image" content="https://mirpdf.com/assets/og-pdf-bol.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="PDF Nasıl Bölünür — Adım Adım Rehber | MirPDF" />
+<meta name="twitter:description" content="PDF dosyasını sayfa aralıklarına göre bölmenin adım adım anlatımı. Üç farklı mod, ipuçları ve sık karşılaşılan sorunlar." />
+<meta name="twitter:image" content="https://mirpdf.com/assets/og-pdf-bol.png" />
+<link rel="alternate" hreflang="tr" href="https://mirpdf.com/seo/tools/pdf-bol/rehber.html" />
+<link rel="alternate" hreflang="x-default" href="https://mirpdf.com/seo/tools/pdf-bol/rehber.html" />
+
+  <!-- Google Analytics GA4 — GA4_ID'yi kendi ID'nizle değiştirin -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA4_MEASUREMENT_ID', {'anonymize_ip': true});
+  </script>
+</head>
+<body>
+<div class="bg"></div>
+<main class="wrap">
+<header class="top">
+  <div class="brand">
+    <a href="/" class="logo-link">
+      <div class="logo">PDF</div>
+      <div>
+        <div class="siteTitle">MirPDF</div>
+        <p>Ücretsiz Online PDF Araçları</p>
+      </div>
+    </a>
+  </div>
+  <nav class="main-nav" aria-label="Ana Menü">
+    <a href="/pdf-birlestir">Birleştir</a>
+    <a href="/pdf-bol">Böl</a>
+    <a href="/pdf-sikistir">Sıkıştır</a>
+    <a href="/seo/">Rehberler</a>
+  </nav>
+</header>
+
+
+<article class="card">
+  <nav aria-label="Breadcrumb" style="font-size:13px;margin-bottom:16px">
+    <a href="/">Ana Sayfa</a> › <a href="/seo/">Rehberler</a> › <a href="/seo/tools/pdf-bol/">PDF Böl</a> › Rehber
+  </nav>
+  <h1>PDF Böl — Kapsamlı Kullanım Rehberi</h1>
+  <p class="lead">Büyük PDF belgelerinden belirli bölümleri, sayfaları veya aralıkları kolayca ayıklamayı bu rehberde adım adım anlatıyoruz.</p>
+
+  <h2>PDF Bölme Neden Gerekir?</h2>
+  <p>Günlük iş akışlarında PDF bölme genellikle şu durumlarda gereksinim duyulan bir işlemdir: büyük bir belgeden yalnızca birkaç sayfayı başkasıyla paylaşmak, sözleşme eklerini ayrıştırmak, taranmış toplu belgeleri tek tek arşivlemek veya e-posta ile göndermek için dosya boyutunu küçültmek.</p>
+  <p>MirPDF'un bölme aracı bu işlemi tamamen tarayıcıda gerçekleştirir; dosyalarınız hiçbir zaman sunucuya yüklenmez.</p>
+
+  <h2>Mod 1: Her Sayfayı Ayrı Dosya Yap</h2>
+  <p>Bu mod, X sayfalık bir PDF'den X ayrı PDF üretir. En çok kullanılan senaryo: tarayıcıdan gelen toplu tarama dosyasındaki her belgeyi ayrı arşivlemek.</p>
+  <p><strong>Nasıl kullanılır:</strong> Aracı açın, PDF yükleyin, "Her sayfayı ayrı dosya yap" modunu seçin, "Böl ve İndir"e tıklayın. Tarayıcı her sayfa için ayrı indirme başlatır.</p>
+  <p><strong>İpucu:</strong> Tarayıcınız çoklu indirmeye izin vermenizi isteyebilir. Açılan bildirimde "İzin ver" veya "Allow" seçeneğini tıklayın.</p>
+
+  <h2>Mod 2: Belirli Aralıkları Ayıkla</h2>
+  <p>En esnek moddur. Sayfa aralıklarını belirterek her aralığı ayrı bir PDF dosyasına dönüştürürsünüz.</p>
+
+  <h3>Aralık Formatı</h3>
+  <p>Sayfa numaralarını şu formatta girin:</p>
+  <ul style="padding-left:1.4em;line-height:2;font-family:monospace">
+    <li><code>1,3,5</code> — 1., 3. ve 5. sayfalar tek dosyada</li>
+    <li><code>1-5</code> — 1'den 5'e kadar (dahil) tek dosyada</li>
+    <li><code>1-3,7,10-15</code> — 1-3, 7 ve 10-15 tek dosyada</li>
+    <li><code>1-3;4-6;7-10</code> — Noktalı virgülle 3 ayrı PDF dosyası</li>
+  </ul>
+
+  <h3>Pratik Örnek</h3>
+  <p>40 sayfalık bir raporda özet (1-3), bulgular (10-25) ve ekler (30-40) bölümleri için:</p>
+  <ul style="padding-left:1.4em;line-height:2">
+    <li>Özet: aralık girin "1-3" → <em>bolum_1.pdf</em></li>
+    <li>Bulgular: aralık girin "10-25" → <em>bolum_2.pdf</em></li>
+    <li>Ya da hepsini tek seferde: "1-3;10-25;30-40" → 3 ayrı PDF</li>
+  </ul>
+
+  <h2>Mod 3: İlk N Sayfayı Ayıkla</h2>
+  <p>Raporun yalnızca yönetici özetini (ilk 5 sayfa gibi) almak için en hızlı yoldur. "İlk N sayfayı ayıkla" modunu seçin, sayı girin, bitirdiniz.</p>
+
+  <h2>Sık Karşılaşılan Sorunlar</h2>
+
+  <h3>İndirme başlamıyor</h3>
+  <p>Tarayıcı pop-up engelleyicisi indirmeleri durdurmuş olabilir. Adres çubuğunun yanındaki engellenen pop-up bildirimine tıklayıp tüm indirmelere izin verin.</p>
+
+  <h3>Aralık hatası alıyorum</h3>
+  <p>Belirttiğiniz sayfa numarasının PDF'in gerçek sayfa sayısından büyük olmadığını kontrol edin. Dosyayı yükledikten sonra araç sayfa sayısını gösterir.</p>
+
+  <h3>Bölünmüş dosya açılmıyor</h3>
+  <p>Orijinal PDF şifre korumalı veya hasarlı olabilir. Önce normal bir PDF okuyucusuyla açmayı deneyin.</p>
+
+  <div class="cta-box" style="margin-top:24px;text-align:center">
+    <a href="/pdf-bol" class="primary">✂️ PDF Böl Aracını Kullan →</a>
+  </div>
+</article>
+
+<footer class="site-footer muted">
+  <div class="footer-links">
+    <a href="/pdf-birlestir">PDF Birleştir</a>
+    <a href="/pdf-sikistir">PDF Sıkıştır</a>
+    <a href="/pdf-bol">PDF Böl</a>
+    <a href="/pdf-to-word">PDF → Word</a>
+    <a href="/ocr">OCR</a>
+    <a href="/pdf-imzala">PDF İmzala</a>
+    <a href="/pdf-kilitle">PDF Kilitle</a>
+    <a href="/seo/">Tüm Rehberler</a>
+  </div>
+  <p>© 2026 MirPDF — Tüm hakları saklıdır.</p>
+</footer>
+</main>
+</body>
+</html>

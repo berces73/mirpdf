@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Sunucu Hatası (500) - MirPDF</title>
+    
+  <!-- Verification (replace tokens) -->
+<style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            padding: 20px;
+        }
+        .container {
+            text-align: center;
+            max-width: 500px;
+        }
+        .error-code {
+            font-size: 100px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #fff;
+            color: #f5576c;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .status-link {
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+        .status-link a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-code">500</div>
+        <h1>Sunucu Hatası</h1>
+        <p>
+            Bir şeyler ters gitti. Teknik ekibimize bildirildi ve en kısa sürede düzeltilecek.
+            Lütfen birkaç dakika sonra tekrar deneyin.
+        </p>
+        <a href="/" class="btn">🏠 Ana Sayfaya Dön</a>
+        <div class="status-link">
+            <a href="https://status.mirpdf.com" target="_blank">Sistem Durumunu Kontrol Et →</a>
+        </div>
+    </div>
+    
+    <script>
+        // Track 500 errors
+        if (typeof gtag === 'function') {
+            gtag('event', 'exception', {
+                'description': '500_error',
+                'fatal': true
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>QR Kod Ekle | MirPDF</title>
+
+  <meta name="description" content="PDF dosyanıza QR kod ekleyin. Tamamen tarayıcıda çalışır, dosyalarınız sunucuya yüklenmez.">
+  <link rel="canonical" href="https://mirpdf.com/qr-kod-ekle/">
+  <link rel="stylesheet" href="/style.css">
+
+  <script type="module" src="/assets/js/toast.js"></script>
+  <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://unpkg.com/qrcode@1.5.3/build/qrcode.min.js"></script>
+
+  <style>
+    .card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:16px}
+    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    input[type="text"], input[type="number"], select{padding:10px 12px;border:1px solid rgba(0,0,0,.15);border-radius:10px}
+    button{padding:10px 14px;border-radius:10px;border:1px solid rgba(0,0,0,.15);background:#111;color:#fff;cursor:pointer}
+    button:disabled{opacity:.5;cursor:not-allowed}
+    .muted{opacity:.8}
+    .preview{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:12px}
+    canvas{border:1px dashed rgba(0,0,0,.2);border-radius:12px}
+    label{display:flex;gap:8px;align-items:center}
+  </style>
+</head>
+
+<body>
+  <main style="max-width:900px;margin:40px auto;padding:0 16px;">
+    <a href="/tools" style="opacity:.8">← Araçlar</a>
+    <h1 style="margin-top:10px">🔳 PDF'e QR Kod Ekle</h1>
+    <p class="muted">QR kodu PDF'inize ekleyin. İşlem tamamen tarayıcıda yapılır.</p>
+
+    <div class="card">
+      <div class="row">
+        <input id="file" type="file" accept="application/pdf">
+        <input id="text" type="text" placeholder="QR içeriği (URL / metin)" style="min-width:280px">
+        <select id="pos">
+          <option value="br">Sağ alt</option>
+          <option value="bl">Sol alt</option>
+          <option value="tr">Sağ üst</option>
+          <option value="tl">Sol üst</option>
+        </select>
+        <input id="size" type="number" min="40" max="260" value="110" style="width:110px" title="Boyut (pt)">
+        <input id="margin" type="number" min="0" max="80" value="18" style="width:110px" title="Kenar boşluğu (pt)">
+        <label><input id="allPages" type="checkbox" checked> Tüm sayfalara</label>
+        <input id="outname" type="text" value="qr_eklenmis.pdf" style="min-width:210px">
+        <button id="run">QR Ekle</button>
+      </div>
+
+      <div class="preview">
+        <div>
+          <div class="muted"><small>Önizleme (QR)</small></div>
+          <canvas id="qrCanvas" width="140" height="140"></canvas>
+        </div>
+        <div class="muted">
+          <small>
+            İpucu: PDF'i yazdıracaksanız 100–140 pt boyut iyi çalışır. <br>
+            QR kod okunmuyorsa boyutu büyütün ve “Kenar boşluğu”nu azaltın.
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <section style="margin-top:18px" class="muted">
+      <small>
+        Not: QR kod eklemek, belgenin içeriğini değiştirdiği için yeni dosyayı indirip kontrol edin.
+      </small>
+    </section>
+  </main>
+
+<script>
+  const $ = (id)=>document.getElementById(id);
+
+  async function renderPreview(){
+    const text = ($("text").value || "https://mirpdf.com").trim();
+    const canvas = $("qrCanvas");
+    try{
+      const url = await QRCode.toDataURL(text, { errorCorrectionLevel:"M", margin:0, width:canvas.width });
+      const img = new Image();
+      img.onload = ()=>{
+        const ctx = canvas.getContext("2d");
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.drawImage(img,0,0,canvas.width,canvas.height);
+      };
+      img.src = url;
+    }catch(e){
+      // ignore preview errors
+    }
+  }
+
+  $("text").addEventListener("input", ()=>{ renderPreview(); });
+  renderPreview();
+
+  function computeXY(page, pos, size, margin){
+    const w = page.getWidth();
+    const h = page.getHeight();
+    let x = margin, y = margin;
+    if(pos === "br"){ x = w - size - margin; y = margin; }
+    if(pos === "bl"){ x = margin; y = margin; }
+    if(pos === "tr"){ x = w - size - margin; y = h - size - margin; }
+    if(pos === "tl"){ x = margin; y = h - size - margin; }
+    // clamp
+    x = Math.max(0, Math.min(x, w - size));
+    y = Math.max(0, Math.min(y, h - size));
+    return {x,y};
+  }
+
+  async function downloadBytes(bytes, filename){
+    const blob = new Blob([bytes], {type:"application/pdf"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = filename || "output.pdf";
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+
+  $("run").addEventListener("click", async ()=>{
+    const f = $("file").files[0];
+    const text = ($("text").value || "").trim();
+    if(!f) return alert("PDF seç.");
+    if(!text) return alert("QR içeriği (URL/metin) gir.");
+    const size = Math.max(40, Math.min(260, Number($("size").value||110)));
+    const margin = Math.max(0, Math.min(80, Number($("margin").value||18)));
+    const pos = $("pos").value;
+    const outname = ($("outname").value || "qr_eklenmis.pdf").trim();
+
+    const btn = $("run");
+    btn.disabled = true;
+    btn.textContent = "İşleniyor...";
+
+    try{
+      const srcBytes = await f.arrayBuffer();
+      const pdfDoc = await PDFLib.PDFDocument.load(srcBytes);
+
+      const qrUrl = await QRCode.toDataURL(text, { errorCorrectionLevel:"M", margin:0, width:512 });
+      const pngBytes = await (await fetch(qrUrl)).arrayBuffer();
+      const png = await pdfDoc.embedPng(pngBytes);
+
+      const pages = pdfDoc.getPages();
+      const applyAll = $("allPages").checked;
+
+      const targetPages = applyAll ? pages : [pages[0]];
+      for(const page of targetPages){
+        const {x,y} = computeXY(page, pos, size, margin);
+        page.drawImage(png, { x, y, width:size, height:size, opacity: 0.95 });
+      }
+
+      const outBytes = await pdfDoc.save();
+      await downloadBytes(outBytes, outname.endsWith(".pdf") ? outname : (outname + ".pdf"));
+      btn.textContent = "QR Ekle";
+      btn.disabled = false;
+    }catch(e){
+      console.error(e);
+      alert("Bir hata oluştu. PDF bozuk olabilir veya tarayıcı bellek sınırına takılmış olabilirsiniz.");
+      btn.textContent = "QR Ekle";
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>

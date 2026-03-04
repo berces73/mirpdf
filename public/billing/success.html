@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ödeme Başarılı</title>
+  
+  <!-- Verification (replace tokens) -->
+<link rel="stylesheet" href="/style.css">
+  <script type="module" src="/assets/js/toast.js"></script>
+</head>
+<body>
+  <div class="container" style="max-width:820px;margin:40px auto;padding:0 16px;">
+    <h1>✅ Ödeme Başarılı</h1>
+    <p>Ödemen alındı. Kredi bakiyen birkaç saniye içinde güncellenecek.</p>
+    <div style="margin-top:16px;">
+      <a class="btn btn-primary" href="/pricing.html">Fiyatlandırmaya dön</a>
+      <a class="btn" href="/">Ana sayfa</a>
+    </div>
+  </div>
+  <script type="module">
+    import { toast } from "/assets/js/toast.js";
+    toast("success", "Ödeme başarılı. Kredi bakiyen güncelleniyor...");
+  </script>
+</body>
+</html>

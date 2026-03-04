@@ -1,0 +1,30 @@
+# llms.txt - AI discovery for MirPDF
+# https://llmstxt.org/
+# Site: https://mirpdf.com
+
+## About
+MirPDF is a privacy-first online PDF toolkit. Most processing happens in the browser (client-side) to minimize file upload risk.
+
+## Popular tools (Turkish URLs)
+- PDF Birleştir: https://mirpdf.com/pdf-birlestir
+- PDF Sıkıştır: https://mirpdf.com/pdf-sikistir
+- PDF Böl: https://mirpdf.com/pdf-bol
+- PDF → JPG: https://mirpdf.com/pdf-to-jpg
+- JPG → PDF: https://mirpdf.com/jpg-to-pdf
+- PDF Döndür: https://mirpdf.com/pdf-dondur
+- Sayfa Sil: https://mirpdf.com/sayfa-sil
+- Sayfa Sırala: https://mirpdf.com/sayfa-sirala
+
+## Pricing
+- Free tier: limited daily credits
+- Pro tier: higher limits via subscription (see https://mirpdf.com/pricing.html)
+
+## Privacy & security
+- Client-side processing is preferred where possible.
+- Some features may require server-side components in the future.
+
+## Sitemap
+https://mirpdf.com/sitemap.xml
+
+## Last Updated
+2026-02-20

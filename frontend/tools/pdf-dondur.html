@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PDF Döndür — Sayfaları 90° veya 180° Çevir | MirPDF</title>
+  <meta name="description" content="PDF sayfalarını 90, 180 veya 270 derece döndürün. Yanlış yönlü sayfaları düzeltin." />
+  <link rel="canonical" href="https://FILL_ACTUAL_DOMAIN/tools/pdf-dondur.html" />
+
+  <meta name="keywords" content="pdf döndürme, pdf sayfa döndürme, pdf rotate, pdf yön düzeltme" />
+  <meta property="og:title" content="PDF Döndür — Sayfaları 90° veya 180° Çevir | MirPDF" />
+  <meta property="og:description" content="PDF sayfalarını 90, 180 veya 270 derece döndürün. Yanlış yönlü sayfaları düzeltin." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://FILL_ACTUAL_DOMAIN/tools/pdf-dondur.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0f0f14" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "MirPDF - PDF Döndür", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "description": "PDF sayfalarını 90°, 180° veya 270° döndür.", "url": "https://FILL_ACTUAL_DOMAIN/tools/pdf-dondur.html", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+  <meta property="og:image" content="https://FILL_ACTUAL_DOMAIN/assets/og-home.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://FILL_ACTUAL_DOMAIN/assets/og-home.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="tr" href="https://FILL_ACTUAL_DOMAIN/tools/pdf-dondur.html" />
+  <link rel="alternate" hreflang="x-default" href="https://FILL_ACTUAL_DOMAIN/tools/pdf-dondur.html" />
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://FILL_ACTUAL_DOMAIN"}, {"@type": "ListItem", "position": 2, "name": "Araçlar", "item": "https://FILL_ACTUAL_DOMAIN/tools/"}, {"@type": "ListItem", "position": 3, "name": "PDF Döndür", "item": "https://FILL_ACTUAL_DOMAIN/tools/pdf-dondur.html"}]}</script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Tek sayfa mı tüm belge mi döner?", "acceptedAnswer": {"@type": "Answer", "text": "Her ikisi de mümkün; belirli sayfaları veya tüm belgeyi döndürebilirsiniz."}}, {"@type": "Question", "name": "Döndürme işlemi geri alınabilir mi?", "acceptedAnswer": {"@type": "Answer", "text": "İndirmeden önce önizleme yaparak kontrol edebilirsiniz. İndirme sonrası tekrar döndürebilirsiniz."}}, {"@type": "Question", "name": "Görüntü kalitesi bozulur mu?", "acceptedAnswer": {"@type": "Answer", "text": "Hayır, döndürme işlemi kayıpsızdır."}}]}</script>
+
+<style>
+.upgrade-nudge{background:linear-gradient(135deg,#1e1b4b,#312e81);border:1px solid #6366f1;border-radius:14px;padding:20px 24px;margin:16px 0;display:none}
+.upgrade-nudge.visible{display:block}
+.upgrade-nudge h3{margin:0 0 6px;color:#a5b4fc;font-size:16px}
+.upgrade-nudge p{margin:0 0 14px;color:#94a3b8;font-size:14px}
+.nudge-btns{display:flex;gap:10px;flex-wrap:wrap}
+.nudge-btns a{background:#6366f1;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600}
+.nudge-btns a.ghost{background:transparent;border:1px solid #6366f1;color:#a5b4fc}
+.credit-bar{background:#0f172a;border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:13px;color:#94a3b8}
+.credit-bar b{color:#f0abfc}
+.blog-link-list{padding-left:20px;line-height:2}
+.blog-link-list a{color:#a5b4fc}
+.faq-section h2{margin-bottom:16px}
+.faq-item{border-bottom:1px solid #1e293b;padding:14px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-item h3{margin:0 0 6px;font-size:15px;color:#e2e8f0}
+.faq-item p{margin:0;color:#94a3b8;font-size:14px;line-height:1.6}
+.tool-hero{margin-bottom:16px}
+.tool-hero h1{margin:0 0 6px;font-size:22px}
+.tool-subtitle{margin:0;font-size:14px}
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <main class="wrap">
+    <div class="toasts" id="toasts" aria-live="polite" aria-atomic="true"></div>
+    <header class="top">
+      <div class="brand">
+        <div class="logo">PDF</div>
+        <div>
+          <div class="siteTitle">MirPDF</div>
+          <p>PDF → Word • OCR • Sıkıştırma</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="ghost" id="toggleTheme" aria-label="Tema değiştir">🌙</button>
+        <button class="ghost" id="openAuth">Giriş / Kayıt</button>
+        <button class="primary" id="openPricing">Premium</button>
+      </div>
+    </header>
+
+    <div class="card" id="verifyBanner" hidden></div>
+
+    <section class="card">
+      <div class="cardHead">
+        <h1>🔄 PDF Döndür</h1>
+        <span class="muted">PDF sayfalarını 90°, 180° veya 270° döndür.</span>
+      </div>
+      <div id="drop" class="drop">
+        <input id="file" type="file" accept="application/pdf" hidden />
+        <div class="dropInner">
+          <div class="icon">⬆️</div>
+          <div class="title">Dosyanı buraya bırak</div>
+          <div class="muted">veya <button id="pickBtn" class="linkBtn">dosya seç</button></div>
+          <div class="meta" id="fileMeta" hidden></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field" style="display:none">
+          <label>Tool</label>
+          <select id="toolSel">
+            <option value="rotate">rotate</option>
+          </select>
+        </div>
+        <div class="field" id="optBox"></div>
+      </div>
+
+      <button id="go" class="primary full">Başlat</button>
+      <div class="progressWrap" id="progressWrap" hidden>
+        <div class="progressBar"><div class="progressFill" id="progressFill" style="width:0%"></div></div>
+        <div class="small muted" id="progressText">0%</div>
+      </div>
+      <div class="small muted" id="pill">Hazır</div>
+    </section>
+
+    <section class="card">
+      <div class="cardHead">
+        <h2>İşler</h2>
+        <span class="muted" id="jobsHint">Henüz iş yok</span>
+      </div>
+      <div class="jobs" id="jobs"></div>
+    </section>
+
+    <!-- SSR Internal Linking -->
+    <section class="card related-tools" aria-label="İlgili Araçlar">
+      <h2>Sıradaki İşleminiz Ne Olabilir?</h2>
+      <div id="related-tools-container"></div>
+    </section>
+
+    <section class="card">
+      <div class="cardHead">
+        <h2>Log</h2>
+        <button id="clearLog" class="ghost">Temizle</button>
+      </div>
+      <pre id="log"></pre>
+    </section>
+
+    <footer class="muted footer">© 2026 MirPDF</footer>
+  
+<section class="card faq-section">
+      <h2>Sık Sorulan Sorular</h2>
+      
+        <div class="faq-item">
+          <h3>Tek sayfa mı tüm belge mi döner?</h3>
+          <p>Her ikisi de mümkün; belirli sayfaları veya tüm belgeyi döndürebilirsiniz.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Döndürme işlemi geri alınabilir mi?</h3>
+          <p>İndirmeden önce önizleme yaparak kontrol edebilirsiniz. İndirme sonrası tekrar döndürebilirsiniz.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Görüntü kalitesi bozulur mu?</h3>
+          <p>Hayır, döndürme işlemi kayıpsızdır.</p>
+        </div>
+    </section>
+
+
+    <div class="upgrade-nudge" id="upgradeNudge">
+      <div class="credit-bar">Kalan ücretsiz hakkın: <b id="creditCount">2</b> işlem</div>
+      <h3>🚀 Limitsiz çalışmak ister misin?</h3>
+      <p>Premium'a geç — sınırsız işlem, öncelikli kuyruk ve daha büyük dosya desteği.</p>
+      <div class="nudge-btns">
+        <a href="/pricing.html">Premium'a Geç →</a>
+        <a href="#" class="ghost" onclick="document.getElementById('upgradeNudge').style.display='none';return false;">Şimdi değil</a>
+      </div>
+    </div>
+</main>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modalCard">
+      <div class="modalHead">
+        <b id="modalTitle">Başlık</b>
+        <button class="ghost" id="closeModal">Kapat</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>window.__DEFAULT_TOOL__ = "rotate";</script>
+  <script defer src="../app.js"></script>
+  <script src="../../internal-linking.js" type="module"></script>
+
+<script>
+(function(){
+  var go = document.getElementById('go');
+  var nudge = document.getElementById('upgradeNudge');
+  if(!go || !nudge) return;
+  go.addEventListener('click', function(){
+    setTimeout(function(){
+      nudge.classList.add('visible');
+      var c = parseInt(localStorage.getItem('freeUses')||'3',10) - 1;
+      if(c < 0) c = 0;
+      localStorage.setItem('freeUses', c);
+      var el = document.getElementById('creditCount');
+      if(el) el.textContent = c;
+    }, 2000);
+  });
+})();
+</script>
+  <footer class="site-footer" style="border-top:1px solid #e5e7eb; margin-top:48px; padding:24px 0; text-align:center; color:#6b7280; font-size:13px;">
+    <div class="container">
+      <nav style="margin-bottom:8px;">
+        <a href="/legal/terms.html" style="color:#6b7280; margin:0 10px;">Kullanım Şartları</a>
+        <a href="/legal/kvkk.html" style="color:#6b7280; margin:0 10px;">KVKK / Gizlilik</a>
+        <a href="/pricing.html" style="color:#6b7280; margin:0 10px;">Fiyatlandırma</a>
+        <a href="/about.html" style="color:#6b7280; margin:0 10px;">Hakkında</a>
+      </nav>
+      <p style="margin:0;">&copy; 2026 MirPDF &mdash; Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+</body>
+</html>

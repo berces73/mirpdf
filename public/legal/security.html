@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Güvenlik Politikası | MirPDF</title>
+  <meta name="description" content="MirPDF'in dosya güvenliği, veri koruma ve altyapı güvenliği hakkında bilgi edinin.">
+  <link rel="canonical" href="https://mirpdf.com/legal/security.html">
+  <meta property="og:title" content="Güvenlik Politikası | MirPDF">
+  <meta property="og:description" content="MirPDF'in dosya güvenliği, veri koruma ve altyapı güvenliği hakkında bilgi edinin.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mirpdf.com/legal/security.html">
+  <meta property="og:site_name" content="MirPDF">
+  <meta name="twitter:card" content="summary">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" type="image/x-icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/legal.css">
+
+</head>
+<body>
+<nav class="l-nav">
+  <a href="/" class="l-nav-logo">
+    <div class="l-nav-badge">PDF</div>
+    MirPDF
+  </a>
+  <div class="l-nav-links">
+    <a href="/#tools">Araçlar</a>
+    <a href="/articles/">Blog</a>
+    <a href="/pricing.html">Fiyatlar</a>
+    <a href="/contact.html">İletişim</a>
+    <a href="/pricing.html" class="l-nav-cta">Premium</a>
+  </div>
+</nav>
+
+<div class="l-hero">
+  <div class="l-hero-eyebrow">Yasal Belgeler</div>
+  <h1>Güvenlik Politikası</h1>
+  <p class="l-hero-meta">Son güncelleme: <strong>1 Mart 2026</strong></p>
+</div>
+
+<div class="l-layout">
+  <nav class="l-toc">
+    <div class="l-toc-title">İçindekiler</div>
+    <ul>
+      <li><a href="#s1">Güvenlik Taahhüdümüz</a></li>
+      <li><a href="#s2">Aktarım Güvenliği</a></li>
+      <li><a href="#s3">Dosya Güvenliği</a></li>
+      <li><a href="#s4">Altyapı Güvenliği</a></li>
+      <li><a href="#s5">Sistem Logları</a></li>
+      <li><a href="#s6">Güvenlik Açığı Bildirimi</a></li>
+      <li><a href="#s7">İletişim</a></li>
+    </ul>
+  </nav>
+
+  <div class="l-content">
+
+    <div class="l-section" id="s1">
+      <h2 class="l-section-title"><span class="s-num">1</span>Güvenlik Taahhüdümüz</h2>
+      <p>MirPDF olarak kullanıcılarımızın dosyalarını ve kişisel verilerini korumak en öncelikli hedefimizdir. Güvenlik mimarimiz, dosyaların işlenmesi sırasında yetkisiz erişimi, veri sızıntısını ve sisteme yönelik saldırıları önlemek üzere tasarlanmıştır.</p>
+      <div class="l-cards">
+        <div class="l-card"><div class="l-card-icon">🔒</div><h4>Sıfır Erişim Prensibi</h4><p>Yüklenen dosyaların içeriğine hiçbir çalışan ya da sistem yöneticisi erişemez.</p></div>
+        <div class="l-card"><div class="l-card-icon">🗑️</div><h4>Otomatik Silme</h4><p>Dosyalar işlem tamamlandıktan sonra sunucudan otomatik ve kalıcı biçimde silinir.</p></div>
+        <div class="l-card"><div class="l-card-icon">🌐</div><h4>Global CDN Koruması</h4><p>Cloudflare'in global ağı ile tüm trafik DDoS ve bot saldırılarına karşı korunur.</p></div>
+        <div class="l-card"><div class="l-card-icon">🔐</div><h4>Şifreli İletim</h4><p>Sitedeki tüm veri iletişimi TLS 1.2+ şifrelemesiyle korunmaktadır.</p></div>
+      </div>
+    </div>
+
+    <div class="l-section" id="s2">
+      <h2 class="l-section-title"><span class="s-num">2</span>Aktarım Güvenliği (HTTPS/TLS)</h2>
+      <ul class="l-list">
+        <li><strong>TLS 1.2 ve 1.3:</strong> Tüm bağlantılar minimum TLS 1.2 ile şifrelenir. TLS 1.3 destekleyen tarayıcılarda daha güçlü şifreleme otomatik devreye girer.</li>
+        <li><strong>HSTS:</strong> HTTP Strict Transport Security aktif durumdadır; tarayıcılar siteye yalnızca HTTPS üzerinden bağlanmaya yönlendirilir.</li>
+        <li><strong>Güvenli HTTP başlıkları:</strong> Content-Security-Policy, X-Frame-Options, X-Content-Type-Options ve Referrer-Policy başlıkları uygulanmaktadır.</li>
+        <li><strong>Güvenli dosya yükleme:</strong> Dosya yüklemeleri şifreli kanal üzerinden gerçekleşir; aktarım sırasında dinleme (man-in-the-middle) mümkün değildir.</li>
+      </ul>
+    </div>
+
+    <div class="l-section" id="s3">
+      <h2 class="l-section-title"><span class="s-num">3</span>Dosya Güvenliği</h2>
+      <p>Yüklenen dosyaların güvenliğine ilişkin tüm süreçler aşağıdaki şekilde işlemektedir:</p>
+      <ul class="l-list">
+        <li><strong>Geçici depolama:</strong> Sunucu tabanlı işlemlerde dosyalar şifreli disk alanında tutulur ve işlem tamamlandığında silinir.</li>
+        <li><strong>Maksimum saklama süresi:</strong> Hiçbir dosya 1 saatten fazla sunucuda kalmaz. Genellikle bu süre çok daha kısadır.</li>
+        <li><strong>Dosya izolasyonu:</strong> Her kullanıcının dosyaları birbirinden izole çalışır; başka kullanıcının dosyasına erişim mümkün değildir.</li>
+        <li><strong>Dosya türü doğrulama:</strong> Yüklenen dosyaların gerçek formatı (magic bytes) kontrol edilir. Yanlış uzantılı veya zararlı içerik içeren dosyalar reddedilir.</li>
+        <li><strong>Boyut sınırı:</strong> Hizmet istikrarı ve güvenlik için dosya boyutu sınırlaması uygulanmaktadır.</li>
+        <li><strong>Tarayıcı tabanlı araçlar:</strong> Birleştirme, bölme ve döndürme gibi araçlarda dosyalar sunucuya hiç gönderilmez; tüm işlem tarayıcınızda gerçekleşir.</li>
+      </ul>
+    </div>
+
+    <div class="l-section" id="s4">
+      <h2 class="l-section-title"><span class="s-num">4</span>Altyapı Güvenliği</h2>
+      <ul class="l-list">
+        <li><strong>Cloudflare WAF:</strong> Web uygulama güvenlik duvarı, SQL injection, XSS ve diğer yaygın saldırı vektörlerine karşı aktif koruma sağlar.</li>
+        <li><strong>DDoS koruması:</strong> Cloudflare'in katmanlı DDoS önleme sistemi sürekli aktiftir.</li>
+        <li><strong>SSH anahtar kimlik doğrulaması:</strong> Sunuculara yalnızca anahtar tabanlı SSH erişimine izin verilir; parola girişi devre dışıdır.</li>
+        <li><strong>Güvenlik duvarı kuralları:</strong> Sunuculara gereksiz portlardan erişim bloke edilmiştir. Yalnızca zorunlu servis portları açıktır.</li>
+        <li><strong>Yazılım güncellemeleri:</strong> Sunucu işletim sistemleri ve bağımlılıklar güvenlik yamaları düzenli olarak uygulanarak güncel tutulur.</li>
+        <li><strong>Hız sınırlama (Rate limiting):</strong> API uç noktaları ve dosya yükleme işlemleri için istek sınırlaması uygulanır.</li>
+      </ul>
+    </div>
+
+    <div class="l-section" id="s5">
+      <h2 class="l-section-title"><span class="s-num">5</span>Sistem Logları</h2>
+      <p>MirPDF, güvenlik ve kötüye kullanım tespiti amacıyla sınırlı sistem logları tutmaktadır:</p>
+      <div class="l-box l-box-gray">
+        Kaydedilen bilgiler: IP adresi, istek zamanı, kullanılan araç türü, dosya boyutu ve HTTP durum kodu. Dosyaların içeriği hiçbir zaman loglanmaz.
+      </div>
+      <ul class="l-list">
+        <li><strong>Saklama süresi:</strong> Güvenlik logları 90 gün saklanır ve ardından silinir.</li>
+        <li><strong>Kullanım amacı:</strong> Loglar yalnızca güvenlik ihlali araştırması, kötüye kullanım tespiti ve yasal zorunluluklar kapsamında kullanılır.</li>
+        <li><strong>Erişim kısıtlaması:</strong> Sistem loglarına yalnızca yetkili sistem yöneticisi erişebilir.</li>
+        <li><strong>Yasal taleplere yanıt:</strong> Yetkili mahkeme kararı veya yasal zorunluluk durumunda ilgili loglar yetkili makamlara sağlanabilir.</li>
+      </ul>
+    </div>
+
+    <div class="l-section" id="s6">
+      <h2 class="l-section-title"><span class="s-num">6</span>Güvenlik Açığı Bildirimi</h2>
+      <p>MirPDF platformunda bir güvenlik açığı tespit ettiyseniz lütfen bunu sorumlu açıklama ilkelerine uygun biçimde bildirin.</p>
+      <div class="l-box l-box-yellow">
+        <strong>⚠️ Önemli:</strong> Tespit ettiğiniz güvenlik açıklarını kamuoyuyla paylaşmadan önce bize bildirmenizi rica ederiz. Bu süreç boyunca sizi açıklamadan ve hukuki süreçten koruyacağımızı taahhüt ediyoruz.
+      </div>
+      <ul class="l-list">
+        <li><strong>Bildirim e-postası:</strong> kolaypdf@gmail.com (konu: "Security Report")</li>
+        <li><strong>Yanıt süresi:</strong> Raporunuz en geç 48 saat içinde yanıtlanır.</li>
+        <li><strong>Düzeltme süreci:</strong> Kritik açıklar 7 iş günü içinde giderilmeye çalışılır.</li>
+        <li><strong>Kapsam dışı:</strong> Sosyal mühendislik, fiziksel güvenlik ve üçüncü taraf hizmetlere ait açıklar kapsam dışındadır.</li>
+      </ul>
+    </div>
+
+    <div class="l-section" id="s7">
+      <h2 class="l-section-title"><span class="s-num">7</span>İletişim</h2>
+      <div class="l-contact">
+        <div>
+          <h3>Güvenlik Bildirimi</h3>
+          <p>Emin Miroğlu · kolaypdf@gmail.com · Konu: Security Report</p>
+        </div>
+        <a href="mailto:kolaypdf@gmail.com?subject=Security+Report">Bildir</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="l-footer">
+  <div class="l-footer-inner">
+    <div class="l-footer-grid">
+      <div>
+        <a href="/" class="l-footer-brand">
+          <div class="l-footer-brand-mark">PDF</div>
+          MirPDF
+        </a>
+        <p class="l-footer-desc">Türkçe, ücretsiz ve güvenli online PDF araçları. 14+ araç, kayıt gerekmez.</p>
+      </div>
+      <div class="l-footer-col">
+        <h4>Araçlar</h4>
+        <a href="/pdf-birlestir">PDF Birleştir</a>
+        <a href="/pdf-sikistir">PDF Sıkıştır</a>
+        <a href="/pdf-bol">PDF Böl</a>
+        <a href="/pdf-to-word">PDF → Word</a>
+        <a href="/ocr">OCR / Metin</a>
+      </div>
+      <div class="l-footer-col">
+        <h4>Şirket</h4>
+        <a href="/about.html">Hakkımızda</a>
+        <a href="/contact.html">İletişim</a>
+        <a href="/pricing.html">Fiyatlar</a>
+        <a href="/faq.html">SSS</a>
+        <a href="/articles/">Blog</a>
+      </div>
+      <div class="l-footer-col">
+        <h4>Yasal</h4>
+        <a href="/legal/privacy.html">Gizlilik Politikası</a>
+        <a href="/legal/terms.html">Kullanım Şartları</a>
+        <a href="/legal/kvkk.html">KVKK</a>
+        <a href="/legal/cookies.html">Çerez Politikası</a>
+        <a href="/legal/security.html">Güvenlik</a>
+        <a href="/legal/refund.html">İade Politikası</a>
+      </div>
+    </div>
+    <div class="l-footer-bottom">
+      <span>© 2026 MirPDF. Tüm hakları saklıdır.</span>
+      <span>
+        <a href="/legal/privacy.html">Gizlilik</a>
+        <span class="l-footer-sep">·</span>
+        <a href="/legal/terms.html">Şartlar</a>
+        <span class="l-footer-sep">·</span>
+        <a href="/legal/kvkk.html">KVKK</a>
+      </span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

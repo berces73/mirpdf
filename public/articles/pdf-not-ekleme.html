@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PDF Düzenleme ve Not Ekleme: İşbirliği Araçları</title>
+<!-- Verification (replace tokens) -->
+<meta content="PDF üzerine not alma, metin vurgulama ve çizim yapma. Annotasyon katmanları ve Flatten işlemi ile belge güvenliği." name="description"/>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+          "@type": "Question",
+          "name": "PDF üzerindeki metni değiştirebilir miyim?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Evet, PDF Düzenleyici ile metinleri silebilir, yenisini yazabilir veya üzerine notlar ekleyebilirsiniz." }
+        },
+        {
+          "@type": "Question",
+          "name": "Flatten (Düzleştirme) işlemi ne işe yarar?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Eklediğiniz notların ve form alanlarının değiştirilmesini engeller, onları belgenin kalıcı bir parçası yapar." }
+        }]
+    }
+    </script>
+<style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; margin: 0; padding: 0; color: #333; }
+        .container { max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; padding: 20px; }
+        .main-content { flex: 3; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .sidebar { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+        .sidebar-box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .sidebar-link { display: block; padding: 10px 0; text-decoration: none; color: #555; border-bottom: 1px solid #f0f0f0; transition: 0.3s; }
+        .sidebar-link:hover { color: #007bff; padding-left: 5px; }
+        h1 { color: #2c3e50; font-size: 2rem; margin-top: 0; }
+        .breadcrumbs { font-size: 0.9em; color: #666; margin-bottom: 20px; }
+        .cta-btn { display: inline-block; background: #fd7e14; color: white; padding: 12px 25px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 10px; }
+        .cta-btn:hover { background: #e86b02; }
+        .author-box { display: flex; align-items: center; gap: 15px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; }
+    </style>
+<link href="https://mirpdf.com/articles/pdf-not-ekleme.html" rel="canonical"/><meta content="PDF Düzenleme ve Not Ekleme: İşbirliği Araçları" property="og:title"/><meta content="PDF üzerine not alma, metin vurgulama ve çizim yapma. Annotasyon katmanları ve Flatten işlemi ile belge güvenliği." property="og:description"/><meta content="https://mirpdf.com/assets/icons/og-image.jpg" property="og:image"/><meta content="article" property="og:type"/><meta content="https://mirpdf.com/articles/pdf-not-ekleme.html" property="og:url"/><meta content="summary_large_image" name="twitter:card"/><meta content="PDF Düzenleme ve Not Ekleme: İşbirliği Araçları" name="twitter:title"/><meta content="PDF üzerine not alma, metin vurgulama ve çizim yapma. Annotasyon katmanları ve Flatten işlemi ile belge güvenliği." name="twitter:description"/><meta content="https://mirpdf.com/assets/icons/og-image.jpg" name="twitter:image"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://mirpdf.com/articles/pdf-not-ekleme.html"},"headline":"PDF Düzenleme ve Not Ekleme: İşbirliği Araçları","description":"PDF üzerine not alma, metin vurgulama ve çizim yapma. Annotasyon katmanları ve Flatten işlemi ile belge güvenliği.","author":{"@type":"Organization","name":"MirPDF"},"publisher":{"@type":"Organization","name":"MirPDF","logo":{"@type":"ImageObject","url":"https://mirpdf.com/assets/logo.png"}},"image":"https://mirpdf.com/assets/icons/og-image.jpg","datePublished":"2026-02-26","dateModified":"2026-02-26"}</script>
+</head>
+<body>
+<div style="background:#fff; padding:15px; border-bottom:1px solid #ddd; text-align:center; font-weight:bold;">
+<a href="/" style="text-decoration:none; color:#333; margin:0 10px;">Ana Sayfa</a>
+<a href="/blog" style="text-decoration:none; color:#007bff; margin:0 10px;">Blog</a>
+</div>
+<div class="container">
+<main class="main-content">
+<div class="breadcrumbs">Anasayfa &gt; Blog &gt; PDF Düzenleme</div>
+<h1>PDF Düzenleme ve Not Ekleme: İşbirliği Araçları</h1>
+<p>PDF üzerinde çalışırken notlar almak, metinlerin altını çizmek veya şekiller eklemek gerekebilir. Bu işlemler, belgenin orijinal içeriğine dokunmadan, üzerine şeffaf bir "Annotasyon Katmanı" eklenerek yapılır.</p>
+<h3>FDF ve XFDF Formatları</h3>
+<p>Eklediğiniz tüm yorumlar, fosforlu kalem izleri ve notlar aslında XML tabanlı <strong>XFDF</strong> formatında dışa aktarılabilir. Bu sayede 100 MB'lık bir PDF'in içindeki sadece 1 KB'lık yorum verisini bir başkasına gönderip, onun kendi kopyası üzerinde bu yorumları görmesini sağlayabilirsiniz.</p>
+<div style="background:#fffaf0; border:1px solid #fbd38d; padding:20px; border-radius:5px; margin:20px 0;">
+<h3 style="margin-top:0; color:#c05621;">PDF Üzerine Yazı Yazın</h3>
+<p>Belgelerinize notlar ekleyin, imzalayın ve düzenleyin.</p>
+<a class="cta-btn" href="/pdf-editor">✏️ PDF Düzenle</a>
+</div>
+<h3>Flattening (Düzleştirme) İhtiyacı</h3>
+<p>Not ekleme süreci bittikten sonra, bu notların değiştirilemez hale gelmesi için "Flatten" işlemi yapılır. Bu işlem, üzerine eklenen tüm notları belgenin ayrılmaz bir parçası (piksel veya vektör) haline getirir. Özellikle form doldurma ve imzalama sonrası bu adım veri güvenliği için şarttır.</p>
+<div class="author-box">
+<div style="width:50px; height:50px; background:#ddd; border-radius:50%;"></div>
+<div>
+<strong>Yazar: PDF Teknik Ekibi</strong>
+</div>
+</div>
+</main>
+<aside class="sidebar">
+<div class="sidebar-box">
+<h4>Hızlı Araçlar</h4>
+<a class="sidebar-link" href="/pdf-birlestir">📂 PDF Birleştir</a>
+<a class="sidebar-link" href="/pdf-to-word">📝 PDF'ten Word'e</a>
+</div>
+</aside>
+</div>
+<section style="margin-top:40px;padding:20px;background:#0f1a30;border-radius:16px">
+<h2>İlgili İçerikler (SEO Cluster)</h2>
+<ul>
+<li><a href="/seo/tools/pdf-birlestir/rehber.html">PDF Birleştirme Rehberi</a></li>
+<li><a href="/seo/tools/pdf-sikistir/rehber.html">PDF Sıkıştırma Rehberi</a></li>
+<li><a href="/seo/tools/pdf-to-word/rehber.html">PDF → Word Rehberi</a></li>
+<li><a href="/seo/tools/ocr/rehber.html">OCR Metin Tanıma Rehberi</a></li>
+<li><a href="/seo/tools/jpg-to-pdf/rehber.html">JPG → PDF Rehberi</a></li>
+<li><a href="/seo/rehberler/pdf-kucultme-rehberi.html">PDF Boyutu Küçültme</a></li>
+<li><a href="/seo/rehberler/wordu-pdf-yapma.html">Word Dosyasını PDF Yapma</a></li>
+<li><a href="/seo/rehberler/kvkk-uyumlu-pdf.html">KVKK Uyumlu PDF Araçları</a></li>
+</ul>
+</section>
+</body>
+</html>

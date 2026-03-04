@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "toolPath": "pdf-sikistir",
+      "toolUrl": "/tools/pdf-sikistir.html",
+      "slug": "outlook",
+      "title": "Outlook için PDF küçültme",
+      "description": "Outlook ek limitini aşmadan PDF boyutunu düşür. Recommended/Strong seçenekleri."
+    },
+    {
+      "toolPath": "pdf-sikistir",
+      "toolUrl": "/tools/pdf-sikistir.html",
+      "slug": "gmail",
+      "title": "Gmail için PDF küçültme",
+      "description": "Gmail 25MB limitine takılmadan PDF sıkıştır. Kaliteyi koruyarak küçült."
+    },
+    {
+      "toolPath": "pdf-birlestir",
+      "toolUrl": "/tools/pdf-birlestir.html",
+      "slug": "mobil",
+      "title": "Telefonda PDF birleştirme",
+      "description": "Android/iPhone’da PDF dosyalarını sırala ve tek dosyada birleştir."
+    }
+  ]
+}

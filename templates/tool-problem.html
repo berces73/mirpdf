@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="tr">
+<head>
+{{> head}}
+<title>{{title}} | MirPDF</title>
+<meta name="description" content="{{desc}}" />
+<link rel="canonical" href="{{baseUrl}}/seo/tools/{{toolSlug}}/problemler/{{slug}}.html" />
+<meta property="og:title" content="{{title}}" />
+<meta property="og:description" content="{{desc}}" />
+<meta property="og:type" content="article" />
+</head>
+<body>
+<div class="bg"></div>
+<main class="wrap">
+{{> header}}
+
+<article class="card blog-article">
+  <header class="article-header">
+    <h1>{{title}}</h1>
+    <p class="lead">{{desc}}</p>
+  </header>
+
+  <div class="article-body">
+    <p>{{body}}</p>
+  </div>
+
+  <div class="cta-box">
+    <a href="/tools/{{toolSlug}}.html" class="primary">Aracı Hemen Dene →</a>
+  </div>
+</article>
+
+<section class="card related-section">
+  <h2>İlgili Sayfalar</h2>
+  <ul>{{relatedLinks}}</ul>
+</section>
+
+{{> footer}}
+</main>
+</body>
+</html>

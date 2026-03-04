@@ -1,0 +1,139 @@
+
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MirPDF | PDF Word Çevirme, OCR, PDF Sıkıştırma</title>
+  <meta name="description" content="PDF→Word çevirme, OCR ile metin çıkarma ve güçlü PDF sıkıştırma. Mobil uyumlu, hızlı ve güvenli." />
+  <link rel="canonical" href="https://FILL_ACTUAL_DOMAIN/" />
+
+  <meta name="keywords" content="pdf to word, pdf sıkıştır, ocr türkçe, pdf metin çıkarma, pdf araçları" />
+  <meta property="og:title" content="MirPDF | PDF Word Çevirme, OCR, PDF Sıkıştırma" />
+  <meta property="og:description" content="PDF→Word, OCR ile metin çıkarma ve güçlü PDF sıkıştırma. Mobil uyumlu, hızlı ve güvenli." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://FILL_ACTUAL_DOMAIN/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0f0f14" />
+
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "MirPDF", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["PDF sıkıştırma (Ghostscript)", "PDF → Word (LibreOffice)", "OCR (Tesseract, Turkish+English)", "Kredi bazlı kullanım ve Stripe ödeme"], "url": "https://FILL_ACTUAL_DOMAIN/"}</script>
+</head>
+<body>
+  <div class="bg"></div>
+  <main class="wrap">
+    <div class="toasts" id="toasts" aria-live="polite" aria-atomic="true"></div>
+    <header class="top">
+      <div class="brand">
+        <div class="logo">PDF</div>
+        <div>
+          <h1>MirPDF</h1>
+          <p>PDF → Word • OCR • Sıkıştırma</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="ghost" id="toggleTheme" aria-label="Tema değiştir">🌙</button>
+        <button class="ghost" id="openAuth">Giriş / Kayıt</button>
+        <button class="primary" id="openPricing">Premium</button>
+      </div>
+    </header>
+
+    <div class="card" id="verifyBanner" hidden></div>
+
+
+    <section class="hero card">
+      <div class="heroText">
+        <h2>En hızlı PDF araçları (TR)</h2>
+        <p class="muted">
+          Ücretsiz dene: günde <b>3 işlem</b>. Daha fazlası için kredi satın al.
+          Dosyalar iş bittikten sonra TTL ile temizlenir.
+        </p>
+        <div class="heroBtns">
+          <a class="cta" href="/tools/pdf-to-word.html">PDF → Word</a>
+          <a class="cta" href="/tools/ocr.html">OCR</a>
+          <a class="cta" href="/tools/pdf-sikistir.html">Sıkıştır</a>
+          <a class="cta ghostLink" href="#tool">Hepsini Gör</a>
+          <a class="cta ghostLink" href="/blog/telefon-pdf-word-yapma.html">SEO Örnek İçerik</a>
+        </div>
+      </div>
+      <div class="heroStats">
+        <div class="stat"><div class="k">⚡</div><div><b>Hız</b><div class="muted">Queue + timeout</div></div></div>
+        <div class="stat"><div class="k">🔒</div><div><b>Güven</b><div class="muted">spawn + whitelist</div></div></div>
+        <div class="stat"><div class="k">📱</div><div><b>Mobil</b><div class="muted">Drag & drop</div></div></div>
+      </div>
+    </section>
+
+    <section class="grid" id="tool">
+      <div class="card">
+        <div class="cardHead">
+          <h2>Dosya Yükle</h2>
+          <span class="muted">Sürükle-bırak</span>
+        </div>
+
+        <div id="drop" class="drop">
+          <input id="file" type="file" accept="application/pdf" hidden />
+          <div class="dropInner">
+            <div class="icon">⬆️</div>
+            <div class="title">PDF dosyanı buraya bırak</div>
+            <div class="muted">veya <button id="pickBtn" class="linkBtn">dosya seç</button></div>
+            <div class="meta" id="fileMeta" hidden></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label>Tool</label>
+            <select id="toolSel">
+              <option value="pdf-to-word">PDF → Word</option>
+              <option value="ocr">OCR</option>
+              <option value="compress">Compress</option>
+            </select>
+          </div>
+          <div class="field" id="optBox"></div>
+        </div>
+
+        <button id="go" class="primary full">Başlat</button>
+        <div class="progressWrap" id="progressWrap" hidden>
+          <div class="progressBar"><div class="progressFill" id="progressFill" style="width:0%"></div></div>
+          <div class="small muted" id="progressText">0%</div>
+        </div>
+        <div class="small muted" id="pill">Hazır</div>
+      </div>
+
+      <div class="card">
+        <div class="cardHead">
+          <h2>İşler</h2>
+          <span class="muted" id="jobsHint">Henüz iş yok</span>
+        </div>
+        <div class="jobs" id="jobs"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="cardHead">
+        <h2>Log</h2>
+        <button id="clearLog" class="ghost">Temizle</button>
+      </div>
+      <pre id="log"></pre>
+    </section>
+
+    <footer class="muted footer">
+      © 2026 MirPDF — <a class="muted" href="/blog/pdf-sikistirma-nasil.html">Blog</a>
+    </footer>
+  </main>
+
+  <!-- Simple modal -->
+  <div class="modal" id="modal" hidden>
+    <div class="modalCard">
+      <div class="modalHead">
+        <b id="modalTitle">Başlık</b>
+        <button class="ghost" id="closeModal">Kapat</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
