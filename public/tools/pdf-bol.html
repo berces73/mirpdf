@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+<<<<<<< HEAD
   <title>PDF Böl — Ücretsiz Online PDF Bölme | MirPDF</title>
   <meta name="description" content="PDF'ten istediğin sayfaları çıkar. Ücretsiz, tarayıcıda çalışır.">
   <link rel="canonical" href="https://mirpdf.com/pdf-bol">
@@ -317,3 +318,116 @@ runBtn.addEventListener('click', async () => {
 <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 </body>
 </html>
+=======
+  <title>PDF Böl | PDF3</title>
+  
+  <!-- Verification (replace tokens) -->
+<link rel="stylesheet" href="/style.css">
+  <script type="module" src="/assets/js/toast.js"></script>
+  <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <style>
+    .card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;margin:14px 0}
+    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    input,select,button{padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(0,0,0,.2);color:#fff}
+    button{cursor:pointer}
+    small{opacity:.75}
+  </style>
+
+  <link rel="stylesheet" href="/assets/css/extra-seo.css"/>
+</head>
+<body>
+<div class="container" style="max-width:900px;margin:40px auto;padding:0 16px;">
+  <a href="/tools" style="opacity:.8">← Araçlar</a>
+  <h1 style="margin-top:10px">✂️ PDF Böl</h1>
+  <p style="opacity:.85">PDF’ten sayfa aralığı çıkar veya tek dosya oluştur (tarayıcıda).</p>
+
+  <div class="card">
+    <div class="row">
+      <input id="file" type="file" accept="application/pdf">
+      <input id="range" type="text" placeholder="Sayfa aralığı (örn: 1-3,5,7)" style="min-width:260px">
+      <input id="outname" type="text" value="cikarilan.pdf" style="min-width:220px">
+      <button id="run">Sayfaları Çıkar</button>
+    </div>
+    <p style="opacity:.8;margin-top:10px"><small>Sayfalar 1’den başlar. Örn: 1-3,6,9-10</small></p>
+  </div>
+
+<script>
+  function parseRanges(s){
+    s = (s||"").replace(/\s+/g,"");
+    if(!s) return null;
+    const parts = s.split(",");
+    const pages = new Set();
+    for(const part of parts){
+      if(!part) continue;
+      if(part.includes("-")){
+        const [a,b]=part.split("-").map(x=>parseInt(x,10));
+        if(!a||!b||a<1||b<a) return null;
+        for(let i=a;i<=b;i++) pages.add(i);
+      } else {
+        const n=parseInt(part,10);
+        if(!n||n<1) return null;
+        pages.add(n);
+      }
+    }
+    return [...pages].sort((x,y)=>x-y);
+  }
+  function downloadBytes(bytes, filename){
+    const blob = new Blob([bytes], {type:"application/pdf"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href), 30000);
+  }
+
+  document.getElementById("run").addEventListener("click", async ()=>{
+    const f = document.getElementById("file").files[0];
+    if(!f) return alert("PDF seç.");
+    const pages = parseRanges(document.getElementById("range").value);
+    if(!pages) return alert("Geçerli sayfa aralığı gir (örn: 1-3,5).");
+    const src = await PDFLib.PDFDocument.load(await f.arrayBuffer());
+    const out = await PDFLib.PDFDocument.create();
+    const total = src.getPageCount();
+    const idxs = pages.map(p=>p-1).filter(i=>i>=0 && i<total);
+    if(!idxs.length) return alert("Aralık PDF içinde değil.");
+    const copied = await out.copyPages(src, idxs);
+    copied.forEach(p=>out.addPage(p));
+    const bytes = await out.save();
+    downloadBytes(bytes, document.getElementById("outname").value || "cikarilan.pdf");
+  });
+</script>
+
+  <p style="opacity:.7;margin-top:18px"><small>İpucu: Bu araç tarayıcıda çalışır. Dosyalarınız sunucuya gönderilmez.</small></p>
+</div>
+
+<section class="related-guides" data-related-guides="1">
+  <div class="container">
+    <h2>İlgili Rehberler</h2>
+    <p class="muted">Benzer konularda en çok okunan rehberler.</p>
+    <ul class="related-list">
+      <li><a href="/seo/tools/pdf-sikistir/" class="rlink">PDF Sıkıştır</a></li><li><a href="/seo/tools/pdf-sikistir/rehber.html" class="rlink">PDF Sıkıştırma Rehberi: Kalite Kaybetmeden Küçültme</a></li><li><a href="/seo/tools/pdf-sikistir/sss.html" class="rlink">PDF Sıkıştırma SSS</a></li><li><a href="/seo/tools/pdf-sikistir/problemler/outlook-pdf-boyutu-buyuk.html" class="rlink">Outlook İçin PDF Küçültme (Dosya Boyutu Sorunu)</a></li><li><a href="/seo/tools/pdf-to-word/" class="rlink">PDF'ten Word'e</a></li><li><a href="/seo/tools/pdf-to-word/rehber.html" class="rlink">PDF’i Word’e Dönüştürme: En Kolay Yöntemler</a></li><li><a href="/seo/tools/pdf-to-word/sss.html" class="rlink">PDF → Word Dönüştürme SSS</a></li><li><a href="/seo/tools/ocr/" class="rlink">OCR</a></li>
+    
+      <li><a href="/articles/pdf-8-temel-islem-rehberi.html" class="rlink">PDF ile 8 Temel İşlem Rehberi →</a></li></ul>
+  </div>
+</section>
+
+<section style="margin-top:40px;padding:20px;background:#0f1a30;border-radius:16px">
+<h2>İlgili İçerikler (SEO Cluster)</h2>
+
+<ul>
+<li><a href="/seo/tools/pdf-birlestir/rehber.html">PDF Birleştirme Rehberi</a></li>
+<li><a href="/seo/tools/pdf-sikistir/rehber.html">PDF Sıkıştırma Rehberi</a></li>
+<li><a href="/seo/tools/pdf-to-word/rehber.html">PDF → Word Rehberi</a></li>
+<li><a href="/seo/tools/ocr/rehber.html">OCR Metin Tanıma Rehberi</a></li>
+<li><a href="/seo/tools/jpg-to-pdf/rehber.html">JPG → PDF Rehberi</a></li>
+<li><a href="/seo/rehberler/pdf-kucultme-rehberi.html">PDF Boyutu Küçültme</a></li>
+<li><a href="/seo/rehberler/wordu-pdf-yapma.html">Word Dosyasını PDF Yapma</a></li>
+<li><a href="/seo/rehberler/kvkk-uyumlu-pdf.html">KVKK Uyumlu PDF Araçları</a></li>
+</ul>
+
+</section>
+
+</body>
+</html>
+>>>>>>> 8c6594bdb250dbef9341a1c86315df2475596a4e
