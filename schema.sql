@@ -1,37 +1,31 @@
 -- ============================================================
 -- PDF Platform — D1 Schema
--- Uygula: wrangler d1 execute pdf-platform-db --file=schema.sql --remote
+-- Uygula: wrangler d1 execute mirpdf-db --file=schema.sql --remote --config wrangler.worker.toml
 -- ============================================================
-
-PRAGMA journal_mode = WAL;
-PRAGMA foreign_keys = ON;
 
 -- ── Jobs tablosu ─────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS jobs (
-  id              TEXT    PRIMARY KEY,        -- crypto.randomUUID()
-  idempotency_key TEXT    UNIQUE NOT NULL,    -- client opId — iki kez çalışmasın
-  client_id       TEXT    NOT NULL,           -- HMAC-signed cookie kimliği
-  tool            TEXT    NOT NULL,           -- "compress-strong"
-  status          TEXT    NOT NULL DEFAULT 'pending',
-  --              pending | processing | done | failed
-  input_r2_key    TEXT,                       -- jobs/input/{id}/file.pdf
-  output_r2_key   TEXT,                       -- jobs/output/{id}/result.pdf
-  input_bytes     INTEGER DEFAULT 0,
-  output_bytes    INTEGER DEFAULT 0,
-  options         TEXT    DEFAULT '{}',       -- JSON: { compression_level }
-  error_message   TEXT,
-  processor_ack   INTEGER DEFAULT 0,          -- 1 = processor aldı (idempotent dispatch)
-  created_at      INTEGER NOT NULL,           -- Unix ms
-  updated_at      INTEGER NOT NULL,
-  expires_at      INTEGER NOT NULL,           -- Unix ms — cleanup için
-  CONSTRAINT chk_status CHECK (
-    status IN ('pending','processing','done','failed')
-  )
+  job_id        TEXT PRIMARY KEY,
+  batch_id      TEXT,
+  client_id     TEXT NOT NULL,
+  tool          TEXT NOT NULL,
+  status        TEXT NOT NULL DEFAULT 'pending',
+  input_key     TEXT,
+  output_key    TEXT,
+  ttl_seconds   INTEGER DEFAULT 3600,
+  cost          INTEGER DEFAULT 0,
+  op_id         TEXT UNIQUE,
+  error_message TEXT,
+  created_at    INTEGER NOT NULL,
+  updated_at    INTEGER NOT NULL,
+  expires_at    INTEGER NOT NULL
 );
 
-CREATE INDEX IF NOT EXISTS idx_jobs_client  ON jobs (client_id);
-CREATE INDEX IF NOT EXISTS idx_jobs_status  ON jobs (status);
-CREATE INDEX IF NOT EXISTS idx_jobs_expires ON jobs (expires_at);
+CREATE INDEX IF NOT EXISTS idx_jobs_client       ON jobs (client_id);
+CREATE INDEX IF NOT EXISTS idx_jobs_status       ON jobs (status);
+CREATE INDEX IF NOT EXISTS idx_jobs_expires      ON jobs (expires_at);
+CREATE INDEX IF NOT EXISTS idx_jobs_batch_id     ON jobs (batch_id);
+CREATE INDEX IF NOT EXISTS idx_jobs_client_batch ON jobs (client_id, batch_id);
 
 -- ── Pro planlar (Stripe webhook buraya yazar) ─────────────────
 CREATE TABLE IF NOT EXISTS pro_plans (
@@ -61,9 +55,7 @@ CREATE TABLE IF NOT EXISTS cleanup_log (
   reason     TEXT    NOT NULL DEFAULT 'expired'  -- expired | manual
 );
 
-
-
--- ── Users / Auth (SaaS) ─────────────────────────────────────
+-- ── Users / Auth (SaaS) ──────────────────────────────────────
 CREATE TABLE IF NOT EXISTS users (
   id                 TEXT PRIMARY KEY,        -- uuid
   email              TEXT UNIQUE NOT NULL,
@@ -122,7 +114,6 @@ CREATE INDEX IF NOT EXISTS idx_password_resets_user ON password_resets(user_id);
 CREATE INDEX IF NOT EXISTS idx_password_resets_hash ON password_resets(token_hash);
 CREATE INDEX IF NOT EXISTS idx_password_resets_exp  ON password_resets(expires_at);
 
-
 -- ── Refresh Tokens (JWT refresh / rotation) ───────────────────
 CREATE TABLE IF NOT EXISTS refresh_tokens (
   id               TEXT PRIMARY KEY,          -- uuid
@@ -138,7 +129,3 @@ CREATE TABLE IF NOT EXISTS refresh_tokens (
 CREATE INDEX IF NOT EXISTS idx_refresh_tokens_user ON refresh_tokens(user_id);
 CREATE INDEX IF NOT EXISTS idx_refresh_tokens_hash ON refresh_tokens(token_hash);
 CREATE INDEX IF NOT EXISTS idx_refresh_tokens_exp  ON refresh_tokens(expires_at);
-
-
-CREATE INDEX IF NOT EXISTS idx_jobs_batch_id ON jobs(batch_id);
-CREATE INDEX IF NOT EXISTS idx_jobs_client_batch ON jobs(client_id, batch_id);
