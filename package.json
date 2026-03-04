@@ -6,9 +6,9 @@
   },
   "name": "mirpdf",
   "version": "1.0.0",
-  "scripts": {
-    "build:seo": "node generate-seo.js",
-    "build:content": "node scripts/build-content.js",
-    "build": "npm run build:seo && npm run build:content"
-  }
+"scripts": {
+  "build": "npm run build:seo && npm run build:content",
+  "build:seo": "node scripts/generate-seo-pages.js",
+  "build:content": "node scripts/build-content.js"
+}
 }
