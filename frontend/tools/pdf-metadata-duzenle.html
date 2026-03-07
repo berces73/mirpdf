@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PDF Metadata Düzenle — Başlık, Yazar, Konu Değiştir | MirPDF</title>
+  <meta name="description" content="PDF dosyanızın başlık, yazar, konu ve anahtar kelime bilgilerini ücretsiz düzenleyin. Tarayıcıda çalışır, dosya sunucuya gönderilmez." />
+  <link rel="canonical" href="https://mirpdf.com/tools/pdf-metadata-duzenle.html" />
+  <meta name="keywords" content="pdf metadata düzenle, pdf bilgi düzenle, pdf başlık değiştir, pdf yazar ekle" />
+  <meta property="og:title" content="PDF Metadata Düzenle | MirPDF" />
+  <meta property="og:description" content="PDF başlık, yazar, konu, anahtar kelime bilgilerini düzenleyin." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mirpdf.com/tools/pdf-metadata-duzenle.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0f0f14" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MirPDF - PDF Metadata Düzenle","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"PDF dosyanızın başlık, yazar ve diğer bilgi alanlarını tarayıcıda düzenleyin.","url":"https://mirpdf.com/tools/pdf-metadata-duzenle.html","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://mirpdf.com"},{"@type":"ListItem","position":2,"name":"Araçlar","item":"https://mirpdf.com/tools/"},{"@type":"ListItem","position":3,"name":"PDF Metadata Düzenle","item":"https://mirpdf.com/tools/pdf-metadata-duzenle.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Metadata nedir?","acceptedAnswer":{"@type":"Answer","text":"PDF metadata; dosyanın başlığı, yazarı, konusu ve anahtar kelimeleri gibi gizli bilgi alanlarıdır. Dosya özellikleri penceresinde görünür."}},{"@type":"Question","name":"Metadata değiştirmek güvenli mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. Metadata değişikliği PDF içeriğine dokunmaz, yalnızca dosya bilgilerini günceller."}},{"@type":"Question","name":"Orijinal dosyam değişir mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır, düzenleme tarayıcıda gerçekleşir ve yeni dosya olarak indirilir. Orijinal dosyanız korunur."}}]}</script>
+<style>
+.upgrade-nudge{background:linear-gradient(135deg,#1e1b4b,#312e81);border:1px solid #6366f1;border-radius:14px;padding:20px 24px;margin:16px 0;display:none}
+.upgrade-nudge.visible{display:block}
+.upgrade-nudge h3{margin:0 0 6px;color:#a5b4fc;font-size:16px}
+.upgrade-nudge p{margin:0 0 14px;color:#94a3b8;font-size:14px}
+.nudge-btns{display:flex;gap:10px;flex-wrap:wrap}
+.nudge-btns a{background:#6366f1;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600}
+.nudge-btns a.ghost{background:transparent;border:1px solid #6366f1;color:#a5b4fc}
+.faq-item{border-bottom:1px solid #1e293b;padding:14px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-item h3{margin:0 0 6px;font-size:15px;color:#e2e8f0}
+.faq-item p{margin:0;color:#94a3b8;font-size:14px;line-height:1.6}
+/* Thumbnail */
+.ce-thumb-preview{display:none;align-items:center;gap:12px;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:12px 16px;margin-bottom:14px}
+.ce-thumb-preview.show{display:flex}
+.ce-thumb-wrap{width:52px;height:68px;border-radius:8px;overflow:hidden;background:rgba(0,0,0,.3);flex-shrink:0;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center}
+.ce-thumb-wrap canvas{width:100%;height:100%;display:block}
+.ce-thumb-info{flex:1;min-width:0}
+.ce-thumb-fname{font-weight:700;font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#eaf2ff}
+.ce-thumb-meta{font-size:.75rem;color:#9fb2c8;margin-top:2px}
+.ce-thumb-change{font-size:.75rem;color:#06b6d4;text-decoration:underline;cursor:pointer;margin-top:4px;display:inline-block;background:none;border:none;font-family:inherit;padding:0}
+.ce-status{display:none;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;font-size:.85rem;margin-top:10px;font-weight:600}
+.ce-status.show{display:flex}
+.ce-status.loading{background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.3);color:#7dd3fc}
+.ce-status.ok{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:#86efac}
+.ce-status.err{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);color:#fca5a5}
+.ce-spin{width:16px;height:16px;border:2.5px solid rgba(255,255,255,.2);border-top-color:#06b6d4;border-radius:50%;animation:ce-spin .7s linear infinite;flex-shrink:0}
+@keyframes ce-spin{to{transform:rotate(360deg)}}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+@media(max-width:600px){.meta-grid{grid-template-columns:1fr}}
+.meta-current{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px;margin-bottom:12px;font-size:.8rem;color:#9fb2c8;display:none}
+.meta-current.show{display:block}
+.meta-current b{color:#eaf2ff}
+.meta-current table{width:100%;border-collapse:collapse;margin-top:6px}
+.meta-current td{padding:3px 6px}
+.meta-current td:first-child{color:#9fb2c8;width:90px}
+.meta-current td:last-child{color:#eaf2ff;font-weight:600}
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <main class="wrap">
+    <div class="toasts" id="toasts" aria-live="polite" aria-atomic="true"></div>
+    <header class="top">
+      <div class="brand">
+        <div class="logo">PDF</div>
+        <div>
+          <div class="siteTitle">MirPDF</div>
+          <p>PDF → Word • OCR • Sıkıştırma</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="ghost" id="toggleTheme" aria-label="Tema değiştir">🌙</button>
+        <a class="ghost" href="/" style="padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.12);font-size:13px;color:#eaf2ff;text-decoration:none;">← Ana Sayfa</a>
+        <button class="primary" onclick="location.href='/pricing.html'">Premium</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="cardHead">
+        <h1>🏷️ PDF Metadata Düzenle</h1>
+        <span class="muted">Başlık, yazar, konu ve anahtar kelimeleri tarayıcıda değiştir</span>
+      </div>
+
+      <!-- Drop Zone -->
+      <div id="dropZone" class="drop" style="cursor:pointer" onclick="document.getElementById('fileInput').click()">
+        <input id="fileInput" type="file" accept="application/pdf" hidden />
+        <div class="dropInner">
+          <div class="icon">🏷️</div>
+          <div class="title">PDF dosyasını buraya bırak</div>
+          <div class="muted">veya <span style="color:#06b6d4;text-decoration:underline;cursor:pointer">dosya seç</span></div>
+        </div>
+      </div>
+
+      <!-- Thumbnail Preview -->
+      <div class="ce-thumb-preview" id="thumbPreview">
+        <div class="ce-thumb-wrap"><canvas id="mainThumb"></canvas></div>
+        <div class="ce-thumb-info">
+          <div class="ce-thumb-fname" id="thumbFname">—</div>
+          <div class="ce-thumb-meta" id="thumbMeta">—</div>
+          <button class="ce-thumb-change" id="thumbChange">Değiştir</button>
+        </div>
+      </div>
+
+      <!-- Mevcut metadata gösterimi -->
+      <div class="meta-current" id="metaCurrent">
+        <b>Mevcut Metadata:</b>
+        <table id="metaTable"></table>
+      </div>
+
+      <!-- Düzenleme alanları -->
+      <div class="meta-grid" id="metaForm" style="display:none">
+        <div class="field">
+          <label>Başlık (Title)</label>
+          <input id="mTitle" type="text" placeholder="PDF başlığı" />
+        </div>
+        <div class="field">
+          <label>Yazar (Author)</label>
+          <input id="mAuthor" type="text" placeholder="Yazar adı" />
+        </div>
+        <div class="field">
+          <label>Konu (Subject)</label>
+          <input id="mSubject" type="text" placeholder="Konu açıklaması" />
+        </div>
+        <div class="field">
+          <label>Oluşturan (Creator)</label>
+          <input id="mCreator" type="text" placeholder="Oluşturan uygulama" />
+        </div>
+        <div class="field" style="grid-column:1/-1">
+          <label>Anahtar Kelimeler (Keywords)</label>
+          <input id="mKeywords" type="text" placeholder="kelime1, kelime2, kelime3" />
+        </div>
+        <div class="field" style="grid-column:1/-1">
+          <label>Çıktı dosya adı</label>
+          <input id="outname" type="text" value="metadata-duzenlenmis.pdf" />
+        </div>
+      </div>
+
+      <button id="runBtn" class="primary full" disabled>Metadata Kaydet ve İndir</button>
+      <div class="ce-status" id="status"></div>
+    </section>
+
+    <!-- İlgili Araçlar -->
+    <section class="card related-tools" aria-label="İlgili Araçlar">
+      <h2>Sıradaki İşleminiz Ne Olabilir?</h2>
+      <div id="related-tools-container"></div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="card faq-section">
+      <h2>Sık Sorulan Sorular</h2>
+      <div class="faq-item">
+        <h3>Metadata nedir?</h3>
+        <p>PDF metadata; dosyanın başlığı, yazarı, konusu ve anahtar kelimeleri gibi gizli bilgi alanlarıdır. Dosya özellikleri penceresinde ve arama motorları tarafından görünür.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Metadata değiştirmek güvenli mi?</h3>
+        <p>Evet. Metadata değişikliği PDF içeriğine dokunmaz, yalnızca dosya bilgilerini günceller.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Orijinal dosyam değişir mi?</h3>
+        <p>Hayır, düzenleme tarayıcıda gerçekleşir ve yeni dosya olarak indirilir. Orijinal dosyanız korunur.</p>
+      </div>
+    </section>
+
+    <div class="upgrade-nudge" id="upgradeNudge">
+      <h3>🚀 Limitsiz çalışmak ister misin?</h3>
+      <p>Premium'a geç — sınırsız işlem, öncelikli kuyruk ve toplu işlem desteği.</p>
+      <div class="nudge-btns">
+        <a href="/pricing.html">Premium'a Geç →</a>
+        <a href="#" class="ghost" onclick="document.getElementById('upgradeNudge').style.display='none';return false;">Şimdi değil</a>
+      </div>
+    </div>
+
+    <footer class="muted footer">© 2026 MirPDF</footer>
+  </main>
+
+  <footer class="site-footer" style="border-top:1px solid rgba(255,255,255,.08);margin-top:48px;padding:24px 0;text-align:center;color:#6b7280;font-size:13px;">
+    <div class="container">
+      <nav style="margin-bottom:8px;">
+        <a href="/legal/terms.html" style="color:#6b7280;margin:0 10px;">Kullanım Şartları</a>
+        <a href="/legal/kvkk.html" style="color:#6b7280;margin:0 10px;">KVKK / Gizlilik</a>
+        <a href="/pricing.html" style="color:#6b7280;margin:0 10px;">Fiyatlandırma</a>
+        <a href="/about.html" style="color:#6b7280;margin:0 10px;">Hakkında</a>
+      </nav>
+      <p style="margin:0;">&copy; 2026 MirPDF — Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script src="../../internal-linking.js" type="module"></script>
+
+<script>
+// ── Theme ────────────────────────────────────────────────────────
+(function(){
+  const btn = document.getElementById('toggleTheme');
+  function apply(t){ document.documentElement.dataset.theme=t; localStorage.setItem('theme',t); if(btn) btn.textContent=t==='light'?'☀️':'🌙'; }
+  try{ const s=localStorage.getItem('theme'); apply(s||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark')); }catch(e){}
+  if(btn) btn.onclick=()=>{ const c=document.documentElement.dataset.theme||'dark'; apply(c==='dark'?'light':'dark'); };
+})();
+
+// ── CDN Lazy Loaders ─────────────────────────────────────────────
+const PDFJS_CDN  = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+const PDFJS_WORK = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+const PDFLIB_CDN = 'https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js';
+let _pdfjs=null, _pdflib=null;
+async function getPdfJs(){ if(_pdfjs)return _pdfjs; await new Promise((r,j)=>{const s=document.createElement('script');s.src=PDFJS_CDN;s.onload=r;s.onerror=j;document.head.appendChild(s);}); window.pdfjsLib.GlobalWorkerOptions.workerSrc=PDFJS_WORK; _pdfjs=window.pdfjsLib; return _pdfjs; }
+async function getPdfLib(){ if(_pdflib)return _pdflib; await new Promise((r,j)=>{const s=document.createElement('script');s.src=PDFLIB_CDN;s.onload=r;s.onerror=j;document.head.appendChild(s);}); _pdflib=window.PDFLib; return _pdflib; }
+
+function fmtSize(b){ return b>1048576?(b/1048576).toFixed(1)+' MB':(b/1024).toFixed(0)+' KB'; }
+function setStatus(msg,type){ const e=document.getElementById('status'); e.className='ce-status show '+type; e.innerHTML=type==='loading'?'<div class="ce-spin"></div>'+msg:msg; }
+function clearStatus(){ document.getElementById('status').className='ce-status'; }
+function dlBytes(bytes,name){ const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([bytes],{type:'application/pdf'})); a.download=name; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),30000); }
+
+let pdfFile=null;
+
+// ── Drop Zone ────────────────────────────────────────────────────
+const dropZone=document.getElementById('dropZone');
+const fileInput=document.getElementById('fileInput');
+dropZone.addEventListener('dragover',e=>{e.preventDefault();dropZone.classList.add('drag');});
+dropZone.addEventListener('dragleave',e=>{if(!dropZone.contains(e.relatedTarget))dropZone.classList.remove('drag');});
+dropZone.addEventListener('drop',e=>{e.preventDefault();dropZone.classList.remove('drag');if(e.dataTransfer.files[0])loadFile(e.dataTransfer.files[0]);});
+fileInput.addEventListener('change',()=>{ if(fileInput.files[0]) loadFile(fileInput.files[0]); });
+document.getElementById('thumbChange').addEventListener('click',()=>fileInput.click());
+
+async function loadFile(f){
+  if(!f||f.type!=='application/pdf'){setStatus('❌ Geçerli bir PDF seçin.','err');return;}
+  pdfFile=f;
+  document.getElementById('thumbFname').textContent=f.name;
+  document.getElementById('thumbMeta').textContent=fmtSize(f.size)+' · yükleniyor...';
+  document.getElementById('thumbPreview').classList.add('show');
+  dropZone.style.display='none';
+  clearStatus();
+
+  // thumbnail
+  try{
+    const pdfjs=await getPdfJs();
+    const ab=await f.arrayBuffer();
+    const doc=await pdfjs.getDocument({data:new Uint8Array(ab)}).promise;
+    const pg=await doc.getPage(1);
+    const canvas=document.getElementById('mainThumb');
+    const vp=pg.getViewport({scale:1});
+    const sc=Math.min(52/vp.width,68/vp.height);
+    const vp2=pg.getViewport({scale:sc});
+    canvas.width=Math.round(vp2.width); canvas.height=Math.round(vp2.height);
+    await pg.render({canvasContext:canvas.getContext('2d'),viewport:vp2}).promise;
+    const n=doc.numPages; await doc.destroy();
+    document.getElementById('thumbMeta').textContent=fmtSize(f.size)+' · '+n+' sayfa';
+  }catch(e){ document.getElementById('thumbMeta').textContent=fmtSize(f.size); }
+
+  // mevcut metadata oku
+  await readMetadata(f);
+  document.getElementById('runBtn').disabled=false;
+}
+
+async function readMetadata(f){
+  try{
+    const PDFLib=await getPdfLib();
+    const ab=await f.arrayBuffer();
+    const doc=await PDFLib.PDFDocument.load(ab,{ignoreEncryption:true});
+    const rows=[
+      ['Başlık',doc.getTitle()||'—'],
+      ['Yazar',doc.getAuthor()||'—'],
+      ['Konu',doc.getSubject()||'—'],
+      ['Anahtar',doc.getKeywords()||'—'],
+      ['Oluşturan',doc.getCreator()||'—'],
+    ];
+    document.getElementById('metaTable').innerHTML=rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('');
+    document.getElementById('metaCurrent').classList.add('show');
+    // form alanlarını doldur
+    document.getElementById('mTitle').value=doc.getTitle()||'';
+    document.getElementById('mAuthor').value=doc.getAuthor()||'';
+    document.getElementById('mSubject').value=doc.getSubject()||'';
+    document.getElementById('mCreator').value=doc.getCreator()||'';
+    document.getElementById('mKeywords').value=doc.getKeywords()||'';
+    document.getElementById('metaForm').style.display='grid';
+  }catch(e){ setStatus('❌ Metadata okunamadı: '+e.message,'err'); }
+}
+
+// ── Çalıştır ─────────────────────────────────────────────────────
+document.getElementById('runBtn').addEventListener('click',async()=>{
+  if(!pdfFile)return;
+  const runBtn=document.getElementById('runBtn');
+  runBtn.disabled=true;
+  setStatus('Metadata güncelleniyor...','loading');
+  try{
+    const PDFLib=await getPdfLib();
+    const ab=await pdfFile.arrayBuffer();
+    const doc=await PDFLib.PDFDocument.load(ab);
+    const t=document.getElementById('mTitle').value.trim();
+    const a=document.getElementById('mAuthor').value.trim();
+    const s=document.getElementById('mSubject').value.trim();
+    const c=document.getElementById('mCreator').value.trim();
+    const k=document.getElementById('mKeywords').value.trim();
+    if(t) doc.setTitle(t); else doc.setTitle('');
+    if(a) doc.setAuthor(a); else doc.setAuthor('');
+    if(s) doc.setSubject(s); else doc.setSubject('');
+    if(c) doc.setCreator(c); else doc.setCreator('');
+    if(k) doc.setKeywords([k]); else doc.setKeywords([]);
+    doc.setProducer('MirPDF');
+    const bytes=await doc.save();
+    dlBytes(bytes, document.getElementById('outname').value||'metadata-duzenlenmis.pdf');
+    setStatus('✅ Metadata güncellendi ve indirildi!','ok');
+    document.getElementById('upgradeNudge').classList.add('visible');
+  }catch(e){ setStatus('❌ Hata: '+e.message,'err'); }
+  runBtn.disabled=false;
+});
+</script>
+</body>
+</html>

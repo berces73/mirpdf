@@ -32,6 +32,11 @@
 /tools/qr-kod-ekle.html     /qr-kod-ekle     301
 /tools/pdf-to-word.html     /pdf-to-word     301
 /tools/ocr.html             /ocr             301
+/pdf-metadata-duzenle    /tools/pdf-metadata-duzenle.html    301
+/pdf-sayfa-kirp          /tools/pdf-sayfa-kirp.html          301
+/pdf-arka-plan-ekle      /tools/pdf-arka-plan-ekle.html      301
+/pdf-sayfa-kopyala       /tools/pdf-sayfa-kopyala.html       301
+/pdf-sayfa-ayikla        /tools/pdf-sayfa-ayikla.html        301
 
 # ── Legacy English → TR ──
 /merge-pdf      /pdf-birlestir   301
